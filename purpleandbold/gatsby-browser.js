@@ -5,3 +5,6 @@
  */
 
 // You can delete this file if you're not using it
+
+//self-hosts the font Rubik using Typefaces.js
+require('typeface-rubik')
