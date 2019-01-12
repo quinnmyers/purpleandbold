@@ -8,7 +8,7 @@ import SEO from '../components/seo'
 //components
 import Landing from '../components/Landing/Landing'
 import Hero from '../components/Hero/Hero'
-
+import Contact from "../components/Contact/Contact"
 const IndexPage = () => (
   <div>
     <Landing />
@@ -22,6 +22,7 @@ const IndexPage = () => (
       <Image />
     </div>
     <Link to="/page-2/">Go to page 2</Link> */}
+      <Contact></Contact>
     </Layout>
   </div>
 )

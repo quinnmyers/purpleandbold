@@ -1,0 +1,256 @@
+@import '../vars.sass'
+@import '../base.sass'
+
+$gradient: linear-gradient(145deg, #FED766 0%,#ff6797 85%)
+$inputback: #f7f3f3
+$cardback: rgba(255, 255, 255, .4)
+$inputColor: black
+$maintextcolor: white
+$disabled: #fc3a3a45
+.section
+    width: 100%
+    height: auto
+    color: $maintextcolor
+    background-image: $gradient
+    font-family: "avenir", sans-serif
+    display: flex
+    justify-content: center
+    align-items: center
+
+    @include tablet-phone
+        height: auto
+        padding: 10px
+    .contact
+        width: 100%
+        form
+            display: flex
+            flex-direction: column
+        h2.section__header 
+            color: white
+            padding-bottom: 10px
+            padding-left: 0px
+        input:focus 
+            outline: none
+            box-shadow: 0px 0px 7px 1px rgba(250,177,245,1);//rgba(234,162,110,1);
+        &__body, form
+            display: flex
+            justify-content: center
+            justify-content: space-between
+            @include tablet-phone
+                flex-direction: column
+            &__left, &__right 
+                label 
+                    margin-bottom: 7px
+            &__left
+                width: 48%
+                justify-content: space-between
+                @include tablet-phone
+                    width: 100%
+                .tag 
+                    div:nth-child(1)
+                        margin-left: 0px
+                    .tag__bubbles
+                        cursor: pointer
+                        //this is the left tags
+                        transition: all 1s ease-in-out
+                        
+                h4 
+                    font-weight: $light
+                    margin-top: 20px
+                .contact__body__left__details
+                    input
+                        color: $maintextcolor
+                        &:focus
+                            box-shadow: none
+                    button
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        border: 1px solid $maintextcolor
+                        border-radius: 100%
+                        height: 1.4em
+                        width: 1.4em
+                        line-height: 10px
+                        transform: translateY(25%)
+                    h4
+                        margin-bottom: 20px
+                    p
+                        text-align: center
+            &__right
+                dipslay: flex 
+                flex-direction: column 
+                justify-content: space-between
+                width: 48%
+                overflow: hidden
+                @include tablet-phone
+                    width: 100%
+                &__missed 
+                    height: 30%
+                    margin-top: 15px
+                textarea
+                    border: none
+                    background: $inputback
+                    margin-top: 8px 
+                    color: $inputColor
+                    resize: none
+                    padding: 2px
+                    height: 80%
+                    &:focus 
+                        outline: none
+                        box-shadow: 0px 0px 7px 1px rgba(250,177,245,1);//rgba(234,162,110,1);
+                .tag
+                    min-height: 62px
+                    flex-wrap: wrap
+                    span
+                        height: 100%
+                    &__bubbles
+                        height: 75%
+                        cursor: pointer
+                .tags-enter-active
+                    animation: tag-in 1.5s forwards
+                .tags-leave-active
+                    animation: tag-out 2s forwards
+                .tags-move
+                    transition: all 2s
+        .flex__col
+            display: flex
+            flex-direction: column
+        
+        .pb
+            padding-bottom: 64px
+        .transback
+            background: $cardback
+            padding: 10px
+            margin-bottom: 20px
+            border-radius: 3px
+        input
+            color: $inputColor
+            border: none
+            background: $inputback
+            font-size: 1.1rem
+            padding: 6px
+            .contact__body__right__compose
+                font-size: 1.63rem
+                .contact__body__right__ul
+                    color: red
+                    border-bottom: 2px solid white
+                    display: inline-block
+                    min-width: 50px
+                .contact__body__right__span
+                    @include tablet-phone
+                        display: none
+                .tag
+                    //inline block on this sort of looks cool actually
+                    // display: inline-block
+                    display: flex
+                    .tag__bubbles 
+                        cursor: pointer
+                        display: flex
+                        border-radius: 100px
+                        // padding: 1px 5px 
+                        padding: 2px 2px
+                        justify-content: space-between
+                        align-items: center
+                        p
+                            padding: 2px 10px
+                            font-size: 0.9rem 
+                            margin: 0px 0px
+                        img 
+                            height: 10px 
+                            width: 10px
+        .tag
+            display: flex
+            flex-wrap: wrap
+            span
+                display: flex
+                flex-wrap: wrap 
+            input
+                background: none
+                border-bottom: 2px solid white 
+                &::placeholder
+                    color: $maintextcolor
+            &__bubbles
+                cursor: bubbles
+                background: $cardback
+                border-radius: 15px
+                padding: 4px 15px
+                margin: 5px
+                font-size: 0.9em
+                .tag__bubbles__del
+                    cursor: pointer
+                    height: 1.25rem
+                    width: 1.25rem
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    border: 1px solid white
+                    border-radius: 100%
+                    margin-right: 2px
+        .send
+            display: flex
+            justify-content: flex-end
+            align-self: flex-end
+        
+            display: flex 
+            flex-direction: column 
+            justify-content: center
+            align-items: center
+            // color: $maintextcolor
+            height: 45px
+            width: 160px
+            border: .08em solid $maintextcolor
+            border-radius: 3px
+            font-size: .9em
+            letter-spacing: .05em
+            font-weight: $light
+            margin-bottom: 40px
+            transition: all 0.3s ease-in-out
+            @include tablet
+                font-size: .85em
+                height: 36px 
+                width: 145px
+            @include phone-large 
+                margin-bottom: 30px
+            @include phone-small 
+                margin-bottom: 20px
+            &:hover 
+                transform: scale(1.03) translateY(-3px)
+            &:disabled
+                background: $disabled
+                box-shadow: 0px 0px 5px 0px $disabled
+                animation: disabled 3s infinite
+                &:hover 
+                    transform: scale(1) translateY(0px)
+            #contact__send--message
+                visibility: hidden
+@keyframes tag-in 
+    0%    
+        // transform: translatex(-300%)
+        opacity: 0
+    100%  
+        // transform: translatex(0%)
+        opacity: 1
+@keyframes tag-out 
+    0%    
+        // transform: translatex(0%)
+        opacity: 1
+    100%  
+        // transform: translatex(-500%)
+        opacity: 0
+@keyframes disabled 
+    0%    
+        opacity: 1
+    50%  
+        opacity: .4
+    100%
+        opacity: 1 
+.tags-enter, 
+  opacity: 1
+  //transform: translateY(300px)
+.tags-leave-to
+  opacity: 0
+.tags-leave-active 
+  //position: absolute
+  opacity: 0
+  //transform: translateX(-1800px) scale(0.3)
+  //right: 0
