@@ -21,9 +21,12 @@
     &__content
       &__top, &__middle
       &__top 
-        display: flex
-        &.loaded 
-          color: red
+        text-align: right
+        transform: translateX(-100vw)
+        &.loaded
+          animation: landing-top-load 1.5s forwards 
+          h1 
+            animation: landing-top-load 2s forwards
         h1 
           font-size: 7em
           font-weight: 300
@@ -37,6 +40,13 @@
         h1 
           font-size: 6em
           font-weight: 900
+        &__left 
+          transform: translateX(-100vw)
+          &.loaded 
+            animation: landing-middle-left-load 1.5s forwards
+          &.after-load 
+            animation: landing-middle-left-after-load 1.5s forwards
+        &__right
       &__bottom 
         position: absolute
         bottom: 0
@@ -45,3 +55,45 @@
         width: 100px
         background: lightgreen 
     
+
+@keyframes landing-top-load
+  0%
+  10%
+    letter-spacing: 4em
+  80% 
+    letter-spacing: 0em
+  100%
+    transform: translateX(0px)
+    letter-spacing: .1em
+
+
+@keyframes landing-middle-left-load
+  0%
+  10%
+  20%
+  30%
+  40%
+  50%
+    transform: rotate(-180deg)
+  60%
+  70%
+  80% 
+  90%
+  100%
+    transform: translateX(0px)
+    transform: rotate(-360deg)
+
+@keyframes landing-middle-left-after-load
+  0%
+    transform: rotate(0deg)
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80% 
+  90%
+  100%
+    transform: rotate(360deg)

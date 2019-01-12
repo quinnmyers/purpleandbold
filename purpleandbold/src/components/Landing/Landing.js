@@ -13,21 +13,29 @@ class Landing extends Component {
     this.state = {
       topLoaded: false,
       middleLoaded: false,
+      leftMiddleLoaded: false,
+      rightMiddleLoaded: false,
+      middleLeftSecondLoaded: false,
     }
   }
   componentDidMount() {
     this.loadTopText()
     this.loadMiddleText()
+    this.loadMiddleLeftText()
   }
   loadTopText() {
-    setTimeout(() => {
-      this.setState({ topLoaded: true })
-    }, 5000)
+    this.setState({ topLoaded: true })
   }
   loadMiddleText() {
     setTimeout(() => {
       this.setState({ middleLoaded: true })
-    }, 3000)
+    }, 1500)
+  }
+  loadMiddleLeftText() {
+    this.setState({ middleLeftLoaded: true })
+    setTimeout(() => {
+      this.setState({ middleLeftSecondLoaded: true })
+    }, 1500)
   }
   render() {
     return (
@@ -40,14 +48,18 @@ class Landing extends Component {
                   this.state.topLoaded ? 'loaded' : ''
                 }`}
               >
-                <h1>Purple</h1>
+                <h1 className={this.state.topLoaded ? 'loaded' : ''}>Purple</h1>
               </div>
               <div
                 className={`landing__container__content__middle ${
                   this.state.middleLoaded ? 'loaded' : ''
                 }`}
               >
-                <div className="landing__container__content__middle__left">
+                <div
+                  className={`landing__container__content__middle__left ${
+                    this.state.middleLeftLoaded ? 'loaded' : ''
+                  } ${this.state.middleLeftSecondLoaded ? 'after-load' : ''}`}
+                >
                   <h1>+</h1>
                 </div>
                 <div className="landing__container__content__bottom__right">
