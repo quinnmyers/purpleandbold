@@ -4,25 +4,25 @@
   display: flex
   height: 100vh
   width: 100%
-  background: $accent
   color: white
   font-size: 12pt
+  background: $accent
+  @include edgesnap 
+    font-size: 1.425vw
   &__container
     display: flex
     position: relative
     flex-direction: column
-    width: 100%
-    height: 100vh
-    background: lightskyblue
     justify-content: center
     align-items: flex-end
-    h2 
-      color: green
+    width: 100%
+    height: 100vh
     &__content
       &__top, &__middle
       &__top 
         text-align: right
         transform: translateX(-100vw)
+        margin-right: -1em
         &.loaded
           animation: landing-top-load 1.5s forwards 
           h1 
@@ -33,10 +33,8 @@
       &__middle
         display: flex 
         justify-content: space-between 
-        background: pink
         width: 100%
         &.loaded
-          color: purple
         h1 
           font-size: 6em
           font-weight: 900
@@ -47,17 +45,36 @@
           &.after-load 
             animation: landing-middle-left-after-load 1.5s forwards
         &__right
+          transform: translateX(-100vw)
+          &.loaded
+            animation: landing-middle-right-load 1.5s forwards
       &__bottom 
         position: absolute
         bottom: 0
         right: 0
         height: 100px 
         width: 100px
-        background: lightgreen 
+        margin-right: 16em
+        transform: rotateX(-180deg) scale(0.4)
+        opacity: 0
+        @include edgesnap 
+          height: 7.25vw
+          width: 7.25vw
+        &.loaded 
+          animation: landing-arrow-load 1.5s forwards
+        &.after-load 
+          margin-right: 0em
+          transform: rotateX(0deg)  scale(1)
+          opacity: 1
+          animation: landing-arrow-after-load 2s infinite
+        img 
+          width: 100% 
+          height: 100%
+          transform: rotate(90deg)
+       
     
 
 @keyframes landing-top-load
-  0%
   10%
     letter-spacing: 4em
   80% 
@@ -68,17 +85,8 @@
 
 
 @keyframes landing-middle-left-load
-  0%
-  10%
-  20%
-  30%
-  40%
   50%
     transform: rotate(-180deg)
-  60%
-  70%
-  80% 
-  90%
   100%
     transform: translateX(0px)
     transform: rotate(-360deg)
@@ -86,14 +94,33 @@
 @keyframes landing-middle-left-after-load
   0%
     transform: rotate(0deg)
-  10%
-  20%
-  30%
-  40%
-  50%
-  60%
-  70%
-  80% 
-  90%
   100%
     transform: rotate(360deg)
+
+
+@keyframes landing-middle-right-load
+  0%
+    opacity: 0
+    transform: translateY(225px)
+  100%
+    transform: translateX(0px)
+    transform: translateY(0px)
+    opactiy: 1
+
+  
+@keyframes landing-arrow-load 
+  0%
+  100%
+    margin-right: 0em
+    transform: rotateX(0deg)  scale(1)
+    opacity: 1
+
+@keyframes landing-arrow-after-load
+  0% 
+  60% 
+    margin-bottom: 1.5em
+  85%
+    margin-bottom: 0em
+  100%
+    margin-bottom: 0em
+    

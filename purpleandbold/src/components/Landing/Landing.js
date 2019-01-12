@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 //components
 // import Section from '../utility/Section/Section'
 import Content from '../utility/Content/Content'
 
-// import style from './landing.module.sass'
+// styles
 import './landing.sass'
+
+//images
+import landingArrow from '../../images/arrow-icon.svg'
 
 class Landing extends Component {
   constructor(props) {
@@ -14,14 +19,19 @@ class Landing extends Component {
       topLoaded: false,
       middleLoaded: false,
       leftMiddleLoaded: false,
-      rightMiddleLoaded: false,
       middleLeftSecondLoaded: false,
+      rightMiddleLoaded: false,
+      middleRightSecondLoaded: false,
+      arrowLoaded: false,
+      arrowLoadedAfter: false,
     }
   }
   componentDidMount() {
     this.loadTopText()
     this.loadMiddleText()
     this.loadMiddleLeftText()
+    this.loadMiddleRightText()
+    this.loadArrow()
   }
   loadTopText() {
     this.setState({ topLoaded: true })
@@ -32,12 +42,26 @@ class Landing extends Component {
     }, 1500)
   }
   loadMiddleLeftText() {
-    this.setState({ middleLeftLoaded: true })
+    this.setState({ leftMiddleLoaded: true })
     setTimeout(() => {
       this.setState({ middleLeftSecondLoaded: true })
     }, 1500)
   }
+  loadMiddleRightText() {
+    setTimeout(() => {
+      this.setState({ rightMiddleLoaded: true })
+    }, 1500)
+  }
+  loadArrow() {
+    setTimeout(() => {
+      this.setState({ arrowLoaded: true })
+    }, 1500)
+    setTimeout(() => {
+      this.setState({ arrowLoadedAfter: true })
+    }, 3000)
+  }
   render() {
+    const { data } = this.props
     return (
       <div className="landing">
         <Content>
@@ -57,16 +81,26 @@ class Landing extends Component {
               >
                 <div
                   className={`landing__container__content__middle__left ${
-                    this.state.middleLeftLoaded ? 'loaded' : ''
+                    this.state.leftMiddleLoaded ? 'loaded' : ''
                   } ${this.state.middleLeftSecondLoaded ? 'after-load' : ''}`}
                 >
                   <h1>+</h1>
                 </div>
-                <div className="landing__container__content__bottom__right">
+                <div
+                  className={`landing__container__content__middle__right ${
+                    this.state.rightMiddleLoaded ? 'loaded' : ''
+                  }`}
+                >
                   <h1>Bold</h1>
                 </div>
               </div>
-              <div className="landing__container__content__bottom" />
+              <div
+                className={`landing__container__content__bottom ${
+                  this.state.arrowLoaded ? 'loaded' : ''
+                } ${this.state.arrowLoadedAfter ? 'after-load' : ''}`}
+              >
+                <img src={landingArrow} alt="" />
+              </div>
             </div>
           </div>
         </Content>
