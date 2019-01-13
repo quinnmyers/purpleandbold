@@ -9,6 +9,8 @@ import SEO from '../components/seo'
 import Landing from '../components/Landing/Landing'
 import Hero from '../components/Hero/Hero'
 import Contact from "../components/Contact/Contact"
+import About from '../components/About/About'
+import Testimonials from '../components/Testimonials/Testimonials'
 const IndexPage = () => (
   <div>
     <Landing />
@@ -16,6 +18,8 @@ const IndexPage = () => (
       <Hero />
       {/* <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} /> */}
       <h1>Hi people</h1>
+      <About></About>
+      <Testimonials></Testimonials>
       {/* <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
