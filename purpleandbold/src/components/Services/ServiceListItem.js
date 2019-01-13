@@ -12,13 +12,18 @@ class ServiceListItem extends Component {
       open: false,
     }
   }
+  componentDidUpdate() {
+    this.title.style.color = this.props.hex
+  }
   toggleSlide() {
     this.setState({ open: !this.state.open })
   }
   render() {
     return (
       <div className="service__block__right__item">
-        <h4 onClick={this.toggleSlide.bind(this)}>{this.props.name}</h4>
+        <h4 onClick={this.toggleSlide.bind(this)} ref={h4 => (this.title = h4)}>
+          {this.props.name}
+        </h4>
         <SlideDown>
           {this.state.open ? this.props.desc : null}
           {/* <p>{this.props.desc}</p> */}

@@ -101,21 +101,27 @@ class Services extends Component {
           ],
         },
       ],
+      hexColor: null,
     }
+    this.getCreativeColor = this.getCreativeColor.bind(this)
   }
+  //passes the correct component to the service block "image"
   buildImageComponentURL(name) {
     if (name === 'Websites') {
       return <WebsitesImage />
     } else if (name === 'Creative') {
-      return <CreativeImage getColorFunction={this.getColor} />
+      return <CreativeImage getColorFunction={this.getCreativeColor} />
     } else if (name === 'Branding') {
       return <BrandingImage />
     } else if (name === 'Marketing') {
       return <MarketingImage />
     }
   }
-  getColor(hex) {
-    console.log(hex)
+  //gets clicked color HEX value from creative image, passes down to branding image
+  //to change color of the card
+  getCreativeColor(hex) {
+    this.setState({ hexColor: hex.toString() })
+    console.log(`from services.js state: ${hex}`)
   }
   render() {
     return (
@@ -128,6 +134,7 @@ class Services extends Component {
                 name={s.serviceName}
                 key={s.serviceName}
                 servicesList={s.serviceList}
+                hexColor={this.state.hexColor}
               >
                 {this.buildImageComponentURL(s.serviceName)}
               </ServiceBlock>
