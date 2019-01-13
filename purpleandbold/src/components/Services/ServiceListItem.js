@@ -34,8 +34,11 @@ class ServiceListItem extends Component {
 }
 
 ServiceListItem.proTypes = {
+  service: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   desc: PropTypes.string.isRequired,
+  key: PropTypes.string.isRequired,
+  hex: PropTypes.string.isRequired,
 }
 
 export default ServiceListItem

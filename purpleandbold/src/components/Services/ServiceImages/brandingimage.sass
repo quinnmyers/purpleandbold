@@ -1,0 +1,133 @@
+@import '../../base.sass'
+
+div 
+  .branding__container
+    display: flex
+    justify-content: space-between
+    width: 300px 
+    height: 160px
+    @include phone-small 
+      width: 100% 
+    &__left
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      width: 28%
+      @include phone-small 
+        width: 30%
+      &__swatch 
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        align-items: flex-end
+        width: 100%
+        height: 130px 
+        border-radius: 7px
+        transition: all .25s ease
+        &--small 
+          height: 12px 
+          width: 32px 
+          border-radius: 2px 
+          margin: 2px 5px  
+          &:nth-last-child(1)
+            margin-bottom: 6px
+        &--1
+        &--2
+        &--3
+        &--4
+      &--hex, &--rgb
+        font-family: 'Helvetica', sans-serif
+        font-size: .55em
+        margin-left: 2px
+      &--hex 
+        font-weight: bold
+      &--rgb     
+        color: $grey
+    &__middle
+      display: flex 
+      flex-direction: column
+      justify-content: space-between
+      width: 28%
+      &--swatch
+        display: flex 
+        width: 100%
+        height: 130px
+        border-radius: 7px
+      &--hex, &--rgb 
+        font-family: 'Helvetica', sans-serif
+        font-size: .55em
+        margin-left: 2px
+      &--hex 
+        font-weight: bold
+      &--rgb     
+        color: $grey
+      &--hex 
+      &--rgb
+    &__right
+      display: flex 
+      flex-direction: column
+      justify-content: space-between
+      width: 28% 
+      height: 100% 
+      font-family: 'Helvetica', sans-serif
+      @include phone-small 
+        width: 30%
+      &__input__container
+        display: flex
+        height 20px
+        &:before 
+          display: flex
+          content: ' '
+          height: 11px
+          align-self: center
+          width: 1px 
+          background: black
+          animation: blink 1.5s infinite
+        &--field, input 
+          font-family: "Helvetica", sans-serif
+          font-size: 0.9em 
+          font-weight: bold
+          border: none
+          width: 100%
+          border-bottom: 1px solid black
+          &:focus 
+            outline: none
+      &--big-heading
+        font-weight: bold
+        font-size: .9em
+        color: black
+        @include phone-small 
+          font-size: .85em
+      &--heading
+        font-size: 0.8em
+        font-weight: bold
+        @include phone-small 
+          font-size: .75em
+      &--subheading
+        font-size: 0.6em
+        font-weight: bold
+        @include phone-small 
+          font-size: .55em
+      &--bodytext
+        font-size: 0.5em
+      &--caption
+        font-size: 0.5em
+        color: $grey
+      &--captionuppercase
+        font-size: 0.5em
+        color: $grey
+      &--label
+        font-size: 0.5em
+        color: $grey
+      &--hyperlink
+        font-size: 0.3em
+
+@keyframes blink 
+  0% 
+    opacity: 0
+  49% 
+    opacity: 0 
+  50% 
+    opacity: 1
+  100%
+    opacity: 1

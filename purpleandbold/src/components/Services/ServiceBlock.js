@@ -41,6 +41,7 @@ class ServiceBlock extends Component {
             //creative component needs the HEX codes to update the font color
             this.props.name === 'Creative' ? (
               <ServiceListItem
+                service={this.state.serviceName}
                 name={s.name}
                 desc={s.desc}
                 key={s.name}

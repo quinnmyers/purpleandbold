@@ -112,7 +112,7 @@ class Services extends Component {
     } else if (name === 'Creative') {
       return <CreativeImage getColorFunction={this.getCreativeColor} />
     } else if (name === 'Branding') {
-      return <BrandingImage />
+      return <BrandingImage rightSwatchBackground={this.state.hexColor} />
     } else if (name === 'Marketing') {
       return <MarketingImage />
     }
