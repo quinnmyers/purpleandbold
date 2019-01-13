@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Carousel from 'nuka-carousel';
 import style from "./slider.module.sass"
 
+
+
 class TestimonialsSlider extends Component {
     constructor(props) {
         super(props);
@@ -36,9 +38,14 @@ class TestimonialsSlider extends Component {
                         "Purple and Bold did a great job on our company website. They were attentive to our needs and delivered the exact product we were looking for in a timely manner."
                 }
             ],
-            slideIndex: 0
+            slideIndex: 0,
+            playing: true
 
         }
+
+    }
+    componentDidMount() {
+
     }
 
 
@@ -53,9 +60,12 @@ class TestimonialsSlider extends Component {
         }
         return (
             <div className={style.testimonials__slider__container}>
-                <Carousel autoplay={true} wrapAround={true} slidesToShow={3}
+                <Carousel autoplay={this.props.playing} wrapAround={true} slidesToShow={3}
                     withoutControls={true}
+                    pauseOnHover={true}
                     slideIndex={this.state.slideIndex}
+
+
                 >
 
 
@@ -71,6 +81,7 @@ class TestimonialsSlider extends Component {
                     )}
 
                 </Carousel>
+                <button onClick={this.stop}>stop</button>
             </div>
 
         )
