@@ -54,12 +54,22 @@ class BrandingImage extends Component {
     //THIS IS BREAKING WHEN YOU CLICK A SMALL LEFT SWATCH FIRST, IT IS CHANGING THE BACKGROUND COLOR TO NULL
     //CHECK TO SEE IF NULL AND THEN SET TO THE BLUE IF SO
   }
-  updateLeftSwatch(hex) {
+  componentWillReceiveProps() {
+    this.setState({
+      middleSwatch: {
+        ...this.state.middleSwatch,
+        rgbBottom: this.props.rightRgb,
+        hexBottom: this.props.rightSwatchBackground.toUpperCase(),
+      },
+    })
+  }
+  updateSwatches(hex, rgb) {
     this.leftswatch.style.background = hex
     this.setState({
       leftSwatch: {
         ...this.state.leftSwatch,
         hexBottom: hex,
+        rgbBottom: rgb,
       },
     })
   }
@@ -78,7 +88,7 @@ class BrandingImage extends Component {
                   className="branding__container__left__swatch--small"
                   style={{ background: s.background }}
                   key={s.background}
-                  onClick={this.updateLeftSwatch.bind(this, s.background)}
+                  onClick={this.updateSwatches.bind(this, s.background, s.rgb)}
                 />
               ))}
             </div>

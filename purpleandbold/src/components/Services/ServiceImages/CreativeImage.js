@@ -110,10 +110,11 @@ class CreativeImage extends Component {
         },
       ],
     }
+    this.handleColorClick = this.handleColorClick.bind(this)
   }
   buildHex() {}
-  handleColorClick(hex) {
-    this.props.getColorFunction(hex)
+  handleColorClick(hex, rgb) {
+    this.props.getColorFunction(hex, rgb)
   }
   render() {
     return (
@@ -124,7 +125,7 @@ class CreativeImage extends Component {
               className="creative__color__palette--color"
               style={{ backgroundColor: `${c.hex}` }}
               key={c.name}
-              onClick={this.handleColorClick.bind(this, c.hex)}
+              onClick={this.handleColorClick.bind(this, c.hex, c.rgb)}
             />
           ))}
           <p className="services__creative__cta">Click a color...</p>
