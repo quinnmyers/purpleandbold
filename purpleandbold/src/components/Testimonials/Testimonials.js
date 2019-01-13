@@ -29,7 +29,7 @@ class Testimonials extends Component {
                             <h2 className={style.section__header}>Testimonials</h2>
                             <div className={style.testimonials__content__container__middle}>
                                 <TestimonialsSlider playing={this.state.playing}></TestimonialsSlider>
-                                <Controls pause={this.pauseSlider} play={this.playSlider}></Controls>
+                                <Controls pause={this.pauseSlider} play={this.playSlider} isPlaying={this.state.playing}></Controls>
                             </div>
 
                             <div className={style.testimonials__content__container__cta}>

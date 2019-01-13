@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="116px" height="310px" viewBox="0 0 116 310" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Background</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-375.000000, -1945.000000)" fill="#102B3F">
+            <g id="Group-46" transform="translate(154.000000, 1785.000000)">
+                <g id="Group-4">
+                    <path d="M232.115248,210.51471 L327.576061,160.760742 C330.581286,159.194425 334.42378,160.124374 336.158511,162.837841 C336.71439,163.707347 337.004749,164.694477 336.999941,165.698438 L335.858923,403.965806 C335.828242,410.372613 332.030148,416.282323 325.884752,419.48529 L230.423939,469.239258 C227.418714,470.805575 223.57622,469.875626 221.841489,467.162159 C221.28561,466.292653 220.995251,465.305523 221.000059,464.301562 L222.141077,226.034194 C222.171758,219.627387 225.969852,213.717677 232.115248,210.51471 Z" id="Background" transform="translate(279.000000, 315.000000) scale(-1, 1) translate(-279.000000, -315.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
