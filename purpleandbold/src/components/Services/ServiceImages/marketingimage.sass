@@ -1,0 +1,38 @@
+@import '../../base.sass'
+
+.marketing__container
+  display: flex 
+  align-items: center
+  width: 300px 
+  height: 130px
+  img.rotateNegative 
+    animation: rotate-negative 6s infinite
+    // transform: rotateY(360deg) !important
+    // transition: all 1s infinite !important
+  img.rotatePositive
+    animation: rotate-positive 7s forwards infinite
+  img 
+    position: absolute
+    animation: return-to-normal 9s forwards infinite
+
+  &--graph--0
+    margin-top: 5px
+  &--graph--1
+
+@keyframes return-to-normal 
+  0% 
+  50% 
+    transform: translateY(0)
+  100%
+
+@keyframes rotate-negative 
+  0% 
+  50% 
+    transform: rotateY(-180deg)
+  100%
+
+@keyframes rotate-positive
+  0% 
+  50% 
+    transform: rotateY(250deg)
+  100%
