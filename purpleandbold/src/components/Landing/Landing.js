@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
 
 //components
 // import Section from '../utility/Section/Section'

@@ -122,7 +122,7 @@ class Services extends Component {
       <section className="services">
         <Content>
           <div className="services__container">
-            <h2>Services</h2>
+            <h2 className="section-header">Services</h2>
             {this.state.services.map(s => (
               <ServiceBlock
                 name={s.serviceName}

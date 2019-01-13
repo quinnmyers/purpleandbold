@@ -41,6 +41,8 @@ module.exports = {
     },
     //allows you to query markdown from contentful as HTML
     `@contentful/gatsby-transformer-contentful-richtext`,
+    //slide up slide down for the services section descriptions
+    `react-slidedown`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
