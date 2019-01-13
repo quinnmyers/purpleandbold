@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="78px" height="121px" viewBox="0 0 78 121" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Background</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-4" transform="translate(-42.000000, -113.000000)" stroke="#032C40">
+            <path d="M88.373674,133.408152 C86.5428282,132.353682 84.2883129,132.356876 82.4604622,133.416529 L11.8383599,174.358029 C11.5186985,174.543345 11.2533649,174.809432 11.0689552,175.129617 C10.4879376,176.138421 10.8347272,177.427226 11.8435314,178.008244 L73.626326,213.591848 C75.4571718,214.646318 77.7116871,214.643124 79.5395378,213.583471 L150.16164,172.641971 C150.481301,172.456655 150.746635,172.190568 150.931045,171.870383 C151.512062,170.861579 151.165273,169.572774 150.156469,168.991756 L88.373674,133.408152 Z" id="Background" transform="translate(81.000000, 173.500000) rotate(60.000000) translate(-81.000000, -173.500000) "></path>
+        </g>
+    </g>
+</svg>

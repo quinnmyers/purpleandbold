@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="69px" height="78px" viewBox="0 0 69 78" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Background</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="95.441203%" id="linearGradient-1">
+            <stop stop-color="#FED666" offset="0%"></stop>
+            <stop stop-color="#FF49A4" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-4" transform="translate(-17.000000, -155.000000)" stroke="url(#linearGradient-1)">
+            <path d="M69.2376758,165.939563 C67.6735319,165.025747 65.7374564,165.02943 64.1768003,165.94919 L3.52193985,201.695633 C3.19093441,201.890708 2.91539681,202.167296 2.72158215,202.499041 C2.09473584,203.57199 2.45637353,204.949946 3.52932254,205.576793 L33.4705138,223.06926 C35.0518313,223.993109 37.0091641,223.989386 38.5869555,223.059528 L98.847012,187.545759 C99.2147958,187.329009 99.5209487,187.021689 99.7362983,186.653083 C100.432794,185.460918 100.030975,183.929855 98.838809,183.233359 L69.2376758,165.939563 Z" id="Background" transform="translate(51.246030, 194.428439) rotate(60.000000) translate(-51.246030, -194.428439) "></path>
+        </g>
+    </g>
+</svg>

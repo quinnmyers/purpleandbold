@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="55px" viewBox="0 0 42 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Pause</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#FFB476" offset="0%"></stop>
+            <stop stop-color="#FF6797" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-1138.000000, -4780.000000)" fill="#102B3F" stroke="url(#linearGradient-1)" stroke-width="2">
+            <g id="Group-61" transform="translate(0.000000, 4473.000000)">
+                <g id="Group-45" transform="translate(999.000000, 64.000000)">
+                    <g id="t_cont_grey_O_outline">
+                        <g id="Group-59" transform="translate(118.000000, 128.000000)">
+                            <path d="M28.5255973,116 C24.871359,116 22,118.185939 22,120.729167 L22,164.270833 C22,166.814061 24.871359,169 28.5255973,169 C32.1798356,169 35.0511945,166.814061 35.0511945,164.270833 L35.0511945,120.729167 C35.0511945,118.185939 32.1798356,116 28.5255973,116 Z M55.4744027,116 C51.8201644,116 48.9488055,118.185939 48.9488055,120.729167 L48.9488055,164.270833 C48.9488055,166.814061 51.8201644,169 55.4744027,169 C59.128641,169 62,166.814061 62,164.270833 L62,120.729167 C62,118.185939 59.128641,116 55.4744027,116 Z" id="Pause"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

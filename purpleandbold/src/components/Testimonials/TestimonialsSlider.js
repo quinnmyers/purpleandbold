@@ -64,7 +64,9 @@ class TestimonialsSlider extends Component {
                     withoutControls={true}
                     pauseOnHover={true}
                     slideIndex={this.state.slideIndex}
-
+                    transitionMode={"scroll"}
+                    speed={3000}
+                    easing={"easeSinInOut"}
 
                 >
 
@@ -81,7 +83,6 @@ class TestimonialsSlider extends Component {
                     )}
 
                 </Carousel>
-                <button onClick={this.stop}>stop</button>
             </div>
 
         )
