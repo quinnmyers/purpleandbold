@@ -34,13 +34,14 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `your_space_id`,
+        spaceId: `3b8phtgf62nm`,
         // Learn about environment variables: https://gatsby.app/env-vars
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        accessToken: `4dcfd3c7e9b4c0758b23330e39baf73b9f9c5cc0a25fe4a3941c9883e723524d`,
       },
     },
     //allows you to query markdown from contentful as HTML
     `@contentful/gatsby-transformer-contentful-richtext`,
+    //slide up slide down for the services section descriptions
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
