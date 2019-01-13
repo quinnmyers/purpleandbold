@@ -25,6 +25,8 @@ $disabled: #fc3a3a45
         form
             display: flex
             flex-direction: column
+            .real_message
+                visibility: hidden
         h2.section__header 
             color: white
             padding-bottom: 10px
@@ -60,6 +62,7 @@ $disabled: #fc3a3a45
                 .contact__body__left__details
                     input
                         color: $maintextcolor
+                        width: 35%
                         &:focus
                             box-shadow: none
                     button
@@ -69,13 +72,15 @@ $disabled: #fc3a3a45
                         border: 1px solid $maintextcolor
                         border-radius: 100%
                         height: 1.4em
-                        width: 1.4em
+                        width: 1.4rem
                         line-height: 10px
                         transform: translateY(25%)
                     h4
                         margin-bottom: 20px
                     p
                         text-align: center
+                    .tag
+                        display: flex
             &__right
                 dipslay: flex 
                 flex-direction: column 
@@ -111,29 +116,12 @@ $disabled: #fc3a3a45
                 .tags-leave-active
                     animation: tag-out 2s forwards
                 .tags-move
-                    transition: all 2s
-        .flex__col
-            display: flex
-            flex-direction: column
-        
-        .pb
-            padding-bottom: 64px
-        .transback
-            background: $cardback
-            padding: 10px
-            margin-bottom: 20px
-            border-radius: 3px
-        input
-            color: $inputColor
-            border: none
-            background: $inputback
-            font-size: 1.1rem
-            padding: 6px
-            .contact__body__right__compose
-                font-size: 1.63rem
+                    transition: all 2s 
+                .contact__body__right__compose
+               
                 .contact__body__right__ul
-                    color: red
-                    border-bottom: 2px solid white
+                
+                    border-bottom: 1px solid white
                     display: inline-block
                     min-width: 50px
                 .contact__body__right__span
@@ -158,6 +146,27 @@ $disabled: #fc3a3a45
                         img 
                             height: 10px 
                             width: 10px
+        .flex__col
+            display: flex
+            flex-direction: column
+        
+        .pb
+            padding-bottom: 64px
+        p
+            color: white
+            text-align: left
+        .transback
+            background: $cardback
+            padding: 10px
+            margin-bottom: 20px
+            border-radius: 3px
+        input
+            color: $inputColor
+            border: none
+            background: $inputback
+            font-size: 1.1rem
+            padding: 6px
+           
         .tag
             display: flex
             flex-wrap: wrap
@@ -170,6 +179,7 @@ $disabled: #fc3a3a45
                 &::placeholder
                     color: $maintextcolor
             &__bubbles
+                display: flex
                 cursor: bubbles
                 background: $cardback
                 border-radius: 15px
@@ -185,17 +195,18 @@ $disabled: #fc3a3a45
                     align-items: center
                     border: 1px solid white
                     border-radius: 100%
-                    margin-right: 2px
+                    margin-left: 4px
+        
         .send
             display: flex
             justify-content: flex-end
             align-self: flex-end
-        
+            background: $cardback
             display: flex 
             flex-direction: column 
             justify-content: center
             align-items: center
-            // color: $maintextcolor
+            color: $maintextcolor
             height: 45px
             width: 160px
             border: .08em solid $maintextcolor
@@ -221,8 +232,9 @@ $disabled: #fc3a3a45
                 animation: disabled 3s infinite
                 &:hover 
                     transform: scale(1) translateY(0px)
-            #contact__send--message
-                visibility: hidden
+        #contact__send__message
+            visibility: hidden
+        
 @keyframes tag-in 
     0%    
         // transform: translatex(-300%)
