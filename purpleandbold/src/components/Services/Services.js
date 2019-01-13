@@ -121,10 +121,14 @@ class Services extends Component {
     return (
       <section className="services">
         <Content>
-          <div className="test-div">
+          <div className="services__container">
             <h2>Services</h2>
             {this.state.services.map(s => (
-              <ServiceBlock name={s.serviceName} key={s.serviceName}>
+              <ServiceBlock
+                name={s.serviceName}
+                key={s.serviceName}
+                servicesList={s.serviceList}
+              >
                 {this.buildImageComponentURL(s.serviceName)}
               </ServiceBlock>
             ))}
