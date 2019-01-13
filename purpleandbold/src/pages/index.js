@@ -8,6 +8,11 @@ import SEO from '../components/seo'
 //components
 import Landing from '../components/Landing/Landing'
 import Hero from '../components/Hero/Hero'
+
+import Contact from '../components/Contact/Contact'
+import About from '../components/About/About'
+import Testimonials from '../components/Testimonials/Testimonials'
+
 import Services from '../components/Services/Services'
 import Contact from '../components/Contact/Contact'
 
