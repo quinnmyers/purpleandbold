@@ -48,6 +48,9 @@ $disabled: #fc3a3a45
                 justify-content: space-between
                 @include tablet-phone
                     width: 100%
+                label
+                    display: flex
+                    flex-direction: column
                 .tag 
                     div:nth-child(1)
                         margin-left: 0px
@@ -111,6 +114,7 @@ $disabled: #fc3a3a45
                     &__bubbles
                         height: 75%
                         cursor: pointer
+
                 .tags-enter-active
                     animation: tag-in 1.5s forwards
                 .tags-leave-active

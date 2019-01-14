@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
-
 //components
 import Content from '../../utility/Content/Content'
 
 //styles
 import './navigation.sass'
+
 
 class Navigation extends Component {
   constructor(props) {
@@ -50,7 +50,7 @@ class Navigation extends Component {
               </div>
               <div className="nav__container__navigation">
                 {this.state.navItems.map(n => (
-                  <a href={n.url}>{n.name}</a>
+                  <a data-scroll href={n.url}>{n.name}</a>
                 ))}
               </div>
             </div>

@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+import {
+    CSSTransition,
+    TransitionGroup,
+} from 'react-transition-group';
 import Content from "../utility/Content/Content"
 import Slider, { Range } from 'rc-slider';
 import x from "../../images/icons/x.svg"
 import 'rc-slider/assets/index.css';
 import style from "./contact.module.sass"
+import "./contactfade.sass"
 class Contact extends Component {
     constructor(props) {
         super(props);
@@ -94,8 +99,9 @@ class Contact extends Component {
                                 <div className={`${style.flex__col} ${style.contact__body__left}`}>
 
                                     <div className={`${style.flex__col} ${style.transback} ${style.contact__body__left__name}`} >
-                                        < label for="name" > Name *</label >
+                                        < label for="name" > Name *
                                         <input required name="yourName" type="text" onChange={this.handleChange} id="name" value={this.state.yourName} />
+                                        </label >
                                     </div>
                                     <div className={`${style.flex__col} ${style.transback} ${style.contact__body__left__company}`}>
                                         < label for="company" > Company</label >
@@ -137,18 +143,22 @@ class Contact extends Component {
 
                                         <p>Hello. My name is <span className={style.contact__body__right__ul}>{this.state.yourName}</span>  from <span className={style.contact__body__right__ul}>{this.state.company}</span> and I need: </p>
 
-                                        <div className={style.tag}>
-
+                                        <TransitionGroup className={style.tag}>
                                             {this.state.pickedTags.map((tag, index) => (
-                                                <div className={style.tag__bubbles}
-                                                    onClick={() => this.removeTag(index)} key={index}>
-                                                    <p>{tag.toLowerCase()}</p>
-                                                    <button
-                                                        type="button" className={style.tag__bubbles__del}><img src={x} alt="icon of letter X" /></button>
-                                                </div >
+                                                <CSSTransition
+                                                    key={index}
+                                                    timeout={500}
+                                                    classNames="tag__fade"
+                                                >
+                                                    <div className={style.tag__bubbles}
+                                                        onClick={() => this.removeTag(index)} >
+                                                        <p>{tag.toLowerCase()}</p>
+                                                        <button
+                                                            type="button" className={style.tag__bubbles__del}><img src={x} alt="icon of letter X" /></button>
+                                                    </div >
+                                                </CSSTransition>
                                             ))}
-
-                                        </div>
+                                        </TransitionGroup>
 
                                         <p className={style.pb}> You can reach me by phone at <span className={style.contact__body__right__ul}> {this.state.telephone} </span> or <span className={style.contact__body__right__span}><br /></span>  at my email <span className={style.contact__body__right__ul}>{this.state.email}</span></p>
                                         <p className={style.pb}>I am looking to spend between <span className={style.contact__body__right__ul}> ${this.state.priceMin.toLocaleString()} </span> and <span className={style.contact__body__right__ul}> ${this.state.priceMax.toLocaleString()} </span> .</p>

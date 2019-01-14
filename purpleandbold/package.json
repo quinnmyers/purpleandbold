@@ -25,6 +25,7 @@
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
     "react-slidedown": "^2.0.5",
+    "react-transition-group": "^2.5.3",
     "typeface-rubik": "0.0.54"
   },
   "keywords": [
