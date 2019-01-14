@@ -144,7 +144,7 @@ class Services extends Component {
   }
   render() {
     return (
-      <section className="services">
+      <section className="services" id="services">
         <Content>
           <div className="services__container">
             <h2 className="section-header">Services</h2>
