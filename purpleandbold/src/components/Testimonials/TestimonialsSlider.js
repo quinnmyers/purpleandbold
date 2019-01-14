@@ -39,12 +39,25 @@ class TestimonialsSlider extends Component {
                 }
             ],
             slideIndex: 0,
-            playing: true
-
+            playing: true,
+            toShow: null
         }
 
     }
     componentDidMount() {
+
+        if (window.matchMedia("(max-width: 500px)").matches) {
+
+
+            this.setState({ toShow: 1 })
+            return
+        } else if (window.matchMedia("(max-width: 1000px)").matches) {
+            this.setState({ toShow: 2 })
+            return
+        } else {
+            this.setState({ toShow: 3 })
+
+        }
 
     }
 
@@ -60,7 +73,7 @@ class TestimonialsSlider extends Component {
         }
         return (
             <div className={style.testimonials__slider__container}>
-                <Carousel autoplay={this.props.playing} wrapAround={true} slidesToShow={3}
+                <Carousel autoplay={this.props.playing} wrapAround={true} slidesToShow={this.state.toShow}
                     withoutControls={true}
                     pauseOnHover={true}
                     slideIndex={this.state.slideIndex}

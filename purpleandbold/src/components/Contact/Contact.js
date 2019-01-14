@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Content from "../utility/Content/Content"
 import Slider, { Range } from 'rc-slider';
+import x from "../../images/icons/x.svg"
 import 'rc-slider/assets/index.css';
 import style from "./contact.module.sass"
 class Contact extends Component {
@@ -18,29 +19,40 @@ class Contact extends Component {
             priceMin: 1500,
             priceMax: 4000,
         }
+        this.hiddenRef = React.createRef()
         this.handleChange = this.handleChange.bind(this);
         // this.handleSubmit = this.handleSubmit.bind(this);
         this.addTag = this.addTag.bind(this)
         this.addCustomTag = this.addCustomTag.bind(this)
         this.onSliderChange = this.onSliderChange.bind(this)
+        this.pushHidden = this.pushHidden.bind(this)
+
     }
     removeTag(i) {
+
         const tempTags = this.state.pickedTags
+
+
         tempTags.splice(i, 1);
+
         this.setState({ pickedTags: tempTags })
+
 
     }
 
     handleChange(event) {
+
         const stateName = event.target.name
 
         this.setState({ [stateName]: event.target.value });
     }
+
     addTag(i) {
         const tempTags = this.state.pickedTags
         tempTags.push(this.state.tags[i]);
         this.setState({ pickedTags: tempTags })
     }
+
     // this is called when you enter a custom tag and it will add it to the message
     addCustomTag() {
         const tempTags = this.state.pickedTags
@@ -49,13 +61,22 @@ class Contact extends Component {
             pickedTags: tempTags,
             customTag: ""
         })
+        this.pushHidden()
     }
+
+    pushHidden() {
+        this.hiddenRef.current.value = `${this.state.priceMin}- ${this.state.priceMax} ${this.state.pickedTags}`
+
+    }
+
     onSliderChange(e) {
         this.setState({
             priceMin: e[0],
             priceMax: e[1]
         })
+        this.pushHidden()
     }
+
     render() {
         return (
 
@@ -66,7 +87,7 @@ class Contact extends Component {
                             style.Contact__title}>
                             <h2 className={style.section__header}>Contact Us</h2>
                         </div>
-                        <form action="https://formspree.io/contact@purpleandbold.com" method="POST">
+                        <form action="https://formspree.io/l33t.ppl@gmail.com" method="POST">
                             <div className={style.contact__body}>
 
 
@@ -74,22 +95,22 @@ class Contact extends Component {
 
                                     <div className={`${style.flex__col} ${style.transback} ${style.contact__body__left__name}`} >
                                         < label for="name" > Name *</label >
-                                        <input name="yourName" type="text" onChange={this.handleChange} id="name" value={this.state.yourName} />
+                                        <input required name="yourName" type="text" onChange={this.handleChange} id="name" value={this.state.yourName} />
                                     </div>
                                     <div className={`${style.flex__col} ${style.transback} ${style.contact__body__left__company}`}>
                                         < label for="company" > Company</label >
-                                        <input type="text" name="company" onChange={this.handleChange} id="company" value={this.state.company} />
+                                        <input requiredtype="text" name="company" onChange={this.handleChange} id="company" value={this.state.company} />
                                     </div>
                                     <div className={`${style.flex__col} ${style.transback} ${style.contact__body__left__telephone}`}>
                                         < label for="Telephone" > Telephone *</label >
-                                        <input type="text" name="telephone" onChange={this.handleChange} id="Telephone" value={this.state.telephone} />
+                                        <input requiredtype="text" name="telephone" onChange={this.handleChange} id="Telephone" value={this.state.telephone} />
                                     </div>
                                     <div className={`${style.flex__col} ${style.transback} ${style.contact__body__left__email}`}>
                                         < label for="email" > Email *</label >
-                                        <input type="text" name="email" onChange={this.handleChange} id="email" value={this.state.email} />
+                                        <input requiredtype="text" name="email" onChange={this.handleChange} id="email" value={this.state.email} />
                                     </div>
                                     <div className={`${style.flex__col} ${style.transback} ${style.contact__body__left__details}`}>
-                                        < p> Project Details</p>
+                                        <lable>Project Details</lable>
                                         <div className={style.tag}>
                                             {this.state.tags.map((tag, index) => (
                                                 <div className={style.tag__bubbles}
@@ -122,7 +143,8 @@ class Contact extends Component {
                                                 <div className={style.tag__bubbles}
                                                     onClick={() => this.removeTag(index)} key={index}>
                                                     <p>{tag.toLowerCase()}</p>
-                                                    <button onClick={() => this.removeTag(index)} class="tag__bubbles__del">x </button>
+                                                    <button
+                                                        type="button" className={style.tag__bubbles__del}><img src={x} alt="icon of letter X" /></button>
                                                 </div >
                                             ))}
 
@@ -134,12 +156,12 @@ class Contact extends Component {
 
                                     <div className={`${style.flex__col} ${style.transback} ${style.contact__body__right__missed}`}>
                                         <label for="missed">Did We Miss Anything?</label>
-                                        <textarea name="missed" v-model="messageData.missed" id="missed" onChange={() => this.handleChange} name="missed" value={this.state.missed}></textarea>
+                                        <textarea name="missed" id="missed" name="missed" ></textarea>
                                     </div>
                                 </div>
 
                             </div >
-
+                            <textarea name="message" id="contact__send__message" className={style.real_message} ref={this.hiddenRef} cols="3" rows="1"></textarea>
                             <input type="submit" ref="submit" value="Send Message" className={style.send} />
                         </form>
                     </div>
