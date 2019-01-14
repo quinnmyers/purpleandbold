@@ -25,7 +25,9 @@ class ServiceListItem extends Component {
           {this.props.name}
         </h4>
         <SlideDown>
-          {this.state.open ? this.props.desc : null}
+          {this.state.open ? (
+            <p dangerouslySetInnerHTML={{ __html: this.props.desc }} />
+          ) : null}
           {/* <p>{this.props.desc}</p> */}
         </SlideDown>
       </div>
