@@ -1,0 +1,92 @@
+@import '../vars.sass'
+@import '../base.sass'
+//IMPORTANT 
+  //in order to reorder these images later or recolor them, if you set the display of the UL/LI
+  //to make all panel images show  in a line on top of each other the order is correct, 1 is 1, 2 is 2, etc.
+.wrapper 
+  transform: scale(0.8)
+  @include edgesnap
+    transform: scale(0.8)
+  @include tablet
+    transform: scale(0.6)
+  @include phone-small 
+    transform: scale(0.55)
+  .not__ul
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-right: 170px
+    height: 100% 
+    list-style: none
+    @include phone-small
+      margin-top: -40px
+    .not__li .panel__loaded 
+      animation: after-panels-loaded 3s infinite
+      //make sure this timeout is exactly the same as the IMG tag load-in animation timing
+      //I think it looks best at exactly the same timing (delay) or 0.1 under.
+      animation-delay: 1.9s
+    .not__li 
+      //remove this for reordering, or recoloring
+      position: absolute
+      @include phone-large
+      img 
+      //-------------------------------------------------------------------was .load__in
+      .load__in
+        animation: panel-load-in 2s  forwards
+        position: relative
+        opacity: 0
+    .about__panel__image
+      img
+      &__1.loaded 
+        display: none
+      &__1
+        //large top right peach
+        margin-left: 250px
+        margin-bottom: 100px
+      &__2
+        // pinkish on top of larger black middle bottom
+        z-index: 2
+        margin-top: 120px
+        margin-right: 10px
+      &__3
+        //smaller black one
+        z-index: 1
+        margin-right: 210px
+        margin-bottom: 130px
+      &__4
+        //black below top right peach middle
+        z-index: 1
+        margin-left: 90px
+        margin-top: 50px
+      &__5
+        // top left purple
+        z-index: -1
+        margin-left: 50px
+        margin-bottom: 200px
+      &__6
+        //lower right purple
+        margin-left: 390px
+        margin-top: 330px
+      &__7
+        //small narrow pinkish top left
+        margin-right: 150px
+        margin-bottom: 190px
+      &__8
+        // display: none
+        margin-right: 300px
+        margin-bottom: 100px
+        z-index: 1
+      
+    
+@keyframes panel-load-in
+  20% 
+    opacity: 0
+  100%
+    opacity: 1
+    transform: scale(1) translateX(0%) translateY(0%)
+
+
+@keyframes after-panels-loaded
+  50%
+    margin-top: 0px
+    transform: scale(1)
