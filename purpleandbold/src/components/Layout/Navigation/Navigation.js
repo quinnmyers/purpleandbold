@@ -43,7 +43,10 @@ class Navigation extends Component {
             <div className="nav__container">
               <div className="nav__container__brand">
                 {/* <h2>Purple + Bold</h2> */}
-                <img src="http://placehold.it/320x56" alt="" />
+                <img
+                  src="http://placehold.it/328x56"
+                  alt="purple and bold logo"
+                />
               </div>
               <div className="nav__container__navigation">
                 {this.state.navItems.map(n => (

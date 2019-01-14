@@ -2,6 +2,9 @@
 
 .navigation 
   background: yellow
+  position: sticky
+  top: 0
+  z-index: 9999
 nav 
   display: flex
   width: 100%
@@ -20,5 +23,25 @@ nav
       align-items: center
     &__navigation 
       display: flex
-      justify-content: flex-end 
-      align-items: flex-end
+      align-items: center
+      height: 100% 
+      background: green
+      &:nth-last-child(1)
+        margin-left: 0px
+      a, a:visited
+        color: black
+      a:hover 
+        color: $accentlight
+      a 
+        font-size: 1.025em
+        margin-left: 1.2em
+        // padding: 0px 4px
+        background: orange
+        transition: all 0.2s ease-in-out
+        &:nth-last-child(1)
+          border: 1px solid black
+          border-radius: 3px
+          padding: 0.34em 1.1em
+          &:hover 
+            color: $accentlight
+            border: 1px solid $accentlight
