@@ -7,11 +7,13 @@ import './layout.css'
 
 //components
 import Navigation from './Layout/Navigation/Navigation'
+import Footer from './Layout/Footer/Footer'
 
 const Layout = ({ children }) => (
   <div>
     <Navigation />
     {children}
+    <Footer />
   </div>
   // <StaticQuery
   //   query={graphql`

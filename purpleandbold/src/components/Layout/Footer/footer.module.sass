@@ -1,12 +1,11 @@
-@import '../vars.sass'
-@import '../base.sass'
+@import '../../base.sass'
 
 .footer 
   display: flex 
   justify-content: center
   height: 200px 
   width: 100% 
-  @include tablet-portrait 
+  @include tablet
     height: 155px
   @include phone-large 
     height: 130px
@@ -27,7 +26,7 @@
       img 
         height: 50px
         margin-bottom: -5px
-        @include tablet-portrait 
+        @include tablet
           height: 40px
         @include phone-large 
           height: 34px
@@ -41,7 +40,7 @@
       font-size: 0.9em
       font-family: $subfont
       margin-bottom: 5px
-      @include tablet-portrait  
+      @include tablet
         font-size: 0.75em
         margin-bottom: 12px
       @include phone-large 
