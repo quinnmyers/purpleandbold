@@ -12,7 +12,7 @@ import Services from '../components/Services/Services'
 import Contact from '../components/Contact/Contact'
 import About from '../components/About/About'
 import Testimonials from '../components/Testimonials/Testimonials'
-
+import Portfolio from "../components/Portfolio/Portfolio"
 const IndexPage = () => (
   <div>
     <Landing />
@@ -30,6 +30,7 @@ const IndexPage = () => (
     </div>
     <Link to="/page-2/">Go to page 2</Link> */}
       <Testimonials />
+      <Portfolio></Portfolio>
       <Contact />
     </Layout>
   </div>
