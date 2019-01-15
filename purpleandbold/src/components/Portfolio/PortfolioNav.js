@@ -1,11 +1,45 @@
 import React, { Component } from 'react';
+import style from "./portfolionav.module.sass"
 class PortfolioNav extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            pickedtags: []
+        }
+        this.filter = this.filter.bind(this)
+        this.picked = this.picked.bind(this)
+    }
+    filter(i) {
+        const otherpicked = this.state.pickedtags
+        const picked = this.props.list[i].name
+        const isIn = otherpicked.indexOf(picked) == -1
+        if (!isIn) {
+            const ii = otherpicked.indexOf(picked)
+            otherpicked.splice(ii, 1)
+        } else {
+            otherpicked.push(picked)
+        }
+        this.props.filter(this.state.pickedtags)
+    }
+    picked(i) {
+        const ispicked = this.state.pickedtags.includes(this.props.list[i].name)
+        if (ispicked) {
+            return "background: red"
+
+        }
+
     }
     render() {
-        return (<div>nav</div>);
+        return (
+            <div className={style.wrapper}>
+                {this.props.list.map((tag, index) => (
+                    <button className={`${style.tags} ${this.state.pickedtags.includes(tag.name) ? style.selected : ""}`} onClick={() => this.filter(index)}>
+                        {tag.name}
+                    </button>
+                ))}
+
+            </div>
+        );
     }
 }
 

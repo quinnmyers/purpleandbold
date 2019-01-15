@@ -34,18 +34,19 @@ class Portfolio extends Component {
             },
             tagArray: [
                 {
-                    name: "website"
+                    name: "Website"
                 },
                 {
-                    name: "logo"
+                    name: "Logo"
                 },
                 {
-                    name: "branding"
+                    name: "Branding"
                 },
                 {
-                    name: "graphic"
+                    name: "Graphic"
                 }
             ],
+            showing: [],
             portfolioPieces: [
                 {
                     id: 0,
@@ -114,17 +115,34 @@ class Portfolio extends Component {
             ]
         }
         this.openModal = this.openModal.bind(this);
-
+        this.filter = this.filter.bind(this)
         this.closeModal = this.closeModal.bind(this);
     }
-
+    componentDidMount() {
+        this.setState({ showing: this.state.portfolioPieces })
+    }
     openModal(i) {
         this.setState({ inModal: this.state.portfolioPieces[i] })
         this.setState({ modalIsOpen: true });
     }
+    filter(tag) {
+        let temparray = []
+        this.state.portfolioPieces.forEach(element => {
 
+            tag.forEach(tagel => {
+                if (element.type == tagel) {
+                    temparray.push(element)
+                } else {
+                    return
+                }
+            });
+        });
+        if (temparray.length === 0) {
+            temparray = this.state.portfolioPieces
+        }
+        this.setState({ showing: temparray })
 
-
+    }
     closeModal() {
         this.setState({ modalIsOpen: false });
     }
@@ -134,17 +152,24 @@ class Portfolio extends Component {
     render() {
         return (
 
-            <div className={style.portfolio} v-if="isMounted" id="portfolio">
+            <div id="portfolio">
                 <Content>
-                    <h2 className={style.section__header}>Portfolio</h2>
-                    <div>
-                        {this.state.portfolioPieces.map((peice, index) => (
-                            <div key={peice.id} onClick={() => this.openModal(index)}>
-                                <img src={peice.mainImg.src} alt={peice.mainImg.alt} width="75" height="75" />
-                            </div>
-                        ))}
-                    </div>
+                    <div className={style.portfolio}>
+                        <h2 className={style.section__header}>Portfolio</h2>
+                        <PortfolioNav
+                            filter={this.filter}
+                            list={this.state.tagArray}
+                        >
 
+                        </PortfolioNav>
+                        <div className={style.portfolio__body}>
+                            {this.state.showing.map((peice, index) => (
+                                <div key={peice.id} className={style.portfolio__body__piece} onClick={() => this.openModal(index)}>
+                                    <img src={peice.mainImg.src} alt={peice.mainImg.alt} />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </Content>
                 <Modal
                     isOpen={this.state.modalIsOpen}

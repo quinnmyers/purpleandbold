@@ -1,48 +1,83 @@
 @import '../vars.sass'
 @import '../base.sass'
+
+
 .modal
-  color: red
-  background:  blue
+  background: white 
   // display: flex
   height: 65vh
   width: 75vw
   position: absolute
   bottom: 15%
   left: 50%
+  border-radius: 3px
   transform: translateX(-50%)
   z-index: 100000
-.body
+  box-shadow: 0px 0px 12px 0px rgba(128,128,128,1)
+  .body
+    display: flex
+    height: 100%
+    width: 100%
+    overflow: hidden
+    justify-content: space-around
+    .right
+      width: 48%
+      display: flex
+      flex-direction: column
+    .left
+      width: 48%
+      display: flex
+      flex-direction: column
+      align-content: center
+      justify-content: space-around
+
+      &__main
+        width: 100%
+        height: 70%
+        display: flex
+        flex-direction: column
+        align-content: center
+        justify-content: center
+        border-radius: 3px
+        box-shadow: 0px 0px 12px 0px rgba(128,128,128,1)
+        img
+          align-self: center
+          max-width: 100%
+          height: auto
+          max-height: 100%   
+      
+      &__alt
+        width: 100%
+        display: flex
+        flex-wrap: wrap
+        border-radius: 3px
+        box-shadow: 0px 0px 12px 0px rgba(128,128,128,1)
+        img
+          padding: 5px
+
+.portfolio
   display: flex
-  height: 100%
+  flex-direction: column
   width: 100%
-  overflow: hidden
-  .right
-    width: 50%
+  &__body
     display: flex
-    flex-direction: column
-  .left
-    width: 50%
-    display: flex
-    flex-direction: column
-    align-content: center
-    &__main
-      width: 100%
-      height: 70%
+    width: 100%
+    flex-wrap: wrap
+    // background: seagreen
+    &__piece
+      margin: 10px
+      // background: tan
+      width: 22%
       display: flex
       flex-direction: column
       align-content: center
       justify-content: center
+      box-shadow: 0px 0px 12px 0px rgba(128,128,128,1)
       img
         align-self: center
         max-width: 100%
         height: auto
         max-height: 100%   
-     
-    &__alt
-      width: 100%
-      display: flex
-      flex-wrap: wrap
-      img
-        padding: 5px
+
 
 
