@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { SlideDown } from 'react-slidedown'
 import 'react-slidedown/lib/slidedown.css'
+
 
 //components
 import Content from '../../utility/Content/Content'
@@ -69,9 +71,9 @@ class Navigation extends Component {
               </div>
               <div className="nav__container__navigation">
                 {this.state.navItems.map(n => (
-                  <a data-scroll href={n.url}>
+                  <AnchorLink href={n.url}>
                     {n.name}
-                  </a>
+                  </AnchorLink>
                 ))}
               </div>
               <div className="nav__container__mobilenav">
@@ -86,14 +88,14 @@ class Navigation extends Component {
                 <div
                   className={`nav__container__mobilenav__container ${
                     this.state.mobileNavExpanded ? 'expanded' : ''
-                  }`}
+                    }`}
                   ref={div => (this.mobilenav = div)}
                 >
                   {this.state.navItems.map(n => (
                     <a
                       className={`nav__container__mobilenav__container__item ${
                         this.state.mobileNavExpanded ? 'expanded' : ''
-                      }`}
+                        }`}
                       onClick={this.handleHamburgerClick.bind(this)}
                       href={n.url}
                     >
