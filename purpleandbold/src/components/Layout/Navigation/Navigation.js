@@ -1,16 +1,24 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
+import { SlideDown } from 'react-slidedown'
+import 'react-slidedown/lib/slidedown.css'
+
 //components
 import Content from '../../utility/Content/Content'
+import MobileNav from './MobileNav'
 
 //styles
 import './navigation.sass'
-
 
 class Navigation extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      mobileNavExpanded: false,
+      focus: false,
+      fixedNavClass: false,
+      open: false,
+      expandMobileNav: false,
       navItems: [
         {
           name: 'About',
@@ -35,14 +43,25 @@ class Navigation extends Component {
       ],
     }
   }
+
+  handleHamburgerClick() {
+    this.setState({
+      mobileNavExpanded: !this.state.mobileNavExpanded,
+    })
+    const nav = this.navigation
+    const navStyle = window.getComputedStyle(nav)
+    const navHeight = navStyle.getPropertyValue('height')
+    const navPadding = navStyle.getPropertyValue('padding')
+    this.mobilenav.style.marginTop = `${navHeight}`
+  }
+
   render() {
     return (
-      <div className="navigation">
+      <div className="navigation" ref={div => (this.navigation = div)}>
         <Content>
           <nav>
             <div className="nav__container">
               <div className="nav__container__brand">
-                {/* <h2>Purple + Bold</h2> */}
                 <img
                   src="http://placehold.it/328x56"
                   alt="purple and bold logo"
@@ -50,8 +69,28 @@ class Navigation extends Component {
               </div>
               <div className="nav__container__navigation">
                 {this.state.navItems.map(n => (
-                  <a data-scroll href={n.url}>{n.name}</a>
+                  <a data-scroll href={n.url}>
+                    {n.name}
+                  </a>
                 ))}
+              </div>
+              <div className="nav__container__mobilenav">
+                <button
+                  className="nav__container__mobilenav__hamburger"
+                  onClick={this.handleHamburgerClick.bind(this)}
+                >
+                  <span className="nav__container__mobilenav__hamburger__line1" />
+                  <span className="nav__container__mobilenav__hamburger__line2" />
+                  <span className="nav__container__mobilenav__hamburger__line3" />
+                </button>
+                <div
+                  className={`nav__container__mobilenav__container ${
+                    this.state.mobileNavExpanded ? 'expanded' : ''
+                  }`}
+                  ref={div => (this.mobilenav = div)}
+                >
+                  <p>this is a test</p>
+                </div>
               </div>
             </div>
           </nav>

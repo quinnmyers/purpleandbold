@@ -1,0 +1,19 @@
+@import '../../base.sass'
+
+.nav__container__mobilenav__container 
+  height: 0px
+  opacity: 0
+  flex-direction: column
+  background: red
+  position: absolute
+  top: 0
+  // padding-top: 70px
+  z-index: 1
+  width: 100%
+  left: 0
+  transition: all 0.3s ease-in-out
+  &.expanded 
+    opacity: 1
+    height: 100vh
+
+
