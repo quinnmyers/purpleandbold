@@ -104,16 +104,19 @@ class Contact extends Component {
                                         </label >
                                     </div>
                                     <div className={`${style.flex__col} ${style.transback} ${style.contact__body__left__company}`}>
-                                        < label for="company" > Company</label >
-                                        <input requiredtype="text" name="company" onChange={this.handleChange} id="company" value={this.state.company} />
+                                        < label for="company" > Company
+                                               <input requiredtype="text" name="company" onChange={this.handleChange} id="company" value={this.state.company} />
+                                        </label >
                                     </div>
                                     <div className={`${style.flex__col} ${style.transback} ${style.contact__body__left__telephone}`}>
-                                        < label for="Telephone" > Telephone *</label >
+                                        < label for="Telephone" > Telephone *
                                         <input requiredtype="text" name="telephone" onChange={this.handleChange} id="Telephone" value={this.state.telephone} />
+                                        </label >
                                     </div>
                                     <div className={`${style.flex__col} ${style.transback} ${style.contact__body__left__email}`}>
-                                        < label for="email" > Email *</label >
+                                        < label for="email" > Email *
                                         <input requiredtype="text" name="email" onChange={this.handleChange} id="email" value={this.state.email} />
+                                        </label >
                                     </div>
                                     <div className={`${style.flex__col} ${style.transback} ${style.contact__body__left__details}`}>
                                         <lable>Project Details</lable>

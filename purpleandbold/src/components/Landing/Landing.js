@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Helmet } from 'react-helmet'
 
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 //components
 // import Section from '../utility/Section/Section'
 import Content from '../utility/Content/Content'
@@ -23,7 +24,10 @@ class Landing extends Component {
       middleRightSecondLoaded: false,
       arrowLoaded: false,
       arrowLoadedAfter: false,
+      scroll: false
     }
+    this.linkTo = React.createRef()
+    this.handleScroll = this.handleScroll.bind(this)
   }
   componentDidMount() {
     this.loadTopText()
@@ -31,7 +35,17 @@ class Landing extends Component {
     this.loadMiddleLeftText()
     this.loadMiddleRightText()
     this.loadArrow()
+    window.addEventListener("scroll", this.handleScroll, true);
+    window.addEventListener("touchmove", this.handleScroll, true);
   }
+  handleScroll() {
+    if (!this.state.scroll) {
+      this.linkTo.current.click()
+      this.setState({ scroll: true })
+      window.removeEventListener("scroll", this.handleScroll, false)
+    }
+  }
+
   loadTopText() {
     this.setState({ topLoaded: true })
   }
@@ -66,16 +80,11 @@ class Landing extends Component {
       <div className="landing">
         <Helmet>
           <meta charSet="utf-8" />
-          <title>{"Purple and Bold Top Digital Agency "}</title>
+          <title>{"Purple and Bold The Top Digital Agency "}</title>
           <meta
             name="description"
             content={"A Las Vegas Web Development Creative, and Marketing Agency"}
-
           />
-          <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14/dist/smooth-scroll.polyfills.min.js"></script>
-
-
-
         </Helmet>
         <Content>
           <div className="landing__container">
@@ -106,14 +115,19 @@ class Landing extends Component {
                 >
                   <h1>Bold</h1>
                 </div>
-              </div>
-              <div
-                className={`landing__container__content__bottom ${
-                  this.state.arrowLoaded ? 'loaded' : ''
-                  } ${this.state.arrowLoadedAfter ? 'after-load' : ''}`}
-              >
-                <img src={landingArrow} alt="" />
-              </div>
+              </div >
+              <AnchorLink href="#nav">
+                <div ref={this.linkTo}
+                  className={`landing__container__content__bottom ${
+                    this.state.arrowLoaded ? 'loaded' : ''
+                    } ${this.state.arrowLoadedAfter ? 'after-load' : ''}`}
+                >
+
+                  <img src={landingArrow} alt="" />
+
+
+                </div>
+              </AnchorLink>
             </div>
           </div>
         </Content>

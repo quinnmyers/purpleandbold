@@ -11,13 +11,36 @@ import ntgMain from "../../images/portfolio/ntg/ntg_main.svg"
 import ntg1 from "../../images/portfolio/ntg/ntg_1.svg"
 import style from "./portfolio.module.sass"
 import Content from '../utility/Content/Content'
-import { Button, Header, Icon, Modal } from 'semantic-ui-react'
+import PhotoArray from "./photoArray"
+import Modal from 'react-modal';
+const customStyles = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)'
+    }
+};
 class Portfolio extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            modalIsOpen: false,
             isMounted: false,
             pieceIndex: 0,
+            inModal: {
+                name: "",
+                type: "",
+                sitelink: "",
+                mainImg: {
+                    src: "",
+                    alt: ""
+                },
+                altImages: [],
+                description: ""
+            },
             tagArray: [
                 {
                     name: "website"
@@ -99,6 +122,23 @@ class Portfolio extends Component {
                 }
             ]
         }
+        this.openModal = this.openModal.bind(this);
+        this.afterOpenModal = this.afterOpenModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
+    }
+
+    openModal(i) {
+        this.setState({ inModal: this.state.portfolioPieces[i] })
+        this.setState({ modalIsOpen: true });
+    }
+
+    afterOpenModal() {
+        // references are now sync'd and can be accessed.
+        this.subtitle.style.color = '#f00';
+    }
+
+    closeModal() {
+        this.setState({ modalIsOpen: false });
     }
     selectedPiece(index) {
         return `potfolioPieces[index]`;
@@ -111,21 +151,44 @@ class Portfolio extends Component {
                     <h2 className={style.section__header}>Portfolio</h2>
                     <div>
                         {this.state.portfolioPieces.map((peice, index) => (
-                            <div key={peice.id}>
+                            <div key={peice.id} onClick={() => this.openModal(index)}>
                                 <img src={peice.mainImg.src} alt={peice.mainImg.alt} width="75" height="75" />
                             </div>
                         ))}
                     </div>
-                    <Modal trigger={<Button>Basic Modal</Button>} basic size='small'>
-                        <Header icon='archive' content='Archive Old Messages' />
-                        <Modal.Content>
-                            <p>
-                                Your inbox is getting full, would you like us to enable automatic archiving of old messages?
-      </p>
-                        </Modal.Content>
 
-                    </Modal>
                 </Content>
+                <Modal
+                    isOpen={this.state.modalIsOpen}
+                    onAfterOpen={this.afterOpenModal}
+                    onRequestClose={this.closeModal}
+                    contentLabel="Example Modal"
+                    style={{ zIndex: 10000 }}
+                >
+
+                    <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
+                    <button onClick={this.closeModal}>close</button>
+                    <div className={style.body}>
+                        <div className={style.left}>
+                            <div className={style.left__main}>
+                                <img src={this.state.inModal.mainImg.src} alt={this.state.inModal.mainImg.alt} />
+                            </div>
+                            <div className={style.left__alt}>
+                                <PhotoArray
+                                    imageArray={this.state.inModal.altImages}
+                                    altImage={this.state.inModal.mainImg}
+                                />
+                            </div>
+                        </div>
+                        <div className={style.right}>
+                            <h4>{this.state.inModal.name}</h4>
+                            <p>{this.state.inModal.type}</p>
+                            <p>{this.state.inModal.description}</p>
+                            <a href={this.state.inModal.siteLink}>
+                                <button>Visit Live Site</button></a>
+                        </div>
+                    </div>
+                </Modal>
             </div>
 
 

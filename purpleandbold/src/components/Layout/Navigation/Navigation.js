@@ -59,7 +59,7 @@ class Navigation extends Component {
 
   render() {
     return (
-      <div className="navigation" ref={div => (this.navigation = div)}>
+      <div id="nav" className="navigation" ref={div => (this.navigation = div)}>
         <Content>
           <nav>
             <div className="nav__container">
@@ -71,7 +71,7 @@ class Navigation extends Component {
               </div>
               <div className="nav__container__navigation">
                 {this.state.navItems.map(n => (
-                  <AnchorLink href={n.url}>
+                  <AnchorLink href={n.url} offset='70'>
                     {n.name}
                   </AnchorLink>
                 ))}
