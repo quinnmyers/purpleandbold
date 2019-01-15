@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Helmet } from 'react-helmet'
 
 //components
 // import Section from '../utility/Section/Section'
@@ -58,36 +59,50 @@ class Landing extends Component {
       this.setState({ arrowLoadedAfter: true })
     }, 3000)
   }
+
   render() {
     const { data } = this.props
     return (
       <div className="landing">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>{"Purple and Bold Top Digital Agency "}</title>
+          <meta
+            name="description"
+            content={"A Las Vegas Web Development Creative, and Marketing Agency"}
+
+          />
+          <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14/dist/smooth-scroll.polyfills.min.js"></script>
+
+
+
+        </Helmet>
         <Content>
           <div className="landing__container">
             <div className="landing__container__content">
               <div
                 className={`landing__container__content__top ${
                   this.state.topLoaded ? 'loaded' : ''
-                }`}
+                  }`}
               >
                 <h1 className={this.state.topLoaded ? 'loaded' : ''}>Purple</h1>
               </div>
               <div
                 className={`landing__container__content__middle ${
                   this.state.middleLoaded ? 'loaded' : ''
-                }`}
+                  }`}
               >
                 <div
                   className={`landing__container__content__middle__left ${
                     this.state.leftMiddleLoaded ? 'loaded' : ''
-                  } ${this.state.middleLeftSecondLoaded ? 'after-load' : ''}`}
+                    } ${this.state.middleLeftSecondLoaded ? 'after-load' : ''}`}
                 >
                   <h1>+</h1>
                 </div>
                 <div
                   className={`landing__container__content__middle__right ${
                     this.state.rightMiddleLoaded ? 'loaded' : ''
-                  }`}
+                    }`}
                 >
                   <h1>Bold</h1>
                 </div>
@@ -95,13 +110,21 @@ class Landing extends Component {
               <div
                 className={`landing__container__content__bottom ${
                   this.state.arrowLoaded ? 'loaded' : ''
-                } ${this.state.arrowLoadedAfter ? 'after-load' : ''}`}
+                  } ${this.state.arrowLoadedAfter ? 'after-load' : ''}`}
               >
                 <img src={landingArrow} alt="" />
               </div>
             </div>
           </div>
         </Content>
+        <script dangerouslySetInnerHTML={{
+          __html:
+            `new SmoothScroll('a[href*="#"]', {
+                speed: 500,
+                speedAsDuration: true
+              })`
+        }}>
+        </script>
       </div>
     )
   }
