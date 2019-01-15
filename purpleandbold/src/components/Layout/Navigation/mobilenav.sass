@@ -1,19 +1,32 @@
 @import '../../base.sass'
 
 .nav__container__mobilenav__container 
-  height: 0px
-  opacity: 0
+  display: flex
   flex-direction: column
-  background: red
+  background: rgba(255,255,255,0.75)
+  text-align: right 
   position: absolute
   top: 0
-  // padding-top: 70px
+  left: 0
   z-index: 1
   width: 100%
-  left: 0
   transition: all 0.3s ease-in-out
+  height: 0px
+  opacity: 0
   &.expanded 
     opacity: 1
     height: 100vh
+    padding-top: 30px
+  &__item, a, a:visited
+    color: black
+    margin-right: 20px
+    font-size: 1.2em
+    margin-top: 1.5em
+    transition: all 0.3s ease-in-out
+    opacity: 0 
+    pointer-events: none
+    &.expanded 
+      opacity: 1
+      pointer-events: auto
 
 

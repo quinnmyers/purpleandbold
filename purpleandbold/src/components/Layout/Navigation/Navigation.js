@@ -5,7 +5,7 @@ import 'react-slidedown/lib/slidedown.css'
 
 //components
 import Content from '../../utility/Content/Content'
-import MobileNav from './MobileNav'
+// import MobileNav from './MobileNav'
 
 //styles
 import './navigation.sass'
@@ -89,7 +89,17 @@ class Navigation extends Component {
                   }`}
                   ref={div => (this.mobilenav = div)}
                 >
-                  <p>this is a test</p>
+                  {this.state.navItems.map(n => (
+                    <a
+                      className={`nav__container__mobilenav__container__item ${
+                        this.state.mobileNavExpanded ? 'expanded' : ''
+                      }`}
+                      onClick={this.handleHamburgerClick.bind(this)}
+                      href={n.url}
+                    >
+                      {n.name}
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
