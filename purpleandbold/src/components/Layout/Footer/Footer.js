@@ -18,7 +18,7 @@ class Footer extends Component {
             <section className={style.footer}>
                 <div className={style.footer__content}>
                     <div className={style.footer__content__top}>
-                        <img src="../assets/images/brand.svg" alt="Purple and Bold Logo" />
+                        <img src={brand} alt="Purple and Bold Logo" />
                         <div className={style.footer__content__top__left}></div>
                         <div className={style.footer__content__top__right}></div>
                     </div>
