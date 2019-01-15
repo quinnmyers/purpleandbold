@@ -1,9 +1,10 @@
 @import '../base.sass'
-@import '../vars.sass'
+
+
 .hero
   display: flex
   height: auto
-  background: $blue-grey
+  background: $accentdark
   overflow: hidden
   @include tablet-phone 
     flex-direction: column
@@ -55,53 +56,63 @@
   &__content 
     display: flex
     height: 100%
-    width: 1100px
+    width: 100%
     margin: auto
     z-index: 1
     padding: 100px 0px
+    font-size: 12pt
     @include edgesnap 
-      width: 100% 
-      padding: 100px 20px
+      font-size: 1.55vw
+      padding: 80px 0px
     @include tablet 
       padding: 70px 20px
     @include tablet-phone
       padding: 20px 20px
     &__container
       height: 100%
+      // background: red
       display: flex
       flex-direction: column
       justify-content: space-around
-      font-family: $mainfont
       @include phone-large
           height: auto
           align-self: flex-end
-      h3 
-        font-size: 2.15em
+      &__top 
+        // background: purple
+        margin-bottom: 5.5em
+        h4 
+          font-size: 2.1em
+      &__bottom 
+        h4 
+          font-size: 1.6em
+          max-width: 60%
+          margin-bottom: 0.65em
+      h4
         font-weight: $light
         color: white
         @include tablet
           font-size: 1.75em
-          margin-top: 40px
+          // margin-top: 40px
         @include phone-large 
           font-size: 1.6em
-          margin-top: 40px
+          // margin-top: 40px
           colr
         @include phone-small 
           font-size: 1.3em
-          margin-top: 30px
+          // margin-top: 30px
         &:nth-child(1)
           margin-top: 0px
-          margin-bottom: 70px
+          // margin-bottom: 70px
           @include phone-large 
             height: 30px
           @include phone-small 
-            margin-bottom: 20px
+            // margin-bottom: 20px
         &:nth-child(2)
-          margin-bottom: 70px
+          // margin-bottom: 70px
           @include phone-large 
-            margin-bottom: 40px
+            // margin-bottom: 40px
           @include phone-small 
-            margin-bottom: 10px
+            // margin-bottom: 10px
       ul  
         list-style: none
         li
