@@ -5,7 +5,7 @@
   display: flex
   justify-content: center
   height: auto
-  padding: 150px 0px
+  padding: 100px 0px
   background: $light-grey
   color: black
   font-family: $subfont
@@ -14,13 +14,15 @@
     padding: 120px 0px
   @include tablet
     padding: 80px 0px
-  @include phone-large 
-    height: 750px
+  @media(max-width: 500px)
+    height: 500px
     padding: 0px 0px
+  @media(max-width: 440px)
+    height: 520px
   @include phone 
-    height: 790px
+    height: 510px
   @include phone-small
-    height: 800px
+    height: 450px
   &__content
     display: flex
     width: 1100px
@@ -31,7 +33,7 @@
       display: flex
       justify-content: space-between
       width: 100%
-      @include phone-large 
+      @media(max-width: 500px)
         flex-direction: column
 
       &__left, &__right
@@ -43,12 +45,22 @@
         width: 60%
         margin-right: 0px
         margin-left: -20px
+        transform: scale(0.88)
         @include edgesnap 
           width: 30%
           margin-left: 100px
-        @include phone-large
+        @media(max-width: 700px)
+          transform: scale(0.8)
+          margin-left: 60px
+        @media(max-width: 540px)
+          transform: scale(0.7)
+          margin-left: 60px
+        @media(max-width: 500px)
           width: 100%
-          margin-top: 175px 
+          margin-top: 125px 
+          margin-left: 15px
+        @media(max-width: 440px)
+          margin-top: 125px 
           margin-left: 15px
       &__right
         display: flex
@@ -56,33 +68,37 @@
         justify-content: center
         width: 76%
         // font-size: .9em
-        line-height: 1.75em
+        line-height: 1.45em
         font-weight: $light
         @include edgesnap 
           width: 50%
           margin-right: 20px
         @include tablet
-          font-size: .8em
+          // font-size: .8em
           line-height: 1.45em
-        @include phone-large 
+        @media(max-width: 500px)
           width: 100%
           margin-bottom: 40px
         p 
           @include edgesnap 
-            line-height: 1.25rem
+            line-height: 1.45em
+          @media(max-width: 700px)
+            line-height: 1.2em
           @include tablet
             width: 100%
         img 
           display: flex 
-          width: 50%
-          margin-bottom: 15px
+          width: 40%
+          margin-bottom: 0.8em
           @include edgesnap 
-            width: 70%
+            width: 50%
+          @media(max-width: 700px)
+            width: 60%
           @include tablet 
-            width: 70%
-            margin-bottom: 15px
-          @include phone-large 
-            width: 75%
+            // width: 70%
+            // margin-bottom: 15px
+          @media(max-width: 500px)
+            width: 50%
             align-self: center
         
 @keyframes panel-entry-animation
