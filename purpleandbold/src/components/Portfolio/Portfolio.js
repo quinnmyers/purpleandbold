@@ -13,16 +13,7 @@ import style from "./portfolio.module.sass"
 import Content from '../utility/Content/Content'
 import PhotoArray from "./photoArray"
 import Modal from 'react-modal';
-const customStyles = {
-    content: {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)'
-    }
-};
+import "./portfolio.sass"
 class Portfolio extends Component {
     constructor(props) {
         super(props);
@@ -123,7 +114,7 @@ class Portfolio extends Component {
             ]
         }
         this.openModal = this.openModal.bind(this);
-        this.afterOpenModal = this.afterOpenModal.bind(this);
+
         this.closeModal = this.closeModal.bind(this);
     }
 
@@ -132,10 +123,7 @@ class Portfolio extends Component {
         this.setState({ modalIsOpen: true });
     }
 
-    afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        this.subtitle.style.color = '#f00';
-    }
+
 
     closeModal() {
         this.setState({ modalIsOpen: false });
@@ -163,11 +151,10 @@ class Portfolio extends Component {
                     onAfterOpen={this.afterOpenModal}
                     onRequestClose={this.closeModal}
                     contentLabel="Example Modal"
-                    style={{ zIndex: 10000 }}
+                    className={style.modal}
                 >
 
-                    <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-                    <button onClick={this.closeModal}>close</button>
+
                     <div className={style.body}>
                         <div className={style.left}>
                             <div className={style.left__main}>
@@ -181,6 +168,8 @@ class Portfolio extends Component {
                             </div>
                         </div>
                         <div className={style.right}>
+
+                            <button onClick={this.closeModal}>close</button>
                             <h4>{this.state.inModal.name}</h4>
                             <p>{this.state.inModal.type}</p>
                             <p>{this.state.inModal.description}</p>

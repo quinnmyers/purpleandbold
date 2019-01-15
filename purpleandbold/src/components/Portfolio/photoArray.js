@@ -3,7 +3,7 @@ import React from 'react';
 import Lightbox from 'lightbox-react';
 import 'lightbox-react/style.css';
 import { array } from 'prop-types';
-
+import style from "./photoarray.module.sass"
 class photoArray extends React.Component {
     constructor(props) {
         super(props);
@@ -32,7 +32,7 @@ class photoArray extends React.Component {
         const { photoIndex, isOpen } = this.state;
         return (
             this.state.images.map((img, index) => (
-                <div>
+                <div className={style.img__wrapper}>
                     <img key={index} src={img} alt="" onClick={() => this.setState({ isOpen: true })} />
                     {isOpen && (
                         <Lightbox
