@@ -5,6 +5,9 @@ import PropTypes from 'prop-types'
 import { SlideDown } from 'react-slidedown'
 import 'react-slidedown/lib/slidedown.css'
 
+//images
+import arrowIcon from '../../images/arrow-icon.svg'
+
 class ServiceListItem extends Component {
   constructor(props) {
     super(props)
@@ -21,9 +24,17 @@ class ServiceListItem extends Component {
   render() {
     return (
       <div className="service__block__right__item">
-        <h4 onClick={this.toggleSlide.bind(this)} ref={h4 => (this.title = h4)}>
-          {this.props.name}
-        </h4>
+        <div
+          className="service__block__right__item__header"
+          onClick={this.toggleSlide.bind(this)}
+        >
+          <h4 ref={h4 => (this.title = h4)}>{this.props.name}</h4>
+          <img
+            className={this.state.open ? 'expanded' : ''}
+            src={arrowIcon}
+            alt="icon of an arrow"
+          />
+        </div>
         <SlideDown>
           {this.state.open ? (
             <p dangerouslySetInnerHTML={{ __html: this.props.desc }} />
