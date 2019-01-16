@@ -1,7 +1,12 @@
-@import '../vars.sass'
 @import '../base.sass'
+
 .img__wrapper
-    width: 15%
+    display: flex 
+    justify-content: center
+    align-items: center
+    width: 15% 
+    @include tablet-phone
+      width: 30%
     img
         max-width: 100%
         height: auto
