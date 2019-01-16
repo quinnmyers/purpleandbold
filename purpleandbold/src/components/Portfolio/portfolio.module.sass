@@ -14,21 +14,39 @@
     width: 80%
     height: 45vw 
     padding: 0px 60px
+  @media(max-width: 850px)
+    width: 85%
   @include tablet-phone 
-    padding: 0px 20px
+    width: 75%
+    font-size: 2vw
+    position: relative
+    height: 70vh
+
+
   .body
     display: flex
     height: 100%
     width: 100%
     overflow: hidden
     justify-content: space-around
+    @include tablet-phone 
+      flex-direction: column-reverse
+      justify-content: space-between 
+      align-items: center
+      padding: 20px 0px
     .left, .right 
       width: 48%
       display: flex
       flex-direction: column
+      @include tablet-phone 
+        width: 80%
     .left
       align-content: center
       justify-content: space-around
+      @include tablet-phone 
+        // max-height: 200px
+        // display: flex
+        // flex: grow
       &__main
         // background: lightskyblue
         width: 100%
@@ -39,13 +57,14 @@
         justify-content: center
         border-radius: 3px
         box-shadow: 0px 0px 26px -10px rgba(87,87,87,1)
+        @include tablet-phone
+          display: none
         img
           align-self: center
           max-width: 100%
           height: auto
           max-height: 100%   
       &__alt
-        // background: lightskyblue
         width: 100%
         display: flex
         flex-wrap: wrap
@@ -53,10 +72,13 @@
         box-shadow: 0px 0px 26px -10px rgba(87,87,87,1)
         img
           padding: 5px
+          @include tablet-phone 
     .right
       display: flex
       justify-content: space-between
       padding: 1.05em 0em
+      @include tablet-phone 
+        height: 50%
       &__top
         &__close
           position: absolute
@@ -78,15 +100,26 @@
           @include edgesnap 
             height: 2.1vw
             width: 2.1vw
+          @include tablet-phone 
+            height: 2.5vw
+            width: 2.5vw
+            margin-right: 2.9em
         h4 
-          font-size: 1.3em
+          font-size: 1.375em
           margin-bottom: 0.5em
+          @include tablet-phone 
+            font-size: 1.6em
         &__type
           color: lightgrey
           margin-bottom: 0.5em
+          @include tablet-phone 
+            font-size: 1.1em
         &__desc
+          font-size: 0.9em
           margin-top: 1.2em
           height: 100%
+          @include tablet-phone 
+            font-size: 1.075em
       a, a:visited 
         color: black
         text-align: center

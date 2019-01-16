@@ -108,6 +108,22 @@ class Portfolio extends Component {
               src: 'https://via.placeholder.com/400x400',
               alt: 'lorem ipsum',
             },
+            {
+              src: 'https://via.placeholder.com/400x400',
+              alt: 'lorem ipsum',
+            },
+            {
+              src: 'https://via.placeholder.com/300x300',
+              alt: 'lorem ipsum',
+            },
+            {
+              src: 'https://via.placeholder.com/400x400',
+              alt: 'lorem ipsum',
+            },
+            {
+              src: 'https://via.placeholder.com/400x400',
+              alt: 'lorem ipsum',
+            },
           ],
           description:
             'Nexus Technology Group is a company specializing in filtration technology for the food and beverage industry. Nexus Technology Group is a clean and environmentally aware company utlizing only organic filtration compounds. Our was with their logo was to create a clean, contemporary, and organic feel.',
