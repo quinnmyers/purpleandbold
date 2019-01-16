@@ -8,6 +8,14 @@ class PortfolioNav extends Component {
         }
         this.filter = this.filter.bind(this)
         this.picked = this.picked.bind(this)
+        this.addClasses = this.addClasses.bind(this)
+    }
+    addClasses(name) {
+        setTimeout(() => {
+            if (this.state.pickedtags.includes(name)) {
+                return true
+            }
+        }, 10);
     }
     filter(i) {
         const otherpicked = this.state.pickedtags
@@ -19,6 +27,7 @@ class PortfolioNav extends Component {
         } else {
             otherpicked.push(picked)
         }
+
         this.props.filter(this.state.pickedtags)
     }
     picked(i) {
@@ -33,7 +42,9 @@ class PortfolioNav extends Component {
         return (
             <div className={style.wrapper}>
                 {this.props.list.map((tag, index) => (
-                    <button className={`${style.tags} ${this.state.pickedtags.includes(tag.name) ? style.selected : ""}`} onClick={() => this.filter(index)}>
+                    <button id={tag.name} className={`${style.tags}
+                     ${this.state.pickedtags.includes(tag.name) ? style.selected : ""} 
+                 `} onClick={() => this.filter(index)}>
                         {tag.name}
                     </button>
                 ))}
