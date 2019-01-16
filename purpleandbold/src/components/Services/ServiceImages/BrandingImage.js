@@ -114,7 +114,9 @@ class BrandingImage extends Component {
           </div>
           <div className="branding__container__right">
             <div className="branding__container__right__input__container">
+              <label for="branding__input" className="visuallyhidden">here you can update all types of content in the mini branding section</label>
               <input
+                id="branding__input"
                 type="text"
                 className="branding__container__right__input__container--field"
                 ref="branding-input-field"

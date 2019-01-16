@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { SlideDown } from 'react-slidedown'
 import 'react-slidedown/lib/slidedown.css'
+import brand from "../../../images/brand.svg"
 
 
 //components
@@ -65,7 +66,7 @@ class Navigation extends Component {
             <div className="nav__container">
               <div className="nav__container__brand">
                 <img
-                  src="http://placehold.it/328x56"
+                  src={brand}
                   alt="purple and bold logo"
                 />
               </div>
@@ -78,6 +79,7 @@ class Navigation extends Component {
               </div>
               <div className="nav__container__mobilenav">
                 <button
+                  aria-label="expand mobile navigation"
                   className="nav__container__mobilenav__hamburger"
                   onClick={this.handleHamburgerClick.bind(this)}
                 >

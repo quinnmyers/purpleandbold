@@ -80,6 +80,7 @@ class Landing extends Component {
       <div className="landing">
         <Helmet>
           <meta charSet="utf-8" />
+          <html lang="en" />
           <title>{"Purple and Bold The Top Digital Agency "}</title>
           <meta
             name="description"
@@ -116,7 +117,9 @@ class Landing extends Component {
                   <h1>Bold</h1>
                 </div>
               </div >
-              <AnchorLink href="#nav">
+              <AnchorLink href="#nav"
+                aria-label="link to navigation bar"
+              >
                 <div ref={this.linkTo}
                   className={`landing__container__content__bottom ${
                     this.state.arrowLoaded ? 'loaded' : ''
