@@ -10,7 +10,11 @@
 nav 
   display: flex
   width: 100%
-  padding: 10px 0px
+  padding: 1.2em 0px
+  @include edgesnap 
+    padding: 0.8em 0px
+  @include tablet 
+    padding: 0.75em 0px
   h2 
     margin: 0
     padding: 0
@@ -23,13 +27,20 @@ nav
       display: flex 
       justify-content: flex-start
       align-items: center
+      width: 245px
       @include edgesnap 
         justify-content: flex-start
         height: 45px
+        width: 24vw
+      @include tablet 
+        width: 26vw
+      @include tablet-phone 
+        width: 31vw
       @media(max-width: 800px)
         height: 40px
       img 
-        height: 100%
+        max-height: 100%
+        width: 100%
     &__navigation 
       display: flex
       align-items: center
