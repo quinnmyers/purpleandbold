@@ -127,8 +127,8 @@ class Contact extends Component {
                                                     <p>{tag.toLowerCase()}</p>
                                                 </div >
                                             ))}
-
-                                            <input type="text" placeholder="Enter Your Own" onChange={this.handleChange} name="customTag" value={this.state.customTag} />
+                                            <label for="custom__tag" className="visuallyhidden">enter custom tags for what your looking for help with</label>
+                                            <input id="custom__tag" type="text" placeholder="Enter Your Own" onChange={this.handleChange} name="customTag" value={this.state.customTag} />
                                             <button onClick={() => this.addCustomTag()} > +</button >
                                         </div >
                                         <h4>Budget</h4>
