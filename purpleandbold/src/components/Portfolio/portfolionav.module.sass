@@ -2,9 +2,7 @@
 @import '../base.sass'
 
 .wrapper
-  margin-top: 10px
-  @include edgesnap 
-    padding: 0px 20px
+  margin-bottom: .6em
   @include phone-small 
     display: flex 
     width: 100% 
@@ -23,6 +21,8 @@
     background: linear-gradient(to bottom, white 50%, black 50%)
     background-size: 110% 200% 
     background-position: right top
+    @include edgesnap 
+      padding: .375em 1.8em
     @include phone-large 
       font-size: 0.7em
     @include phone-small 

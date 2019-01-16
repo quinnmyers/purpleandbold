@@ -9,11 +9,13 @@ import dima3 from '../../images/portfolio/dd/dimaduchet_3.jpg'
 
 import ntgMain from '../../images/portfolio/ntg/ntg_main.svg'
 import ntg1 from '../../images/portfolio/ntg/ntg_1.svg'
-import style from './portfolio.module.sass'
 import Content from '../utility/Content/Content'
 import PhotoArray from './photoArray'
 import Modal from 'react-modal'
 import './portfolio.sass'
+
+import style from './portfolio.module.sass'
+
 class Portfolio extends Component {
   constructor(props) {
     super(props)
@@ -170,16 +172,18 @@ class Portfolio extends Component {
           <div className={style.portfolio}>
             <h2 className={style.section__header}>Portfolio</h2>
             <PortfolioNav filter={this.filter} list={this.state.tagArray} />
-            <div className={style.portfolio__body}>
-              {this.state.showing.map((peice, index) => (
-                <div
-                  key={peice.id}
-                  className={style.portfolio__body__piece}
-                  onClick={() => this.openModal(index)}
-                >
-                  <img src={peice.mainImg.src} alt={peice.mainImg.alt} />
-                </div>
-              ))}
+            <div className="portfolio__grid">
+              <div className="portfolio__grid__container">
+                {this.state.showing.map((p, index) => (
+                  <div
+                    key={p.id}
+                    className={`item portfolio__grid__container__item ${p.type.toLowerCase()} is-visible`}
+                    onClick={() => this.openModal(index)}
+                  >
+                    <img src={p.mainImg.src} alt={p.mainImg.alt} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </Content>
