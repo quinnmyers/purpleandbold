@@ -40,9 +40,11 @@ class Landing extends Component {
   }
   handleScroll() {
     if (!this.state.scroll) {
+
       this.linkTo.current.click()
       this.setState({ scroll: true })
       window.removeEventListener("scroll", this.handleScroll, false)
+      this.props.didScroll()
     }
   }
 

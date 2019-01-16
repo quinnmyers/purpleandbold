@@ -8,11 +8,13 @@ import './layout.css'
 //components
 import Navigation from './Layout/Navigation/Navigation'
 import Footer from './Layout/Footer/Footer'
+import Cta from './Layout/Cta/Cta'
 
-const Layout = ({ children }) => (
+const Layout = (props) => (
   <div>
     <Navigation />
-    {children}
+    {props.children}
+    <Cta didScroll={props.didScroll} />
     <Footer />
   </div>
   // <StaticQuery
