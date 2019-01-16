@@ -6,7 +6,7 @@ import { SlideDown } from 'react-slidedown'
 import 'react-slidedown/lib/slidedown.css'
 
 //images
-import arrowIcon from '../../images/arrow-icon.svg'
+import arrowIcon from '../../images/arrow-icon-services.svg'
 
 class ServiceListItem extends Component {
   constructor(props) {
