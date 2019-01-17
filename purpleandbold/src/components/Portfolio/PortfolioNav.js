@@ -17,6 +17,8 @@ class PortfolioNav extends Component {
       }
     }, 10)
   }
+
+
   filter(i) {
     const otherpicked = this.state.pickedtags
     const picked = this.props.list[i].name
@@ -27,7 +29,10 @@ class PortfolioNav extends Component {
     } else {
       otherpicked.push(picked)
     }
+    this.props.filter(this.state.pickedtags)
   }
+
+
   picked(i) {
     const ispicked = this.state.pickedtags.includes(this.props.list[i].name)
     if (ispicked) {
@@ -42,10 +47,10 @@ class PortfolioNav extends Component {
             id={tag.name}
             className={`${style.tags}
                      ${
-                       this.state.pickedtags.includes(tag.name)
-                         ? style.selected
-                         : ''
-                     } 
+              this.state.pickedtags.includes(tag.name)
+                ? style.selected
+                : ''
+              } 
                  `}
             onClick={() => this.filter(index)}
           >

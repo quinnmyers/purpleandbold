@@ -143,6 +143,7 @@ class Portfolio extends Component {
     this.setState({ inModal: this.state.portfolioPieces[i] })
     this.setState({ modalIsOpen: true })
   }
+
   filter(tag) {
     let temparray = []
     this.state.portfolioPieces.forEach(element => {
@@ -159,6 +160,7 @@ class Portfolio extends Component {
     }
     this.setState({ showing: temparray })
   }
+
   closeModal() {
     this.setState({ modalIsOpen: false })
   }

@@ -14,19 +14,34 @@ import About from '../components/About/About'
 import Testimonials from '../components/Testimonials/Testimonials'
 import Portfolio from '../components/Portfolio/Portfolio'
 
-const IndexPage = () => (
-  <div>
-    <Landing />
-    <Layout>
-      <Hero />
-      <About />
-      <Services />
-      {/* <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} /> */}
-      <Testimonials />
-      <Portfolio />
-      <Contact />
-    </Layout>
-  </div>
-)
+class IndexPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      didScroll: false
+    }
+    this.didScroll = this.didScroll.bind(this)
+  }
+  didScroll() {
+    this.setState({ didScroll: true })
+  }
 
-export default IndexPage
+  render() {
+    return (
+      <div>
+        <Landing didScroll={this.didScroll} />
+        <Layout didScroll={this.state.didScroll}>
+          <Hero />
+          <About />
+          <Services />
+          {/* <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} /> */}
+          <Testimonials />
+          <Portfolio />
+          <Contact />
+        </Layout>
+      </div>
+    );
+  }
+}
+
+export default IndexPage;
