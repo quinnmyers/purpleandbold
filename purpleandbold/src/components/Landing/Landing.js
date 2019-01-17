@@ -24,7 +24,7 @@ class Landing extends Component {
       middleRightSecondLoaded: false,
       arrowLoaded: false,
       arrowLoadedAfter: false,
-      scroll: false
+      scroll: false,
     }
     this.linkTo = React.createRef()
     this.handleScroll = this.handleScroll.bind(this)
@@ -35,15 +35,14 @@ class Landing extends Component {
     this.loadMiddleLeftText()
     this.loadMiddleRightText()
     this.loadArrow()
-    window.addEventListener("scroll", this.handleScroll, true);
-    window.addEventListener("touchmove", this.handleScroll, true);
+    window.addEventListener('scroll', this.handleScroll, true)
+    window.addEventListener('touchmove', this.handleScroll, true)
   }
   handleScroll() {
     if (!this.state.scroll) {
-
       this.linkTo.current.click()
       this.setState({ scroll: true })
-      window.removeEventListener("scroll", this.handleScroll, false)
+      window.removeEventListener('scroll', this.handleScroll, false)
       this.props.didScroll()
     }
   }
@@ -80,7 +79,7 @@ class Landing extends Component {
     const { data } = this.props
     return (
       <div className="landing">
-        <Helmet>
+        {/* <Helmet>
           <meta charSet="utf-8" />
           <html lang="en" />
           <title>{"Purple and Bold The Top Digital Agency "}</title>
@@ -88,62 +87,58 @@ class Landing extends Component {
             name="description"
             content={"A Las Vegas Web Development Creative, and Marketing Agency"}
           />
-        </Helmet>
+        </Helmet> */}
         <Content>
           <div className="landing__container">
             <div className="landing__container__content">
               <div
                 className={`landing__container__content__top ${
                   this.state.topLoaded ? 'loaded' : ''
-                  }`}
+                }`}
               >
                 <h1 className={this.state.topLoaded ? 'loaded' : ''}>Purple</h1>
               </div>
               <div
                 className={`landing__container__content__middle ${
                   this.state.middleLoaded ? 'loaded' : ''
-                  }`}
+                }`}
               >
                 <div
                   className={`landing__container__content__middle__left ${
                     this.state.leftMiddleLoaded ? 'loaded' : ''
-                    } ${this.state.middleLeftSecondLoaded ? 'after-load' : ''}`}
+                  } ${this.state.middleLeftSecondLoaded ? 'after-load' : ''}`}
                 >
                   <h1>+</h1>
                 </div>
                 <div
                   className={`landing__container__content__middle__right ${
                     this.state.rightMiddleLoaded ? 'loaded' : ''
-                    }`}
+                  }`}
                 >
                   <h1>Bold</h1>
                 </div>
-              </div >
-              <AnchorLink href="#nav"
-                aria-label="link to navigation bar"
-              >
-                <div ref={this.linkTo}
+              </div>
+              <AnchorLink href="#nav" aria-label="link to navigation bar">
+                <div
+                  ref={this.linkTo}
                   className={`landing__container__content__bottom ${
                     this.state.arrowLoaded ? 'loaded' : ''
-                    } ${this.state.arrowLoadedAfter ? 'after-load' : ''}`}
+                  } ${this.state.arrowLoadedAfter ? 'after-load' : ''}`}
                 >
-
                   <img src={landingArrow} alt="" />
-
-
                 </div>
               </AnchorLink>
             </div>
           </div>
         </Content>
-        <script dangerouslySetInnerHTML={{
-          __html:
-            `new SmoothScroll('a[href*="#"]', {
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `new SmoothScroll('a[href*="#"]', {
                 speed: 500,
                 speedAsDuration: true
-              })`
-        }}>
-        </script>
+              })`,
+          }}
+        />
       </div>
     )
   }
