@@ -1,24 +1,23 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Purple and Bold Las Vegas Digital Agency`,
+    description: `Las Vegas Digital Agency Specializing in Web Development, Design, and Marketing.`,
+    author: `Purple and Bold`,
   },
   plugins: [
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "Purple And Bold",
-        short_name: "Purple & Bold",
-        start_url: "/",
-        background_color: "#f0f0f0",
-        theme_color: "#112a40",
+        name: 'Purple And Bold',
+        short_name: 'Purple & Bold',
+        start_url: '/',
+        background_color: '#f0f0f0',
+        theme_color: '#112a40',
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
-        display: "standalone",
-        icon: "src/images/apple-touch-icon.png", // This path is relative to the root of the site.
+        display: 'standalone',
+        icon: 'src/images/apple-touch-icon.png', // This path is relative to the root of the site.
       },
-
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,

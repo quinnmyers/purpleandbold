@@ -35,6 +35,14 @@ function SEO({ description, lang, meta, keywords, title }) {
                 content: `website`,
               },
               {
+                property: `og:url`,
+                content: `https://www.purpleandbold.com`,
+              },
+              {
+                property: `og:image`,
+                content: `https://www.purpleandbold.com/https://purpleandbold.com/purpleandbold_og.png`,
+              },
+              {
                 name: `twitter:card`,
                 content: `summary`,
               },
