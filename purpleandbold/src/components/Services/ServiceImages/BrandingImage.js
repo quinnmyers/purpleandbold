@@ -53,6 +53,7 @@ class BrandingImage extends Component {
     this.rightswatch.style.background = this.props.rightSwatchBackground
     //THIS IS BREAKING WHEN YOU CLICK A SMALL LEFT SWATCH FIRST, IT IS CHANGING THE BACKGROUND COLOR TO NULL
     //CHECK TO SEE IF NULL AND THEN SET TO THE BLUE IF SO
+    this.props.getColorFunction()
   }
   componentWillReceiveProps() {
     this.setState({
@@ -63,6 +64,14 @@ class BrandingImage extends Component {
       },
     })
   }
+  // static getDerivedStateFromProps(nextProps, prevState) {
+  //   if (
+  //     nextProps.rightRgb != prevState.rgbBottom &&
+  //     nextProps.rightRgb != 'hex'
+  //   ) {
+  //     return { rgbBottom: nextProps.rightRgb }
+  //   } else return null
+  // }
   updateSwatches(hex, rgb) {
     this.leftswatch.style.background = hex
     this.setState({
@@ -114,7 +123,10 @@ class BrandingImage extends Component {
           </div>
           <div className="branding__container__right">
             <div className="branding__container__right__input__container">
-              <label for="branding__input" className="visuallyhidden">here you can update all types of content in the mini branding section</label>
+              <label for="branding__input" className="visuallyhidden">
+                here you can update all types of content in the mini branding
+                section
+              </label>
               <input
                 id="branding__input"
                 type="text"

@@ -112,7 +112,8 @@ class Services extends Component {
           ],
         },
       ],
-      hexColor: 'null',
+      hexColor: 'hex',
+      rgbColor: 'rgb',
     }
     this.getCreativeColor = this.getCreativeColor.bind(this)
   }
@@ -127,14 +128,15 @@ class Services extends Component {
         <BrandingImage
           rightSwatchBackground={this.state.hexColor}
           rightRgb={this.state.rgbColor}
+          getColorFunction={this.getCreativeColor}
         />
       )
     } else if (name === 'Marketing') {
       return <MarketingImage />
     }
   }
-  //gets clicked color HEX value from creative image, passes down to branding image
-  //to change color of the card
+  // gets clicked color HEX value from creative image, passes down to branding image
+  // to change color of the card
   getCreativeColor(hex, rgb) {
     this.setState({
       hexColor: hex.toString(),
