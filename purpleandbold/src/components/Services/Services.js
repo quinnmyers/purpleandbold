@@ -112,8 +112,8 @@ class Services extends Component {
           ],
         },
       ],
-      hexColor: 'hex',
-      rgbColor: 'rgb',
+      hexColor: '#7CBDF1',
+      rgbColor: 'rgb(124, 189, 241)',
     }
     this.getCreativeColor = this.getCreativeColor.bind(this)
   }

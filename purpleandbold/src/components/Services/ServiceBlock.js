@@ -45,7 +45,11 @@ class ServiceBlock extends Component {
                 name={s.name}
                 desc={s.desc}
                 key={s.name}
-                hex={this.props.hexColor}
+                hex={
+                  this.props.hexColor === '#7CBDF1'
+                    ? '#000000'
+                    : this.props.hexColor
+                }
               />
             ) : (
               <ServiceListItem name={s.name} desc={s.desc} key={s.name} />

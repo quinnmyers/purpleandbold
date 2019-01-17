@@ -51,26 +51,7 @@ class BrandingImage extends Component {
   //to be set by inline styles
   componentDidUpdate() {
     this.rightswatch.style.background = this.props.rightSwatchBackground
-    //THIS IS BREAKING WHEN YOU CLICK A SMALL LEFT SWATCH FIRST, IT IS CHANGING THE BACKGROUND COLOR TO NULL
-    //CHECK TO SEE IF NULL AND THEN SET TO THE BLUE IF SO
   }
-  componentWillReceiveProps() {
-    this.setState({
-      middleSwatch: {
-        ...this.state.middleSwatch,
-        rgbBottom: this.props.rightRgb,
-        hexBottom: this.props.rightSwatchBackground.toUpperCase(),
-      },
-    })
-  }
-  // static getDerivedStateFromProps(nextProps, prevState) {
-  //   if (
-  //     nextProps.rightRgb != prevState.rgbBottom &&
-  //     nextProps.rightRgb != 'hex'
-  //   ) {
-  //     return { rgbBottom: nextProps.rightRgb }
-  //   } else return null
-  // }
   updateSwatches(hex, rgb) {
     this.leftswatch.style.background = hex
     this.setState({
@@ -114,10 +95,10 @@ class BrandingImage extends Component {
               style={{ background: this.state.middleSwatch.background }}
             />
             <div className="branding__container__middle--hex">
-              <p>{this.state.middleSwatch.hexBottom}</p>
+              <p>{this.props.rightSwatchBackground.toUpperCase()}</p>
             </div>
             <div className="branding__container__middle--rgb">
-              <p>{this.state.middleSwatch.rgbBottom}</p>
+              <p>{this.props.rightRgb}</p>
             </div>
           </div>
           <div className="branding__container__right">
