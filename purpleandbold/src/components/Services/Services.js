@@ -128,7 +128,6 @@ class Services extends Component {
         <BrandingImage
           rightSwatchBackground={this.state.hexColor}
           rightRgb={this.state.rgbColor}
-          getColorFunction={this.getCreativeColor}
         />
       )
     } else if (name === 'Marketing') {

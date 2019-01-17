@@ -53,7 +53,6 @@ class BrandingImage extends Component {
     this.rightswatch.style.background = this.props.rightSwatchBackground
     //THIS IS BREAKING WHEN YOU CLICK A SMALL LEFT SWATCH FIRST, IT IS CHANGING THE BACKGROUND COLOR TO NULL
     //CHECK TO SEE IF NULL AND THEN SET TO THE BLUE IF SO
-    this.props.getColorFunction()
   }
   componentWillReceiveProps() {
     this.setState({
