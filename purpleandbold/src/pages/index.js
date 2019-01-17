@@ -16,9 +16,9 @@ import Portfolio from '../components/Portfolio/Portfolio'
 
 class IndexPage extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      didScroll: false
+      didScroll: false,
     }
     this.didScroll = this.didScroll.bind(this)
   }
@@ -29,6 +29,7 @@ class IndexPage extends React.Component {
   render() {
     return (
       <div>
+        <SEO />
         <Landing didScroll={this.didScroll} />
         <Layout didScroll={this.state.didScroll}>
           <Hero />
@@ -40,8 +41,8 @@ class IndexPage extends React.Component {
           <Contact />
         </Layout>
       </div>
-    );
+    )
   }
 }
 
-export default IndexPage;
+export default IndexPage
