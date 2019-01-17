@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "./cta.sass"
 import { redirectTo } from '@reach/router';
+
 class Cta extends Component {
     constructor(props) {
         super(props);
@@ -40,7 +41,7 @@ class Cta extends Component {
     toggleOpen() {
         setTimeout(() => {
             this.setState({ open: true })
-        }, 5000);
+        }, 500);
         this.setState({ firsedopend: true })
     }
 
@@ -67,8 +68,8 @@ class Cta extends Component {
             <div className={`cta ${this.state.open ? "cta__open" : "cta__closed"} ${this.state.scrollShow ? "cta__ult__open" : "cta__ult__closed"} ${this.props.didScroll ? "cta__showing" : "cta__gone"}`} >
                 <div className={`${this.state.open ? "cta__close__open" : "cta__close__closed"}`}>
                     <button onClick={this.close}>
-                        close
-                </button>
+
+                    </button>
                 </div>
                 <div className={`cta__content ${this.state.open ? "cta__content__open" : "cta__content__closed"}`} onClick={this.open}>
                     <div className="cta__content__body">

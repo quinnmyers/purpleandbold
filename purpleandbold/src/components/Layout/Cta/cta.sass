@@ -6,45 +6,68 @@
     flex-direction: column
     background: white
     position: fixed
-    bottom: 0
+    bottom: 50%
+    transform: translateY(50%)
     z-index: 101
     right: 0
     transition: all 2s ease-in-out
     @include navsnap 
+        transform: translateY(0%)
+        bottom: 0
         width: 100vw
-        height: 2vh
+    &__close__open
+        justify-content: flex-end
+        display: flex
+        button
+
+            height: 23px 
+            width: 23px
+            margin: 1em
+            border-radius: 100%
+            border: 1px solid black
+            background:
+                image: url('../../../images/x-modal.svg')
+                size: 50%
+                position: center
+                repeat: no-repeat
+            transition: all 0.7s ease-in-out
+            &:hover 
+                transform: scale(1.1) rotate(360deg)
+                box-shadow: 0px 0px 26px -8px rgba(87,87,87,1)
     &__close__closed
         display: none
     &__content
         width: 100%
         display: flex
         height: 100%
-        margin-top: 10px
     &__content__closed
+        @include navsnap
+            display: flex
+            flex-direction: column-reverse
         .cta__content__body
             display: none
+            @include navsnap
+                display: flex
+                visibility: hidden
     &__content__open
         .cta__content__arrow
             display: none
 .cta__open
     // wrapper just open
     width: 20vw
-    height: 93vh
-    background: red
+    // background: red
     box-shadow: -12px 0px 19px -2px rgba(235,235,235,1)
-    // transform: translateY(100%)
-    animation: slideout 5s ease-in-out
+    animation: slideoutdesk 2s ease-in-out
     @include navsnap
+        animation: slideoutmoble 2s ease-in-out forwards
         box-shadow: 0px -19px 19px -2px rgba(235,235,235,1)
         width: 100vw
-        height: 20vh
 .cta__closed
     // just closed
     transform: translateX(80%)
-    height: 93vh
     @include navsnap 
+        transform: translateY(80%)
         width: 100vw
-        height: 2vh
 .cta__gone
     display: none !important
 .cta__showing
@@ -59,8 +82,14 @@
     opacity: 1
 
 
-@keyframes slideout
+@keyframes slideoutmoble
   0%
     transform: translateY(100%)
   100%
-    transform: translateY(0%)
+    transform: translate(0%)
+
+@keyframes slideoutdesk
+  0%
+    transform: translateX(100%)
+  100%
+    transform: translateX(0%)
