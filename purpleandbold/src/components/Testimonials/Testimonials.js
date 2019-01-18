@@ -3,6 +3,9 @@ import TestimonialsSlider from './TestimonialsSlider'
 import Content from '../utility/Content/Content'
 import style from './testimonials.module.sass'
 import Controls from './Controls'
+
+import Button from '../utility/Button/Button'
+
 class Testimonials extends Component {
   constructor(props) {
     super(props)
@@ -36,22 +39,8 @@ class Testimonials extends Component {
               </div>
 
               <div className={style.testimonials__content__container__cta}>
-                <h3>
-                  Need help with your &nbsp;
-                  <ul>
-                    {/* <li 
-                :class="ctaSlideClass(index)"
-                v-for="(ctaSlide, index) in testimonialCtaSlides" :key="index" ref="ctaSlide">
-                  {{ ctaSlide }}?
-                </li> */}
-                  </ul>
-                </h3>
-                <a
-                  href="#contact"
-                  v-smooth-scroll="{ duration: 1000, offset: -50}"
-                >
-                  <button>Get A Free Quote</button>
-                </a>
+                <h3>Need help with your &nbsp;</h3>
+                <Button text="Get A Free Quote" section="#contact" />
               </div>
             </div>
           </div>

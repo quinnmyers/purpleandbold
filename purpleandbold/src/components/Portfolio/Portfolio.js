@@ -169,70 +169,72 @@ class Portfolio extends Component {
   }
   render() {
     return (
-      <div id="portfolio">
-        <Content>
-          <div className={style.portfolio}>
-            <h2 className={style.section__header}>Portfolio</h2>
-            <PortfolioNav filter={this.filter} list={this.state.tagArray} />
-            <div className="portfolio__grid">
-              <div className="portfolio__grid__container">
-                {this.state.showing.map((p, index) => (
-                  <div
-                    key={p.id}
-                    className={`item portfolio__grid__container__item ${p.type.toLowerCase()} is-visible`}
-                    onClick={() => this.openModal(index)}
-                  >
-                    <img src={p.mainImg.src} alt={p.mainImg.alt} />
-                  </div>
-                ))}
+      <section className="portfolio">
+        <div id="portfolio">
+          <Content>
+            <div className={style.portfolio}>
+              <h2 className={style.section__header}>Portfolio</h2>
+              <PortfolioNav filter={this.filter} list={this.state.tagArray} />
+              <div className="portfolio__grid">
+                <div className="portfolio__grid__container">
+                  {this.state.showing.map((p, index) => (
+                    <div
+                      key={p.id}
+                      className={`item portfolio__grid__container__item ${p.type.toLowerCase()} is-visible`}
+                      onClick={() => this.openModal(index)}
+                    >
+                      <img src={p.mainImg.src} alt={p.mainImg.alt} />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        </Content>
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          contentLabel="Example Modal"
-          className={style.modal}
-        >
-          <div className={style.body}>
-            <div className={style.left}>
-              <div className={style.left__main}>
-                <img
-                  src={this.state.inModal.mainImg.src}
-                  alt={this.state.inModal.mainImg.alt}
-                />
+          </Content>
+          <Modal
+            isOpen={this.state.modalIsOpen}
+            onAfterOpen={this.afterOpenModal}
+            onRequestClose={this.closeModal}
+            contentLabel="Example Modal"
+            className={style.modal}
+          >
+            <div className={style.body}>
+              <div className={style.left}>
+                <div className={style.left__main}>
+                  <img
+                    src={this.state.inModal.mainImg.src}
+                    alt={this.state.inModal.mainImg.alt}
+                  />
+                </div>
+                <div className={style.left__alt}>
+                  <PhotoArray
+                    imageArray={this.state.inModal.altImages}
+                    altImage={this.state.inModal.mainImg}
+                  />
+                </div>
               </div>
-              <div className={style.left__alt}>
-                <PhotoArray
-                  imageArray={this.state.inModal.altImages}
-                  altImage={this.state.inModal.mainImg}
-                />
-              </div>
-            </div>
-            <div className={style.right}>
-              <div className={style.right__top}>
-                <button
-                  className={style.right__top__close}
-                  onClick={this.closeModal}
-                />
-                <h4>{this.state.inModal.name}</h4>
-                <p className={style.right__top__type}>
-                  {this.state.inModal.type.toLowerCase()}
-                </p>
-                <p className={style.right__top__desc}>
-                  {this.state.inModal.description}
-                </p>
-              </div>
+              <div className={style.right}>
+                <div className={style.right__top}>
+                  <button
+                    className={style.right__top__close}
+                    onClick={this.closeModal}
+                  />
+                  <h4>{this.state.inModal.name}</h4>
+                  <p className={style.right__top__type}>
+                    {this.state.inModal.type.toLowerCase()}
+                  </p>
+                  <p className={style.right__top__desc}>
+                    {this.state.inModal.description}
+                  </p>
+                </div>
 
-              <a href={this.state.inModal.siteLink}>
-                <button>Visit Live Site</button>
-              </a>
+                <a href={this.state.inModal.siteLink}>
+                  <button>Visit Live Site</button>
+                </a>
+              </div>
             </div>
-          </div>
-        </Modal>
-      </div>
+          </Modal>
+        </div>
+      </section>
     )
   }
 }

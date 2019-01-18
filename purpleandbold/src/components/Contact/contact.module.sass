@@ -27,13 +27,6 @@ $disabled: #fc3a3a45
             flex-direction: column
             .real_message
                 visibility: hidden
-        h2.section__header 
-            color: white
-            padding-bottom: 10px
-            padding-left: 0px
-        input:focus 
-            outline: none
-            box-shadow: 0px 0px 7px 1px rgba(250,177,245,1);//rgba(234,162,110,1);
         &__body, form
             display: flex
             justify-content: center
@@ -42,7 +35,7 @@ $disabled: #fc3a3a45
                 flex-direction: column
             &__left, &__right 
                 label 
-                    margin-bottom: 7px
+                    margin-bottom: 4px
             &__left
                 width: 48%
                 justify-content: space-between
@@ -95,6 +88,8 @@ $disabled: #fc3a3a45
                 &__missed 
                     height: 30%
                     margin-top: 15px
+                p 
+                  font-size: 1.35em
                 textarea
                     border: none
                     background: $inputback
@@ -153,7 +148,6 @@ $disabled: #fc3a3a45
         .flex__col
             display: flex
             flex-direction: column
-        
         .pb
             padding-bottom: 64px
         p
@@ -218,7 +212,6 @@ $disabled: #fc3a3a45
             font-size: .9em
             letter-spacing: .05em
             font-weight: $light
-            margin-bottom: 40px
             transition: all 0.3s ease-in-out
             @include tablet
                 font-size: .85em

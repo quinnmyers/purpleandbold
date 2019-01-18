@@ -1,0 +1,18 @@
+@import '../../base.sass'
+  
+.button
+  display: flex
+  a, a:visited
+    font-size: 0.95em
+    font-weight: 300
+    color: $accentlight
+    border: 1px solid $accentlight
+    padding: 0.7em 1.8em
+    border-radius: 3px
+    transition: all .2s ease-in-out
+    @include tablet-phone 
+      font-size: 1.25em
+      padding: 0.7em 1.9em
+    &:hover
+      text-decoration: none
+      box-shadow: 0px 0px 20px -4px $accentlight

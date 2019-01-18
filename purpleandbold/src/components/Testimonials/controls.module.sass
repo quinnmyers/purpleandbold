@@ -2,12 +2,14 @@
 @import '../base.sass'
 .testimonials__controls
   display: flex 
-  position: relative
-  height: 150% 
+  position: absolute
+  right: 0
+  bottom: 50%
+  transform: translateY(50%)
+  height: 100%
   width: 25%
   background: $blue-grey 
-  z-index: 10 
-
+  z-index: 10
   @media (max-width: 710px)
     height: 120%
   @include tablet-phone 

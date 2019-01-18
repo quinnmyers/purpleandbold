@@ -4,6 +4,7 @@ import heroMonitor from '../../images/hero-monitor-2.svg'
 
 //components
 import Content from '../utility/Content/Content'
+import Button from '../utility/Button/Button'
 
 class hero extends React.Component {
   constructor(props) {
@@ -33,11 +34,7 @@ class hero extends React.Component {
                     If you're starting something new, let's make sure it's not
                     already old.
                   </h4>
-                  <a href="#contact">
-                    <button class={style.hero__content__container__ctabutton}>
-                      Get A Free Quote
-                    </button>
-                  </a>
+                  <Button section="#contact" text="Get A Free Quote" />
                 </div>
               </div>
             </Content>
