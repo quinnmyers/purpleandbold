@@ -68,9 +68,7 @@ function SEO({ description, lang, meta, keywords, title }) {
                   : []
               )
               .concat(meta)}
-          >
-            <noscript>Your browser does not support JavaScript!</noscript>
-          </Helmet>
+          />
         )
       }}
     />
