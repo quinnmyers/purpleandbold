@@ -28,7 +28,7 @@ class hero extends React.Component {
                     If you're starting something new, let's make sure it's not
                     already old.
                   </h4>
-                  <Button section="#contact" text="Get A Free Quote" />
+                  <Button section="#contact" text="Contact Us Today" />
                 </div>
               </div>
             </Content>

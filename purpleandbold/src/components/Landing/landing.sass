@@ -30,6 +30,8 @@
         h1 
           font-size: 7em
           font-weight: 300
+          @include tablet-phone 
+            font-size: 9em
       &__middle
         display: flex 
         justify-content: space-between 
@@ -38,6 +40,8 @@
         h1 
           font-size: 6em
           font-weight: 900
+          @include tablet-phone 
+            font-size: 8em
         &__left 
           transform: translateX(-100vw)
           &.loaded 
@@ -60,6 +64,10 @@
         @include edgesnap 
           height: 7.25vw
           width: 7.25vw
+        @include tablet-phone 
+          height: 10vw 
+          width: 10vw
+          bottom: 14vw
         &.loaded 
           animation: landing-arrow-load 1.5s forwards
         &.after-load 

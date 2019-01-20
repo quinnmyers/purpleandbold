@@ -7,7 +7,7 @@
   position: sticky
   top: 0
   z-index: 99
-  box-shadow: 0px 0px 3px 0px rgba(145,145,145,0.6)
+  box-shadow: 0px 0px 3px -3px rgba(145,145,145,0.6)
 nav 
   display: flex
   width: 100%
@@ -36,7 +36,7 @@ nav
       @include tablet 
         width: 26vw
       @include tablet-phone 
-        width: 31vw
+        width: 46vw
       @media(max-width: 800px)
         height: 40px
       img 
@@ -83,14 +83,14 @@ nav
         flex-direction: column 
         justify-content: space-between
         cursor: pointer
-        height: 15px
+        height: 13px
         align-self: center
         position: relative 
         z-index: 10
         &__line1, &__line2, &__line3
           display: flex
           height: 1px
-          width: 26px
+          width: 23px
           background: $blue-grey
         &__line1
         &__line2
