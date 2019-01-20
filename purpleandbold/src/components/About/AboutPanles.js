@@ -1,4 +1,9 @@
 import React, { Component } from 'react'
+
+//components
+import './aboutpanels.sass'
+
+//images
 import iso1 from '../../images/hero-iso/iso-1.svg'
 import iso2 from '../../images/hero-iso/iso-2.svg'
 import iso3 from '../../images/hero-iso/iso-3.svg'
@@ -8,8 +13,6 @@ import iso6 from '../../images/hero-iso/iso-6.svg'
 import iso7 from '../../images/hero-iso/iso-7.svg'
 import iso8 from '../../images/hero-iso/iso-8.svg'
 
-import './aboutpanles.sass'
-// import hero from '../hero'
 class About extends Component {
   constructor(props) {
     super(props)

@@ -190,20 +190,6 @@ class Cta extends Component {
         >
           <img src={plusIcon} alt="" />
         </button>
-
-        {/* <div className="cta__content__arrow">
-                  this is showen when open and hidden when closed
-                  <button>
-                      get a arrow to bounce over here for the sexs
-              </button>
-              </div> */}
-        {/* <div
-          className={`${
-            this.state.open ? 'cta__close__open' : 'cta__close__closed'
-          }`}
-        >
-          <button onClick={this.close} />
-        </div> */}
       </div>
     )
   }

@@ -29,12 +29,6 @@ class IndexPage extends React.Component {
   render() {
     return (
       <div>
-        <noscript>
-          Your browser does not support JavaScript! We're sorry, our website
-          doesn't work very well without JavaScript, feel free to email us at
-          contact@purpleandbold.com and we can explain why our website, and
-          many, require JavaScript.
-        </noscript>
         <SEO />
         <Landing didScroll={this.didScroll} />
         <Layout didScroll={this.state.didScroll}>

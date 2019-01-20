@@ -1,8 +1,15 @@
 import React, { Component } from 'react'
+
+//compontents
 import AboutPanels from './AboutPanles'
-import style from './about.module.sass'
-import brand from '../../images/brand.svg'
 import Content from '../utility/Content/Content'
+
+//styles
+import style from './about.module.sass'
+
+//images
+import brand from '../../images/brand.svg'
+
 class About extends Component {
   constructor(props) {
     super(props)
