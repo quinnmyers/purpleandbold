@@ -94,26 +94,26 @@ class Landing extends Component {
               <div
                 className={`landing__container__content__top ${
                   this.state.topLoaded ? 'loaded' : ''
-                }`}
+                  }`}
               >
                 <h1 className={this.state.topLoaded ? 'loaded' : ''}>Purple</h1>
               </div>
               <div
                 className={`landing__container__content__middle ${
                   this.state.middleLoaded ? 'loaded' : ''
-                }`}
+                  }`}
               >
                 <div
                   className={`landing__container__content__middle__left ${
                     this.state.leftMiddleLoaded ? 'loaded' : ''
-                  } ${this.state.middleLeftSecondLoaded ? 'after-load' : ''}`}
+                    } ${this.state.middleLeftSecondLoaded ? 'after-load' : ''}`}
                 >
                   <h1>+</h1>
                 </div>
                 <div
                   className={`landing__container__content__middle__right ${
                     this.state.rightMiddleLoaded ? 'loaded' : ''
-                  }`}
+                    }`}
                 >
                   <h1>Bold</h1>
                 </div>
@@ -123,7 +123,7 @@ class Landing extends Component {
                   ref={this.linkTo}
                   className={`landing__container__content__bottom ${
                     this.state.arrowLoaded ? 'loaded' : ''
-                  } ${this.state.arrowLoadedAfter ? 'after-load' : ''}`}
+                    } ${this.state.arrowLoadedAfter ? 'after-load' : ''}`}
                 >
                   <img src={landingArrow} alt="" />
                 </div>
@@ -131,14 +131,7 @@ class Landing extends Component {
             </div>
           </div>
         </Content>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `new SmoothScroll('a[href*="#"]', {
-                speed: 500,
-                speedAsDuration: true
-              })`,
-          }}
-        />
+
       </div>
     )
   }
