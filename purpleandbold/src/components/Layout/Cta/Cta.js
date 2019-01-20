@@ -105,8 +105,8 @@ class Cta extends Component {
               </div>
               <div className="cta__content__left__content">
                 <p>
-                  We'll send you simple instructions on how to get a free audit
-                  of your current website with suggestions for improvements.
+                  We'll send you simple instructions on how to get a free hand
+                  crafted audit of your digital presence from us.
                 </p>
               </div>
             </div>
@@ -175,13 +175,7 @@ class Cta extends Component {
                 </div>
                 {/*End mc_embed_signup*/}
               </div>
-              <p>
-                Don't have a website?{' '}
-                <AnchorLink href="#contact" offset="70">
-                  Contact Us
-                </AnchorLink>{' '}
-                for a phone call.
-              </p>
+              <p>Don't have a website yet? No worries, we can help.</p>
             </div>
 
             {/* main body ends here */}

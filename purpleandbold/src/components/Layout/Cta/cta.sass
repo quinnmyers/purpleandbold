@@ -56,13 +56,9 @@
           margin-bottom: 0.15em
     &__right
       // background: green
-      p, a, a:visited 
+      p
         color: $grey
         font-weight: 300
-        a 
-          text-decoration: underline
-        a:hover 
-          color: $accentlight
           
       &__signup
         // background: pink
@@ -91,86 +87,3 @@
 
 .cta__ult__closed
   transform: translateY(110%) !important
-
-
-
-// @keyframes collapse 
-//   0%
-//     transform: translateX(0)
-//   100% 
-//     transform: translateX(calc(-100vw + 80px))
-
-// @keyframes expand 
-//   0% 
-//     transform: translateX(calc(-100vw + 80px))
-//   100%
-//     transform: translateX(0)
-
-
-// @keyframes slideoutmoble
-//   0%
-//     transform: translateY(100%)
-//   100%
-//     transform: translate(0%)
-
-// @keyframes slideoutdesk
-//   0%
-//     transform: translateX(100%)
-//   100%
-//     transform: translateX(0%)
-
-
-
-
-     //older stuff
-//     &__close__open
-//         // justify-content: flex-end
-//         display: flex
-//         position: relative
-//         button
-//             position: absolute
-//             right: 0
-//             height: 23px 
-//             width: 23px
-//             margin: 1em
-//             border-radius: 100%
-//             border: 1px solid black
-//             background:
-//                 image: url('../../../images/x-modal.svg')
-//                 size: 50%
-//                 position: center
-//                 repeat: no-repeat
-//             // transition: all 0.7s ease-in-out
-//             &:hover 
-//                 transform: scale(1.1) rotate(360deg)
-//                 box-shadow: 0px 0px 26px -8px rgba(87,87,87,1)
-//     &__close__closed
-//       transform: translateY(calc(100% - 60px))
-//         // display: none
-//     &__content
-//         width: 100%
-//         display: flex
-//         height: 100%
-//     &__content__closed
-//         @include navsnap
-//             display: flex
-//             flex-direction: column-reverse
-//         .cta__content__body
-//             display: none
-//             @include navsnap
-//                 display: flex
-//                 visibility: hidden
-//     &__content__open
-//         .cta__content__arrow
-//             background: yellow
-// .cta__open
-//     // wrapper just open
-//     //removed below
-//     // width: 20vw
-//     // background: red
-//     box-shadow: -12px 0px 19px -2px rgba(235,235,235,1)
-//     animation: slideoutdesk 2s ease-in-out
-//     @include navsnap
-//         animation: slideoutmoble 2s ease-in-out forwards
-//         box-shadow: 0px -19px 19px -2px rgba(235,235,235,1)
-//         width: 100vw

@@ -9,7 +9,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'Purple And Bold',
-        short_name: 'Purple & Bold',
+        short_name: 'Purple&Bold',
         start_url: '/',
         background_color: '#f0f0f0',
         theme_color: '#112a40',
