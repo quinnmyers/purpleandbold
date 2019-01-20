@@ -40,7 +40,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 property: `og:image`,
-                content: `https://www.purpleandbold.com/https://purpleandbold.com/purpleandbold_og.png`,
+                content: `https://www.purpleandbold.com/purpleandbold_og.png`,
               },
               {
                 name: `twitter:card`,
