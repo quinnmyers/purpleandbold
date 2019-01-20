@@ -18,13 +18,13 @@ class ServiceBlock extends Component {
     this.setState({ serviceName: this.props.name })
   }
   //runs everytime the component updates
-  componentDidUpdate() {
-    //checks to see if the component is the Creative component, because that needs the HEX color
-    //passed a prop to change the font color
-    if (this.state.serviceName === 'Creative') {
-      console.log(`from yours truly, the creative block ${this.props.hexColor}`)
-    }
-  }
+  // componentDidUpdate() {
+  //   //checks to see if the component is the Creative component, because that needs the HEX color
+  //   //passed a prop to change the font color
+  //   if (this.state.serviceName === 'Creative') {
+  //     console.log(`from yours truly, the creative block ${this.props.hexColor}`)
+  //   }
+  // }
   render() {
     return (
       <div className="service__block">

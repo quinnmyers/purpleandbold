@@ -40,7 +40,6 @@ class MarketingImage extends Component {
     } else {
       this.setState({ flag: false })
     }
-    console.log(`from marketing image: ${this.state.flag}`)
   }
   constructor(props) {
     super(props)
@@ -61,14 +60,14 @@ class MarketingImage extends Component {
   render() {
     return (
       <div
-        class="marketing__container"
+        className="marketing__container"
         onMouseOver={this.changeFlag.bind(this, 0)}
         onMouseLeave={this.changeFlag.bind(this, 1)}
       >
         <img
           src={this.state.brandingImages[0].src}
           alt={this.state.brandingImages[0].alt}
-          class={`marketing__container--graph--0 ${
+          className={`marketing__container--graph--0 ${
             this.state.flag ? 'rotatePositive' : ''
           }`}
           // style={this.styleMarketingGraphs(0)}
@@ -77,7 +76,7 @@ class MarketingImage extends Component {
         <img
           src={this.state.brandingImages[1].src}
           alt={this.state.brandingImages[1].alt}
-          class={`marketing__container--graph--1 ${
+          className={`marketing__container--graph--1 ${
             this.state.flag ? 'rotateNegative' : ''
           }`}
           // style={this.styleMarketingGraphs(0)}

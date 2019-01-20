@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
+// import { StaticQuery, graphql } from 'gatsby'
 
-import Header from './header'
+// import Header from './header'
 import './layout.css'
 
 //components
@@ -10,7 +10,7 @@ import Navigation from './Layout/Navigation/Navigation'
 import Footer from './Layout/Footer/Footer'
 import Cta from './Layout/Cta/Cta'
 
-const Layout = (props) => (
+const Layout = props => (
   <div>
     <Navigation />
     {props.children}

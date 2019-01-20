@@ -43,7 +43,9 @@ class WebsitesImage extends Component {
                   ))}
                 </ul>
               </div>
-              <label for="editor" className="visuallyhidden">Mini text editor like one used to write code</label>
+              <label htmlFor="editor" className="visuallyhidden">
+                Mini text editor like one used to write code
+              </label>
               <textarea
                 id="editor"
                 name="editor__textarea"
@@ -56,7 +58,7 @@ class WebsitesImage extends Component {
               <img
                 className={`websites__container__editor__main--codeblock ${
                   this.state.textareaFocused ? 'isnotvisible' : ''
-                  }`}
+                }`}
                 src={codeBlock}
                 alt="code in a text editor"
               />

@@ -141,7 +141,6 @@ class Services extends Component {
       hexColor: hex.toString(),
       rgbColor: rgb.toString(),
     })
-    console.log(`from services.js state: ${hex} rgb: ${rgb}`)
   }
   render() {
     return (

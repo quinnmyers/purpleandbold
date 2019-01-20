@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import PortfolioGrid from './PortfolioGrid'
-import PortfolioItemModal from './PortfolioItemModal'
 import PortfolioNav from './PortfolioNav'
 import dimaMain from '../../images/portfolio/dd/dimaduchet_main.jpg'
 import dimaLogo from '../../images/portfolio/dd/dima_logo.svg'
@@ -148,7 +146,7 @@ class Portfolio extends Component {
     let temparray = []
     this.state.portfolioPieces.forEach(element => {
       tag.forEach(tagel => {
-        if (element.type == tagel) {
+        if (element.type === tagel) {
           temparray.push(element)
         } else {
           return

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
+// import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 import style from './portfoliogrid.module.sass'
 

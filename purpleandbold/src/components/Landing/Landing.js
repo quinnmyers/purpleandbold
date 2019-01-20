@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Helmet } from 'react-helmet'
 
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 //components
@@ -76,18 +75,8 @@ class Landing extends Component {
   }
 
   render() {
-    const { data } = this.props
     return (
       <div className="landing">
-        {/* <Helmet>
-          <meta charSet="utf-8" />
-          <html lang="en" />
-          <title>{"Purple and Bold The Top Digital Agency "}</title>
-          <meta
-            name="description"
-            content={"A Las Vegas Web Development Creative, and Marketing Agency"}
-          />
-        </Helmet> */}
         <Content>
           <div className="landing__container">
             <div className="landing__container__content">

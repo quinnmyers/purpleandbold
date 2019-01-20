@@ -18,11 +18,10 @@ class PortfolioNav extends Component {
     }, 10)
   }
 
-
   filter(i) {
     const otherpicked = this.state.pickedtags
     const picked = this.props.list[i].name
-    const isIn = otherpicked.indexOf(picked) == -1
+    const isIn = otherpicked.indexOf(picked) === -1
     if (!isIn) {
       const ii = otherpicked.indexOf(picked)
       otherpicked.splice(ii, 1)
@@ -31,7 +30,6 @@ class PortfolioNav extends Component {
     }
     this.props.filter(this.state.pickedtags)
   }
-
 
   picked(i) {
     const ispicked = this.state.pickedtags.includes(this.props.list[i].name)
@@ -47,12 +45,13 @@ class PortfolioNav extends Component {
             id={tag.name}
             className={`${style.tags}
                      ${
-              this.state.pickedtags.includes(tag.name)
-                ? style.selected
-                : ''
-              } 
+                       this.state.pickedtags.includes(tag.name)
+                         ? style.selected
+                         : ''
+                     } 
                  `}
             onClick={() => this.filter(index)}
+            key={index}
           >
             {tag.name}
           </button>

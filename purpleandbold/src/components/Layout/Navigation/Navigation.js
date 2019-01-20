@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-import { SlideDown } from 'react-slidedown'
-import 'react-slidedown/lib/slidedown.css'
-import brand from "../../../images/brand.svg"
-
 
 //components
 import Content from '../../utility/Content/Content'
-// import MobileNav from './MobileNav'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+
+//images
+import brand from '../../../images/brand.svg'
 
 //styles
 import './navigation.sass'
@@ -54,7 +51,6 @@ class Navigation extends Component {
     const nav = this.navigation
     const navStyle = window.getComputedStyle(nav)
     const navHeight = navStyle.getPropertyValue('height')
-    const navPadding = navStyle.getPropertyValue('padding')
     this.mobilenav.style.marginTop = `${navHeight}`
   }
 
@@ -65,14 +61,11 @@ class Navigation extends Component {
           <nav>
             <div className="nav__container">
               <div className="nav__container__brand">
-                <img
-                  src={brand}
-                  alt="purple and bold logo"
-                />
+                <img src={brand} alt="purple and bold logo" />
               </div>
               <div className="nav__container__navigation">
                 {this.state.navItems.map(n => (
-                  <AnchorLink href={n.url} offset='70'>
+                  <AnchorLink href={n.url} offset="70" key={n.url}>
                     {n.name}
                   </AnchorLink>
                 ))}
@@ -90,16 +83,17 @@ class Navigation extends Component {
                 <div
                   className={`nav__container__mobilenav__container ${
                     this.state.mobileNavExpanded ? 'expanded' : ''
-                    }`}
+                  }`}
                   ref={div => (this.mobilenav = div)}
                 >
                   {this.state.navItems.map(n => (
                     <a
                       className={`nav__container__mobilenav__container__item ${
                         this.state.mobileNavExpanded ? 'expanded' : ''
-                        }`}
+                      }`}
                       onClick={this.handleHamburgerClick.bind(this)}
                       href={n.url}
+                      key={n.url}
                     >
                       {n.name}
                     </a>
