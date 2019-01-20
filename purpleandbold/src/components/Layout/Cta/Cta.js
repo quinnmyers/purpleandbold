@@ -95,7 +95,7 @@ class Cta extends Component {
             <div
               className={`cta__content__left ${
                 this.state.textVisible ? 'visible' : ''
-              }`}
+                }`}
             >
               <div className="cta__content__left__header">
                 <h4>
@@ -113,7 +113,7 @@ class Cta extends Component {
             <div
               className={`cta__content__right ${
                 this.state.textVisible ? 'visible' : ''
-              }`}
+                }`}
             >
               <div className="cta__content__right__signup">
                 {/* Begin Mailchimp Signup Form */}
@@ -129,7 +129,11 @@ class Cta extends Component {
                   >
                     <div id="mc_embed_signup_scroll">
                       <div className="mc-field-group">
+                        <label for="mce-EMAIL" className="visuallyhidden">
+                          Email Sign up
+              </label>
                         <input
+
                           type="email"
                           placeholder="email"
                           name="EMAIL"
@@ -155,6 +159,7 @@ class Cta extends Component {
                         aria-hidden="true"
                       >
                         <input
+
                           type="text"
                           name="b_7148d992c4429b31c494c4eba_a0bf264bc7"
                           tabIndex={-1}
@@ -182,6 +187,7 @@ class Cta extends Component {
           </div>
         </Content>
         <button
+          aria-label="close email sign up form"
           onClick={this.toggleModal}
           className={this.state.textVisible ? '' : 'expanded'}
         >
