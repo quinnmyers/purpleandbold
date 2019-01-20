@@ -11,9 +11,9 @@
   font-size: 12pt
   @include edgesnap 
     font-size: 1.435vw
-    width: 80%
+    width: 85%
     height: 45vw 
-    padding: 0px 60px
+    padding: 0px 37px
     @include tablet 
       padding: 0px 40px 
     @include tablet-phone 
@@ -22,7 +22,7 @@
     width: 85%
   @include tablet-phone 
     width: 95%
-    font-size: 2vw
+    font-size: 2.4vw
     position: relative
     height: 70vh
   &:focus 
@@ -32,9 +32,11 @@
     display: flex
     height: 100%
     width: 100%
-    overflow: hidden
     justify-content: space-around
+    @include edgesnap 
+      justify-content: space-between
     @include tablet-phone 
+      // background: lightcoral
       flex-direction: column-reverse
       justify-content: space-between 
       align-items: center
@@ -48,8 +50,10 @@
         // height: 100%
     .left
       align-content: center
+      // background: lightgreen
       justify-content: space-around
       @include tablet-phone 
+        // background: lightgreen
         // max-height: 200px
         // display: flex
         // flex: grow
@@ -62,7 +66,7 @@
         align-content: center
         justify-content: center
         border-radius: 3px
-        box-shadow: 0px 0px 26px -10px rgba(87,87,87,1)
+        box-shadow: 0px 0px 30px -7px rgba(87,87,87,0.5)
         @include tablet-phone
           display: none
         img
@@ -75,15 +79,17 @@
         display: flex
         // flex-wrap: wrap
         border-radius: 3px
-        box-shadow: 0px 0px 26px -10px rgba(87,87,87,1)
+        box-shadow: 0px 0px 30px -7px rgba(87,87,87,0.5)
         img
           padding: 5px
     .right
       display: flex
+      // background: lightgreen
       justify-content: space-between
       padding: 1.05em 0em
       @include tablet-phone 
-        height: 50%
+        // background: lightyellow
+        height: 76%
       &__top
         &__close
           position: absolute
@@ -106,9 +112,9 @@
             height: 2.1vw
             width: 2.1vw
           @include tablet-phone 
-            height: 2.5vw
-            width: 2.5vw
-            margin-right: 2.9em
+            height: 3.2vw
+            width: 3.2vw
+            margin-right: 2.7em
         h4 
           font-size: 1.375em
           margin-bottom: 0.5em
