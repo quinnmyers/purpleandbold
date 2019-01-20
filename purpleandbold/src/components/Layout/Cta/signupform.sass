@@ -21,17 +21,26 @@
           height: 100%
           width: 100%
           padding-left: 5px
+          font-size: .85em
+          @include tablet-phone 
+            height: 20px
+            font-size: 1em
       .clear
         display: flex
         // background: orange
         // background: lightgreen
         margin-left: .25em
         font-size: .75em
+        @include tablet-phone 
+          font-size: 1em
         input 
           padding: .25em .55em
           border: 1px solid black
           transition: all .2s ease-in-out
           border-radius: 2px
+          @include tablet-phone 
+            width: 100%
+            padding: 0.25em 1.5em
           &:hover 
             color: $accentlight 
             border: 1px solid $accentlight

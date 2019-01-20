@@ -13,12 +13,6 @@ class hero extends React.Component {
     this.state = {}
   }
 
-  //   <a
-  //   href="#contact"
-  //   v-smooth-scroll="{ duration: 1000, offset: -50}"
-  // >
-  //   <button>Get A Free Quote</button>
-  // </a>
   render() {
     return (
       <div>
