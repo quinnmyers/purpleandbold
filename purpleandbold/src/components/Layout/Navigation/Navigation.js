@@ -87,16 +87,27 @@ class Navigation extends Component {
                   ref={div => (this.mobilenav = div)}
                 >
                   {this.state.navItems.map(n => (
-                    <a
+                    // <a
+                    //   className={`nav__container__mobilenav__container__item ${
+                    //     this.state.mobileNavExpanded ? 'expanded' : ''
+                    //   }`}
+                    //   onClick={this.handleHamburgerClick.bind(this)}
+                    //   href={n.url}
+                    //   key={n.url}
+                    // >
+                    //   {n.name}
+                    // </a>
+                    <AnchorLink
                       className={`nav__container__mobilenav__container__item ${
                         this.state.mobileNavExpanded ? 'expanded' : ''
                       }`}
                       onClick={this.handleHamburgerClick.bind(this)}
                       href={n.url}
+                      offset="60"
                       key={n.url}
                     >
                       {n.name}
-                    </a>
+                    </AnchorLink>
                   ))}
                 </div>
               </div>

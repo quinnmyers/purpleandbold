@@ -5,6 +5,8 @@ import PropTypes from 'prop-types'
 import { SlideDown } from 'react-slidedown'
 import 'react-slidedown/lib/slidedown.css'
 
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+
 import './mobilenav.sass'
 
 class MobileNav extends Component {
@@ -43,6 +45,17 @@ class MobileNav extends Component {
                   >
                     {n.name}
                   </a>
+
+                  {/* <AnchorLink 
+                    className="mobilenav__item"
+                    href={n.url}
+                    key={n.name}
+                    onClick={this.collapseMobileNav()}
+                    href={n.url}
+                    offset="70"
+                    key={n.url}>
+                      {n.name}
+                  </AnchorLink> */}
                 </div>
               ))
             : ''}
