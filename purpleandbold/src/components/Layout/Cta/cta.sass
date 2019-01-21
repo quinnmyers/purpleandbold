@@ -23,7 +23,7 @@
     height: 70px
     font-size: 1.7vw
   @include tablet-phone 
-    height: 125px
+    height: 140px
   &.open 
     transform: translateY(0)
     // background: lightgreen
@@ -68,7 +68,7 @@
       p 
         font-size: 0.8em
         @include tablet-phone 
-          font-size: 1em
+          font-size: 1.2em
       &.visible 
         transform: translateY(0)
         opacity: 1
@@ -87,7 +87,7 @@
           @media(max-width: 740px)
             font-size: 1.05em
           @include tablet-phone 
-            font-size: 1.6em
+            font-size: 1.68em
             margin-bottom: 0.35em
       &__content 
         @include tablet-phone 
@@ -109,6 +109,7 @@
         font-size: 0.68em
         @include tablet-phone
           margin-top: .15em
+          margin-bottom: .35em
           font-size: 1.2em
       &__signup
         display: flex 

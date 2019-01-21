@@ -3,6 +3,9 @@
 
 .wrapper
   margin-bottom: .6em
+  @include phone-large 
+    display: flex 
+    justify-content: space-between
   @include phone-small 
     display: flex 
     width: 100% 
@@ -23,11 +26,8 @@
     background-position: right top
     @include edgesnap 
       padding: .375em 1.8em
-    @include phone-large 
-      font-size: 0.7em
-    @include phone-small 
-      padding: 3px 12px
-      margin: 0px 0px
+    @include phone-large
+      font-size: 0.85em
     &.grow 
       animation: portfolio-tag-bounce .5s forwards
     &:nth-child(1)

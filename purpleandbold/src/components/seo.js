@@ -62,9 +62,9 @@ function SEO({ description, lang, meta, keywords, title }) {
               .concat(
                 keywords.length > 0
                   ? {
-                    name: `keywords`,
-                    content: keywords.join(`, `),
-                  }
+                      name: `keywords`,
+                      content: keywords.join(`, `),
+                    }
                   : []
               )
               .concat(meta)}
@@ -78,7 +78,16 @@ function SEO({ description, lang, meta, keywords, title }) {
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  keywords: [],
+  keywords: [
+    'las vegas creative agency',
+    'las vegas digital agency',
+    'las vegas website design',
+    'las vegas web developer',
+    'las vegas logo design',
+    'las vegas grapic designer',
+    'las vegas web designer',
+    'las vegas creative agency',
+  ],
 }
 
 SEO.propTypes = {
