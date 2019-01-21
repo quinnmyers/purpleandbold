@@ -2,7 +2,7 @@
 
 section.aboutsection 
   background: $light-grey
-
+  padding: 0px 0px
 .about
   display: flex
   justify-content: center
@@ -17,12 +17,12 @@ section.aboutsection
   @include tablet
     padding: 80px 0px
   @media(max-width: 500px)
-    height: 575px
+    height: 615px
     padding: 0px 0px
   @media(max-width: 440px)
-    height: 550px
+    height: 610px
   @include phone 
-    height: 530px
+    height: 560px
   @include phone-small
     height: 450px
   &__content
@@ -58,13 +58,13 @@ section.aboutsection
         @media(max-width: 500px)
           transform: scale(0.92)
           width: 100%
-          margin-top: 155px 
+          margin-top: 142px 
           margin-left: 15px
         @media(max-width: 440px)
-          margin-top: 148px 
+          margin-top: 132px 
           margin-left: 15px
         @include phone 
-          margin-btop: 155px
+          margin-top: 142px
       &__right
         display: flex
         flex-direction: column
@@ -83,12 +83,12 @@ section.aboutsection
         @media(max-width: 500px)
           width: 93%
           position: absolute
-          width: 92.25%
+          width: 91%
           // margin: 0px 10px
           bottom: 0
           margin-bottom: 40px
-        @include phone 
-          width: 90%
+        @include phone-large
+          width: 88%
         p 
           line-height: 1.35em
           @include edgesnap 

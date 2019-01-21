@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import TestimonialsSlider from './TestimonialsSlider'
 import Content from '../utility/Content/Content'
-import style from './testimonials.module.sass'
+import './testimonials.sass'
 import Controls from './Controls'
 
 import Button from '../utility/Button/Button'
@@ -24,12 +24,12 @@ class Testimonials extends Component {
   }
   render() {
     return (
-      <section className={style.testimonials}>
+      <section className="testimonials">
         <Content>
-          <div className={style.testimonials__content}>
-            <div className={style.testimonials__content__container}>
-              <h2 className={style.section__header}>Testimonials</h2>
-              <div className={style.testimonials__content__container__middle}>
+          <div className="testimonials__content">
+            <div className="testimonials__content__container">
+              <h2 className="section__header">Testimonials</h2>
+              <div className="testimonials__content__container__middle">
                 <TestimonialsSlider playing={this.state.playing} />
                 <Controls
                   pause={this.pauseSlider}
@@ -38,9 +38,9 @@ class Testimonials extends Component {
                 />
               </div>
 
-              <div className={style.testimonials__content__container__cta}>
+              <div className="testimonials__content__container__cta">
                 <h3>Need help with your &nbsp;</h3>
-                <Button text="Get A Free Quote" section="#contact" />
+                <Button text="Contact Us Today" section="#contact" />
               </div>
             </div>
           </div>
