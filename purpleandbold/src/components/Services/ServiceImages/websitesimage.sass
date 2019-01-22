@@ -20,10 +20,9 @@ $numbers-dark: #5A639A
   display: flex
   width: 300px 
   height: 185px
+  background: lightgreen
   box-shadow: 0px 0px 15px 4px rgba(235,235,235,1)
   border-radius: $border-radius
-  // @include tablet 
-  //   width: 100%
   &__editor 
     background: $editor-dark
     height: 100% 
@@ -57,21 +56,23 @@ $numbers-dark: #5A639A
       position: relative
       width: 300px
       //must be the same as the .top height %
-      height: calc(100% - 12%)
+      --height: calc(100% - 12%)
+      height: --height
       overflow-x: hidden
       &__numbers
         display: flex
-        height: 100%
+        height: var(--height)
         align-items: center
         justify-content: center
         &__list
+          max-height: var(--height)
           margin-left: 13px
           list-style: none
           &__item
             color: $numbers-dark
-            font-size: 0.55em 
+            font-size: 7pt 
             font-family: "Inconsolata", sans-serif
-            margin: 2px 0px
+            margin: 1.5px 0px
       &--codeblock, img 
         align-self: flex-start
         margin-top: 10px 
@@ -85,7 +86,7 @@ $numbers-dark: #5A639A
           transform: translateX(-200px)
           transition: transform .25s ease-in-out
       textarea 
-        height: 100% 
+        max-height: var(--height) 
         width: 100%
         position: relative
         z-index: 2
@@ -93,6 +94,7 @@ $numbers-dark: #5A639A
         border: none
         padding-top: 9px
         padding-left: 10px
+        overflow: hidden
         resize: none
         line-height: 1.5em
         font-size: .55em

@@ -61,7 +61,9 @@ class Navigation extends Component {
           <nav>
             <div className="nav__container">
               <div className="nav__container__brand">
-                <img src={brand} alt="purple and bold logo" />
+                <AnchorLink href={'#hero'} offset="70">
+                  <img src={brand} alt="purple and bold logo" />
+                </AnchorLink>
               </div>
               <div className="nav__container__navigation">
                 {this.state.navItems.map(n => (

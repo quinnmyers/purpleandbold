@@ -3,12 +3,20 @@
 //IMPORTANT 
   //in order to reorder these images later or recolor them, if you set the display of the UL/LI
   //to make all panel images show  in a line on top of each other the order is correct, 1 is 1, 2 is 2, etc.
-.wrapper 
+.wrapper
+  margin-left: -26px
   transform: scale(0.8)
   @include edgesnap
+    margin-left: 70px
     transform: scale(0.8)
   @include tablet
     transform: scale(0.6)
+  @include tablet-phone 
+    margin-left: 5px
+  @include navsnap 
+    margin-left: -35px
+  @media(max-width: 500px)
+    margin-left: 0px
   @include phone-small 
     transform: scale(0.55)
   .not__ul
