@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
 import PortfolioNav from './PortfolioNav'
+// smaller
+import dimaMainSmall from '../../images/portfolio/dd/tinified/dimaduchet_main.png'
+import dima2Small from '../../images/portfolio/dd/tinified/dimaduchet_2.png'
+import dima3Small from '../../images/portfolio/dd/tinified/dimaduchet_3.png'
+
+
 import dimaMain from '../../images/portfolio/dd/dimaduchet_main.jpg'
 import dimaLogo from '../../images/portfolio/dd/dima_logo.svg'
 import dima2 from '../../images/portfolio/dd/dimaduchet_2.jpg'
@@ -55,25 +61,22 @@ class Portfolio extends Component {
           services: ['web design', 'web development'],
           siteLink: 'dimaduchet.com',
           mainImg: {
-            src: dimaMain,
+            src: dimaMainSmall,
             alt: 'Dima Duchet Artist Portfolio Landing Page',
           },
           altImages: [
-            {
-              src: dimaMain,
-              alt: 'Dima Duchet Artist Portfolio Landing Page',
-            },
+
             {
               src: dimaLogo,
               alt:
                 'Logo made for Dima Duchet showing two D letters with red underlines',
             },
             {
-              src: dima2,
+              src: dima2Small,
               alt: 'Screenshot of website showing art section',
             },
             {
-              src: dima3,
+              src: dima3Small,
               alt:
                 'Screenshot of website showing about section, cv, and contact',
             },
@@ -92,10 +95,6 @@ class Portfolio extends Component {
             alt: 'Nexus Technology Group Full Logo',
           },
           altImages: [
-            {
-              src: ntgMain,
-              alt: 'Nexus Technology Group Full Logo',
-            },
             {
               src: ntg1,
               alt: 'Nexus Technology Group Smaller Logo',
