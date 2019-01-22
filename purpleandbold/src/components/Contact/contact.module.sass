@@ -3,7 +3,7 @@
 
 $gradient: linear-gradient(145deg, #FED766 0%,#ff6797 85%)
 $inputback: #f7f3f3
-$cardback: rgba(255, 255, 255, .4)
+$cardback: rgba(255, 255, 255, .25)
 $inputColor: black
 $maintextcolor: white
 $disabled: #fc3a3a45
@@ -34,8 +34,10 @@ $disabled: #fc3a3a45
             @include tablet-phone
                 flex-direction: column
             &__left, &__right 
+                input 
+                  margin-top: 4px
                 label 
-                    margin-bottom: 4px
+                  margin-bottom: 4px
             &__left
                 width: 48%
                 justify-content: space-between
@@ -48,9 +50,14 @@ $disabled: #fc3a3a45
                     div:nth-child(1)
                         margin-left: 0px
                     .tag__bubbles
-                        cursor: pointer
-                        //this is the left tags
+                        display: flex 
+                        align-items: center
+                        background-blend-mode: color-dodge
+                        background: rgba(237,113,151, 0.1)
+                        border: 1px solid white
+                        cursor: pointer                        //this is the left tags
                         transition: all 1s ease-in-out
+                        border-radius: 100px
                         
                 h4 
                     font-weight: $light
@@ -177,7 +184,6 @@ $disabled: #fc3a3a45
                 &::placeholder
                     color: $maintextcolor
             &__bubbles
-                display: flex
                 cursor: bubbles
                 background: $cardback
                 border-radius: 15px
@@ -210,7 +216,7 @@ $disabled: #fc3a3a45
             width: 160px
             border: .08em solid $maintextcolor
             border-radius: 3px
-            font-size: .9em
+            font-size: 1em
             letter-spacing: .05em
             font-weight: $light
             transition: all 0.3s ease-in-out
@@ -223,7 +229,7 @@ $disabled: #fc3a3a45
             @include phone-small 
                 margin-bottom: 20px
             &:hover 
-                transform: scale(1.03) translateY(-3px)
+                transform: scale(1.02) translateY(-1px)
             &:disabled
                 background: $disabled
                 box-shadow: 0px 0px 5px 0px $disabled
