@@ -6,7 +6,15 @@ import "./auditcopy.sass"
 class AuditCopy extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            isSent: false,
+        }
+
+    }
+    componentDidMount() {
+        if (window.location.href.slice(-7) === "#sended") {
+            this.setState({ isSent: true })
+        }
     }
     render() {
         return (
@@ -24,10 +32,11 @@ class AuditCopy extends Component {
                     <p>We’ll research your business, do a deep dive into your current presense and strategy, then do the same for a few of your competitors, in 1-3 business days we will email you a PDF of our finding along with a list of suggestions to improve your digital strategy. If you’re open to making some of those improvements, we will send you a formal proposal for the work shortly after. If we work together, great, if not, consider what we give you to be a “to-do” list. Please allow 1-3 business days for these reports to actually get to you. These aren’t automatically generated and the research takes time.</p>
                 </div>
                 <div className="audit__form">
-                    <h5>
+                    <h5>In order to do our research and generate these reports, we need a bit of information from you:</h5>
+                    <div className={this.state.isSent ? "audit__form__sent" : "audit__form__not"}>
+                        <p>Thank you for your submition the information has been recived and is being prossed please allow 1-3 days for a responce.</p>
+                    </div>
 
-                        In order to do our research and generate these reports, we need a bit of information from you:
-                </h5>
                     <Form></Form>
                 </div>
             </div>
