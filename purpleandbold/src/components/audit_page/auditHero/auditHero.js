@@ -16,6 +16,7 @@ class AuditHero extends Component {
                 </div>
                 <div className="audit__hero__right">
                     <img src={heroImg} alt="five pink and peach boxes layed out on a dark purple background from a isomectric view point" />
+
                 </div>
             </Content>
 
