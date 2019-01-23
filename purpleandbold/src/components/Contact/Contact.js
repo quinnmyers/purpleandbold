@@ -70,7 +70,7 @@ class Contact extends Component {
   pushHidden() {
     this.hiddenRef.current.value = `${this.state.priceMin}- ${
       this.state.priceMax
-    } ${this.state.pickedTags}`
+      } ${this.state.pickedTags}`
   }
 
   onSliderChange(e) {
@@ -90,8 +90,8 @@ class Contact extends Component {
               <h2 className={style.section__header}>Contact Us</h2>
             </div>
             <form
-              action="https://formspree.io/l33t.ppl@gmail.com"
               method="POST"
+              action="https://formfor.site/send/nHLl9Gl7zttcbnyXbjDB4WGA2Hxzxq"
             >
               <div className={style.contact__body}>
                 <div
@@ -100,7 +100,7 @@ class Contact extends Component {
                   <div
                     className={`${style.flex__col} ${style.transback} ${
                       style.contact__body__left__name
-                    }`}
+                      }`}
                   >
                     <label htmlFor="name">
                       {' '}
@@ -118,7 +118,7 @@ class Contact extends Component {
                   <div
                     className={`${style.flex__col} ${style.transback} ${
                       style.contact__body__left__company
-                    }`}
+                      }`}
                   >
                     <label htmlFor="company">
                       {' '}
@@ -135,7 +135,7 @@ class Contact extends Component {
                   <div
                     className={`${style.flex__col} ${style.transback} ${
                       style.contact__body__left__telephone
-                    }`}
+                      }`}
                   >
                     <label htmlFor="Telephone">
                       {' '}
@@ -152,7 +152,7 @@ class Contact extends Component {
                   <div
                     className={`${style.flex__col} ${style.transback} ${
                       style.contact__body__left__email
-                    }`}
+                      }`}
                   >
                     <label htmlFor="email">
                       {' '}
@@ -169,7 +169,7 @@ class Contact extends Component {
                   <div
                     className={`${style.flex__col} ${style.transback} ${
                       style.contact__body__left__details
-                    }`}
+                      }`}
                   >
                     <label>Project Details</label>
                     <div className={style.tag}>
@@ -218,7 +218,7 @@ class Contact extends Component {
                   <div
                     className={`${style.flex__col} ${
                       style.contact__body__right__compose
-                    }`}
+                      }`}
                   >
                     <p>
                       Hello. My name is{' '}
@@ -289,7 +289,7 @@ class Contact extends Component {
                   <div
                     className={`${style.flex__col} ${style.transback} ${
                       style.contact__body__right__missed
-                    }`}
+                      }`}
                   >
                     <label htmlFor="missed">Did We Miss Anything?</label>
                     <textarea name="missed" id="missed" name="missed" />
