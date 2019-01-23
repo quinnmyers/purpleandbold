@@ -17,22 +17,22 @@ class Form extends Component {
                 </div>
 
                 <div className="form__small">
-                    <label htmlFor="form_last">Your Last Name</label>
+                    <label htmlFor="form__last">Your Last Name</label>
                     <input type="text" name="last" id="form__last" />
                 </div>
 
                 <div className="form__small">
-                    <label htmlFor="form_business">Name of Your Business</label>
+                    <label htmlFor="form__business">Name of Your Business</label>
                     <input type="text" name="business" id="form__business" />
                 </div>
 
                 <div className="form__small">
-                    <label htmlFor="form_phone">Your Phone Number</label>
+                    <label htmlFor="form__phone">Your Phone Number</label>
                     <input type="text" name="phone" id="form__phone" />
                 </div>
 
                 <div className="form__small">
-                    <label htmlFor="form_website">Your Website URL</label>
+                    <label htmlFor="form__website">Your Website URL</label>
                     <input type="text" name="website" id="form__website" />
                 </div>
 
