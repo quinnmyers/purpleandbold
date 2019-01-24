@@ -11,6 +11,8 @@ import dimaLogo from '../../images/portfolio/dd/dima_logo.svg'
 import dima2 from '../../images/portfolio/dd/dimaduchet_2.jpg'
 import dima3 from '../../images/portfolio/dd/dimaduchet_3.jpg'
 
+import ntgMainpng from '../../images/portfolio/ntg/ntg_main.png'
+import ntg1png from '../../images/portfolio/ntg/ntg_1.png'
 import ntgMain from '../../images/portfolio/ntg/ntg_main.svg'
 import ntg1 from '../../images/portfolio/ntg/ntg_1.svg'
 import Content from '../utility/Content/Content'
@@ -95,6 +97,7 @@ class Portfolio extends Component {
             alt: 'Nexus Technology Group Full Logo',
           },
           altImages: [
+
             {
               src: ntg1,
               alt: 'Nexus Technology Group Smaller Logo',
