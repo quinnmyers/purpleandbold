@@ -1,53 +1,51 @@
 @import '../../../base.sass'
 .form
-
+    margin-top: 2.5em
     display: flex
     width: 100%
+    label 
+      margin-bottom: .25em
     form
         display: flex
         width: 100%
         flex-wrap: wrap
         justify-content: space-between
+    &__small, &__large 
+        input, textarea 
+          border-radius: 2px
+          font-size: 1em
+          padding-left: .35em
     &__small
         margin: .5em 0
         width: 48%
         display: flex
         flex-direction: column
         input
+            height: 28px
             border: 1px solid black
     &__large
-       
         width: 100%
         display: flex
         flex-direction: column
+        margin-top: 1em
         textarea 
             border: 1px solid black
             resize: none
-    button
-        margin-top: 10px
-
-        display: flex 
-        flex-direction: column 
-        justify-content: center
-        align-items: center
+    .button__container
+      display: flex 
+      width: 100% 
+      justify-content: flex-end
+      button
+        padding: .7em 2em
+        margin-top: 1em
         color: black
-        height: 45px
-        width: 160px
-        border: .08em solid black
+        border: 1px solid black
         border-radius: 3px
         font-size: 1em
-        letter-spacing: .05em
         font-weight: $light
-        transition: all 0.3s ease-in-out
-        @include tablet
-        font-size: .85em
-        height: 36px 
-        width: 145px
-        @include phone-large 
-        margin-bottom: 30px
-        @include phone-small 
-        margin-bottom: 20px
+        transition: all 0.4s ease-in-out
         &:hover 
-        transform: scale(1.02) translateY(-1px)
-        &:hover 
-        transform: scale(1) translateY(0px)
+          border: 1px solid #2ecc71 
+          color: #2ecc71 
+          transform: scale(1.02) translateX(1px)
+      

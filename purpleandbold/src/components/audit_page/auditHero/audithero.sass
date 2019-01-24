@@ -1,18 +1,69 @@
 @import '../../base.sass'
 
 .audit__hero
-    width: 100%
-    background: $blue-grey
-    &__content
-        display: flex
-        @include phone-large
-            flex-direction: column-reverse
-        &__left
-            display: flex
-            flex-direction: column
-            height: 100%
-            justify-content: center
-            h2
-                color: white
-            p
-                color: lightgray
+  display: flex
+  width: 100%
+  background: $accentdark
+  &__content
+    // background: orange
+    display: flex
+    justify-content: space-between
+    // background: red
+    @include tablet-phone
+      flex-direction: column
+    &__left
+      display: flex
+      flex-direction: column
+      max-width: 60%
+      align-self: center
+      justify-content: center
+      // background: yellow
+      padding: 6.5em 0em
+      @include edgesnap 
+        padding: 5em 0em
+      @media(max-width: 860px)
+        max-width: 70%
+      @include tablet-phone
+        padding: 3.5em 0em
+        max-width: 100%
+      @include phone-large 
+        padding: 2em 0em
+      h2
+          color: white
+          margin-bottom: 0.8em
+          @include edgesnap 
+            font-size: 1.6em
+          @include tablet-phone 
+            font-size: 1.75em
+      p
+          font-size: 1.1em
+          color: lightgray
+          @include edgesnap 
+            font-size: 1em
+          @include tablet-phone 
+            font-size: 1.2em
+    &__right
+      height: 80%
+      max-width: 40%
+      margin-left: 2em
+      display: flex
+      align-self: center 
+      // background: lightyellow
+      @media(max-width: 860px)
+        max-width: 30%
+      @include tablet-phone
+        justify-content: center
+        max-width: 100%
+        width: 100%
+        margin-left: 0em
+        height: auto
+      img 
+        width: 100%
+        @include tablet-phone 
+          max-width: 100%
+          margin-bottom: 2.5em
+          margin-left: -30px
+        @include phone-large 
+          margin-bottom: 2em 
+          margin-left: -10px
+          width: 90%

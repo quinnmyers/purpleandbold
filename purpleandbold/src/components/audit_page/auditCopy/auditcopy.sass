@@ -1,18 +1,31 @@
 @import '../../base.sass'
 .audit
-    display: flex
-    flex-direction: column
-    // background: plum
-    &__content
-        margin-top: 5em
-        h4,h3
-            margin-bottom: .5rem
+  display: flex
+  flex-direction: column
+  &__content
+    h3 
+      margin-top: 2.25em
+    h3, h4 
+      margin-bottom: 0.2em
+    p 
+      margin-bottom: 2em
     &__form
-        width: 90%
-        margin-top: 5em
-        h5
-            margin-bottom: .5rem
-        &__sent
-            display: flex
-        &__not
-            display: none
+      width: 90%
+      margin-top: 5em
+      h5
+        margin-bottom: .5rem
+  .audit__form__sent, .audit__form__not 
+    display: flex 
+    width: 100% 
+    justify-content: center 
+  .audit__form__not
+    p 
+      display: none
+  .audit__form__sent
+    text-align: center
+    margin-top: 2em
+    p 
+      display: flex
+      font-size: 1.1em
+  a 
+    margin: 1.25em auto
