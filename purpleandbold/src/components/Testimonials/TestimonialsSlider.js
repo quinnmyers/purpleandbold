@@ -12,7 +12,7 @@ class TestimonialsSlider extends Component {
           name: 'Dima Duchet',
           position: 'Artist, Art Lead',
           testimonial:
-            'Purple and Bold has worked on my personal art website, which means that I had to deliver many visual assets. Quinn was patient with me, and had good solutions to any questions I had. I am so excited to finally have a website of my own that is linked to all my other profiles and will serve as a good place to start my business.',
+            'Purple and Bold worked on my personal art website, which means that I had to deliver many visual assets. Quinn was patient with me, and had good solutions to any questions I had. I am so excited to finally have a website of my own that is linked to all my other profiles and will serve as a good place to start my business.',
         },
         {
           id: 2,
@@ -26,12 +26,12 @@ class TestimonialsSlider extends Component {
           name: 'Jared Bonnell',
           position: 'Broker/Owner, One Commercial',
           testimonial:
-            'Purple and Bold has made me the exact website I want that has really helped me get in front of maybe buyers and sellers. I am proud to hand people the business card the designed for me and even prouder when people complement my website.',
+            'Purple and Bold has made me a website that really helps me get in front of buyers and sellers. I am confident when I send people a link to my website or hand them a business card, knowing that my website functions perfectly and looks stunning.',
         },
         {
           id: 4,
           name: 'Jim Jackson',
-          position: 'Broker/Owner, Bluhare Studios',
+          position: 'CEO, Bluhare Studios',
           testimonial:
             'Purple and Bold did a great job on our company website. They were attentive to our needs and delivered the exact product we were looking for in a timely manner.',
         },

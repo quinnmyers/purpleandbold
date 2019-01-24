@@ -40,7 +40,7 @@ class About extends Component {
                   alt="Purple and Bold Logo"
                   className={style.about__content__container__right__image}
                 />
-                <p>
+                {/* <p>
                   Starting a business or building a brand can be overwhelming.
                   Why? So many steps must be taken before you can even start:
                   you need a logo, you need a website, you don’t even have a
@@ -58,6 +58,22 @@ class About extends Component {
                   and frequent communication, and delivering quality products on
                   time, after all, we want to do this for a long time, it’s what
                   we love.
+                </p> */}
+                <p>
+                  At Purple and Bold, we provide custom tailored digital
+                  solutions to businesses, offering personalized services and
+                  products as though we are an in-house team, and we obsess over
+                  the future success of our clients. We first focus on
+                  establishing a strong connection and understanding of our
+                  client's business and goals, with this we gain an advantage
+                  over our competition, we are able to create all aspects of a
+                  successful modern business from the ground up, with a website
+                  that converts, a striking and memorable logo, a brand that
+                  speaks to your audience, and a digital presence that drives
+                  leads. Our approach offers our clients an immense advantage
+                  over their competition, allowing them to gain the benefits of
+                  an in-house developent, design, and marketing team without the
+                  overhead.
                 </p>
               </div>
             </div>
@@ -67,6 +83,5 @@ class About extends Component {
     )
   }
 }
-
 
 export default About
