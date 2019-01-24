@@ -21,9 +21,9 @@ class A extends Component {
     render() {
         return (
             this.state.isHome ?
-                (<AnchorLink href={this.props.href} offset="70">{this.props.children}</AnchorLink>)
+                (<AnchorLink className={this.props.className} href={this.props.href} offset="70">{this.props.children}</AnchorLink>)
                 :
-                (<a href={`${this.state.homePath}/${this.props.href}`}>{this.props.children}</a>)
+                (<a href={`${this.state.homePath}/${this.props.href}`} className={this.props.className}>{this.props.children}</a>)
 
         );
     }
