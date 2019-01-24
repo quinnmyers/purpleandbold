@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 //components
+import A from "../../utility/link/A"
 import Content from '../../utility/Content/Content'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
@@ -61,15 +62,15 @@ class Navigation extends Component {
           <nav>
             <div className="nav__container">
               <div className="nav__container__brand">
-                <AnchorLink href={'#hero'} offset="70">
+                <A href={'#hero'}>
                   <img src={brand} alt="purple and bold logo" />
-                </AnchorLink>
+                </A>
               </div>
               <div className="nav__container__navigation">
                 {this.state.navItems.map(n => (
-                  <AnchorLink href={n.url} offset="70" key={n.url}>
+                  <A href={n.url} key={n.url}>
                     {n.name}
-                  </AnchorLink>
+                  </A>
                 ))}
               </div>
               <div className="nav__container__mobilenav">
@@ -85,7 +86,7 @@ class Navigation extends Component {
                 <div
                   className={`nav__container__mobilenav__container ${
                     this.state.mobileNavExpanded ? 'expanded' : ''
-                  }`}
+                    }`}
                   ref={div => (this.mobilenav = div)}
                 >
                   {this.state.navItems.map(n => (
@@ -99,17 +100,16 @@ class Navigation extends Component {
                     // >
                     //   {n.name}
                     // </a>
-                    <AnchorLink
+                    <A
                       className={`nav__container__mobilenav__container__item ${
                         this.state.mobileNavExpanded ? 'expanded' : ''
-                      }`}
+                        }`}
                       onClick={this.handleHamburgerClick.bind(this)}
                       href={n.url}
-                      offset="60"
                       key={n.url}
                     >
                       {n.name}
-                    </AnchorLink>
+                    </A>
                   ))}
                 </div>
               </div>
