@@ -43,9 +43,12 @@ class Navigation extends Component {
         },
       ],
     }
+    this.handleHamburgerClick = this.handleHamburgerClick.bind(this)
   }
 
   handleHamburgerClick() {
+    console.log("clicking");
+
     this.setState({
       mobileNavExpanded: !this.state.mobileNavExpanded,
     })
@@ -62,7 +65,9 @@ class Navigation extends Component {
           <nav>
             <div className="nav__container">
               <div className="nav__container__brand">
-                <A href={'#hero'}>
+                <A href={'#hero'}
+                  hasOnClick={false}>
+
                   <img src={brand} alt="purple and bold logo" />
                 </A>
               </div>
@@ -104,7 +109,8 @@ class Navigation extends Component {
                       className={`nav__container__mobilenav__container__item ${
                         this.state.mobileNavExpanded ? 'expanded' : ''
                         }`}
-                      onClick={this.handleHamburgerClick.bind(this)}
+                      hasOnClick={true}
+                      onClickDo={this.handleHamburgerClick}
                       href={n.url}
                       key={n.url}
                     >

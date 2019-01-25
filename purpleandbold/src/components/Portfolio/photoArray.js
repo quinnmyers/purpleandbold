@@ -3,6 +3,10 @@ import React from 'react'
 import Lightbox from 'lightbox-react'
 import 'lightbox-react/style.css'
 
+// import Lightbox from 'react-image-lightbox';
+// import 'react-image-lightbox/style.css';
+
+
 import style from './photoarray.module.sass'
 class photoArray extends React.Component {
   constructor(props) {
@@ -44,8 +48,8 @@ class photoArray extends React.Component {
             }
             prevSrc={
               this.state.images[
-                (photoIndex + this.state.images.length - 1) %
-                  this.state.images.length
+              (photoIndex + this.state.images.length - 1) %
+              this.state.images.length
               ]
             }
             onCloseRequest={() => this.setState({ isOpen: false })}
