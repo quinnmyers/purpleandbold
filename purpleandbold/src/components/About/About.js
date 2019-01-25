@@ -60,7 +60,7 @@ class About extends Component {
                   we love.
                 </p> */}
                 <p>
-                  At Purple and Bold, we provide custom tailored digital
+                  At Purple and Bold, we provide custom-tailored digital
                   solutions to businesses, offering personalized services and
                   products as though we are an in-house team, and we obsess over
                   the future success of our clients. We first focus on
@@ -70,9 +70,9 @@ class About extends Component {
                   successful modern business from the ground up, with a website
                   that converts, a striking and memorable logo, a brand that
                   speaks to your audience, and a digital presence that drives
-                  leads. Our approach offers our clients an immense advantage
-                  over their competition, allowing them to gain the benefits of
-                  an in-house developent, design, and marketing team without the
+                  leads. Our approach offers clients an immense advantage over
+                  their competition, allowing them to gain the benefits of an
+                  in-house development, design, and marketing team without the
                   overhead.
                 </p>
               </div>
