@@ -110,6 +110,19 @@ function SEO({ description, lang, meta, keywords, title }) {
     <!-- End Facebook Pixel Code -->`,
               }}
             />
+            <script
+              async
+              src="https://www.googletagmanager.com/gtag/js?id=UA-133235986-1"
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: ` window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+              
+                gtag('config', 'UA-133235986-1');`,
+              }}
+            />
           </div>
         )
       }}
