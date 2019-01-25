@@ -183,13 +183,15 @@ class Cta extends Component {
             {/* main body ends here */}
           </div>
         </Content>
-        <button
-          aria-label="close email sign up form"
-          onClick={this.toggleModal}
-          className={this.state.textVisible ? '' : 'expanded'}
-        >
-          <img src={plusIcon} alt="" />
-        </button>
+        <div className="button__container" onClick={this.toggleModal}>
+          <button
+            aria-label="close email sign up form"
+            // onClick={this.toggleModal}
+            className={this.state.textVisible ? '' : 'expanded'}
+          >
+            <img src={plusIcon} alt="" />
+          </button>
+        </div>
       </div>
     )
   }

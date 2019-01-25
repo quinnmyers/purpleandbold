@@ -16,15 +16,22 @@ section.aboutsection
     padding: 120px 0px
   @include tablet
     padding: 80px 0px
-  @media(max-width: 500px)
-    height: 615px
+  @include tablet-phone 
+    height: 625px 
     padding: 0px 0px
+  // @media(max-width: 500px)
+  //   height: 615px
+  //   padding: 0px 0px
+  @media(max-width: 600px)
+    height: 595px
+  @media(max-width: 500px)
+    height: 625px
   @media(max-width: 440px)
-    height: 640px
+    height: 610px
   @include phone 
     height: 560px
   @include phone-small
-    height: 450px
+    height: 500px
   &__content
     display: flex
     background: orange
@@ -32,7 +39,9 @@ section.aboutsection
       display: flex
       justify-content: space-between
       width: 100%
-      @media(max-width: 500px)
+      // @media(max-width: 500px)
+      //   flex-direction: column
+      @include tablet-phone 
         flex-direction: column
       &__left, &__right
       &__left
@@ -52,16 +61,21 @@ section.aboutsection
         @media(max-width: 700px)
           transform: scale(0.8)
           margin-left: 60px
-        @media(max-width: 540px)
-          transform: scale(0.7)
-          margin-left: 60px
-        @media(max-width: 500px)
+        // @media(max-width: 540px)
+        //   transform: scale(0.7)
+        //   margin-left: 60px
+        @include tablet-phone 
           transform: scale(0.92)
           width: 100%
-          margin-top: 142px 
+          margin-top: 162px 
           margin-left: 15px
+        // @media(max-width: 500px)
+        //   transform: scale(0.92)
+        //   width: 100%
+        //   margin-top: 142px 
+        //   margin-left: 15px
         @media(max-width: 440px)
-          margin-top: 148px 
+          margin-top: 160px 
           margin-left: 15px
         @include phone 
           margin-top: 142px
@@ -78,8 +92,15 @@ section.aboutsection
         @include tablet
           // font-size: .8em
           line-height: 1.45em
-        @include tablet-phone 
-          width: 57%
+        // @include tablet-phone 
+        //   width: 57%
+        @include tablet-phone
+          width: 93%
+          position: absolute
+          width: 91%
+          // margin: 0px 10px
+          bottom: 0
+          margin-bottom: 40px
         @media(max-width: 500px)
           width: 93%
           position: absolute
@@ -104,13 +125,12 @@ section.aboutsection
           @include edgesnap 
             width: 50%
           @media(max-width: 700px)
-            width: 60%
-          @include tablet 
-            // width: 70%
-            // margin-bottom: 15px
-          @media(max-width: 500px)
             width: 50%
+          @include tablet-phone 
             align-self: center
+          @include phone-large 
+            width: 60%
+
         
 @keyframes panel-entry-animation
   from 

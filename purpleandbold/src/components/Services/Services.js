@@ -24,7 +24,7 @@ class Services extends Component {
               //   desc:
               //     'Custom made websites. No templates, no themes, nothing is “out of the box.”  A lot of  people say that, but we mean it.  Also, we realize most clients may not understand why custom websites are important, so let us explain. Your brand and business should dictate the design and functionality of  your website, not constraints set by a theme or template. Nothing should impede on good  design and functionality, which is why (unless otherwise requested) all our websites are coded by hand, from a blank page all the way to a completed website. If you, like many people, need or prefer to work within a CMS like Wordpress or Shopify, no problem at all, we can build you a fully custom theme for any CMS that fits your business’ needs while still maintaining 100% of the custom design.',
               // },
-              desc: `Custom made websites, from landing pages all the way to robust websites featuring advanced business logic. All custom web development products are created using modern technologies paired with best practices. To our clients, this means their website is as fast as it can be, perfectly set up for SEO, with design and functionality specific to your business allowing for icreased conversions, sales, and lead generation, all while working flawlessly across all devices. All custom web development products are still easily maintainable and updateable by the client.`,
+              desc: `Custom made websites, from landing pages all the way to robust websites featuring advanced business logic. All custom web development products are created using modern technologies paired with best practices. To our clients, this means their website is as fast as it can be, perfectly set up for SEO, with design and functionality specifically tailored to your business allowing for increased conversions, sales, and lead generation, while working flawlessly across all devices. All custom web development products are still easily maintainable and updateable.`,
             },
             {
               name: 'Wordpress',
@@ -32,19 +32,19 @@ class Services extends Component {
               //     'Already have a great  Wordpress website or  Wordpress blog that works for you but need some new functionality? Or maybe it’s not so great and needs some attention? We are experts  at working within the Wordpress ecosystem and can make any and all edits or repairs necessary to your  Wordpress website.',
               // },
               desc:
-                'We are experts at working within the Wordpress ecosystem. If you already have a Wordpress website or if Wordpress is the best fit for your needs, we are fully capable of handling all your needs.',
+                'We are experts at working within the Wordpress ecosystem. If you already have a Wordpress website or if Wordpress is the best fit for your business, we are fully capable of handling all your needs.',
             },
             {
               name: 'Web Applications',
               desc:
-                'Need something more complex? We are ready to help you build your business’ application from the ground up and recommend the best available modern technologies to build it upon.  We will help you go from idea to prototype or fully functional application depending on your goals and discuss each option with you so you can make an informed decision.',
+                'Need something more complex? We are ready to help you build your business’ application from the ground up and recommend the best available modern technologies to build it upon.  We will help you go from idea to prototype or fully functional application depending on your goals, and discuss each option with you so you can make an informed decision.',
             },
 
             {
               name: 'Hosting',
               // desc:
               //   'If you want to handle hosting yourself, no problem at all,  you can do whatever you want with your website when we are done with it, you own it. However, some people prefer not to host or manage their website themselves. We offer fast hosting with guaranteed 99.99% uptime and all hosting plans come with monthly reviews of your website, meaning, we fix or update anything that needs attention, for no additional cost.',
-              desc: `If you choose to handle hosting yourself, that's no problem at all; however, some client's prefer this be handled for them. We offer extremely fast hosting with guaranteed 99.99% uptime. All hosting plans come with monthly reviews of your website, meaning, we fix or update anything that needs attention, for no additional cost.`,
+              desc: `If you choose to handle hosting yourself, that's no problem at all, however, some client's prefer this be handled for them. We offer extremely fast hosting with guaranteed 99.99% uptime. All hosting plans come with monthly reviews of your website, meaning, we fix or update anything that needs attention, for no additional cost.`,
             },
           ],
         },
@@ -60,7 +60,7 @@ class Services extends Component {
             {
               name: 'Graphic Design',
               desc:
-                'All modern businesses need graphic design, and need it frequently. Broches, fliers, billboards, newsletters, business cards, stickers, we do it all. We aim to be your business’ partner when you need anything designed and produced, digital or printed.',
+                'All modern businesses need graphic design, and need it frequently. Brochures, fliers, billboards, newsletters, business cards, stickers, we do it all. We aim to be your partner when you need anything designed and produced, digital or printed, presenting you with options, iterating quickly, and offering a fast turnaround.',
             },
             // {
             //   name: 'Illustration',
@@ -70,7 +70,7 @@ class Services extends Component {
             {
               name: 'Motion Graphics',
               desc:
-                'When things move, they get people’s attention.  Motion graphics are very popular and instantly capture attention, you’ve probably noticed a lot of businesses have a moving and transforming logo or illustrated animation that creates intrigue, draws you closer to their content, and introduces you to their brand.',
+                'When things move, they get people’s attention.  Motion graphics are very popular and instantly capture attention, you’ve probably noticed a lot of businesses have a moving and transforming logo or illustrated animation that creates intrigue, draws you closer to their content, and introduces you to their brand, we can create these for you.',
             },
           ],
         },
@@ -82,16 +82,16 @@ class Services extends Component {
               //   desc:
               //     'Giving your businessthe gift of a great logo is usually the best thing you can do for its success.  However, it’s not enough to just have a logo look great on a screen. Think bigger,  your logo needs to look great on a screen, a sticker, a t-shirt, a hat, a billboard,  an envelope, etc., you get the idea. There is a lot to think about when it comes to logos, and we love thinking about them.',
               // },
-              desc: `We create logos that work hard for your business. Logos are arguably the most important aspect of any new business, and can be a large contributing factor to the failure or low perfomance of an existing. Your logo needs to convey the identity of your brand in a matter of seconds and must be memorable and recognizable. Furthermore, we like to think big. Your logo shouldn't just look great on a screen, it needs to look amazing on a billboard, t-shirt, sticker, hat, letter, and everything inbetween. You get the idea, we create logos that work for businesses.`,
+              desc: `We create logos that work hard for your business. Logos are arguably the most important aspect of any new business, and can be a large contributing factor to the success or failure of an existing business. Your logo needs to convey the identity of your brand in a matter of seconds and must be memorable and recognizable. Furthermore, we like to think big. Your logo shouldn't just look great on a screen, it needs to look amazing on a billboard, t-shirt, sticker, hat, letter, and everything in between.`,
             },
             {
               name: 'Business Essentials',
               desc:
-                'All business need some basics that just work, like business cards and letterhead. We are here to help make sure these essential items are the best they can be, and create a cohesive respresentation of your business and brand.',
+                'All business need some basic materials that just work, like business cards and letterhead. We are here to help make sure these essential items are the best they can be, and create a cohesive respresentation of your business and brand.',
             },
             {
               name: 'Product Design',
-              desc: `In some scenarios, a client's brand needs to extend into useable products, and we think that these should be treated with the same attention to detail your website or business card is given. We don't just want to slap your logo on a napkin, or order 10,000 pens with your logo crookedly placed on the side that barely even writes. These are representations of your brand and business, and shouldn't be taken lightly. Instead, we want our clients to give their customers branded prodcuts that actually work and are a pleasure to use, ones that reflect the quality of client's business.`,
+              desc: `In some scenarios, a client's brand needs to extend into useable products, and we think that these should be treated with the same attention to detail your website or business card is given. We don't just want to slap your logo on a napkin, or order 10,000 pens with your logo crookedly slapped on the side that barely even write. These are representations of your brand and business, and shouldn't be taken lightly. Instead, we want our clients to give their customers branded prodcuts that actually work and are a pleasure to use, ones that reflect the quality of our client's business.`,
             },
           ],
         },
@@ -100,11 +100,11 @@ class Services extends Component {
           serviceList: [
             {
               name: 'SEO',
-              desc: `All of our websites come equipped with modern best-practices for on-page SEO, setting you up for success and making sure search engines don’t skip over you. For clients seeking additional SEO services, we focus on driving traffic through captivating content. Great content creates strong SEO, and we feel the best content comes from a collaborative process with our clients. We offer a consulting service throughout the process, taking what you give us and turning it into contetnt that drives traffic to your website and converts.`,
+              desc: `All of our websites come equipped with modern best practices for on-page SEO, setting you up for success and making sure search engines don’t skip over you. For clients seeking additional SEO services, we focus on driving traffic through captivating content. Great content creates strong SEO, and we feel the best content comes from a collaborative process with our clients. We offer a consulting service throughout the process, taking what you give us and turning it into contetnt that drives traffic to your website and converts.`,
             },
             {
               name: 'Social Media Creation',
-              desc: `Modern businesses need social media accounts, we create the neccessary assets to ensure that these profiles reflect your business and brand accurately. We will generate banners and images, and where applicable will set up automated posts and actions based on your website. Don't be the business that has the wrong hours listed on their Google My Business, or the one that has an old phone number on their Facebook. We will make sure this is all set up for you perfectly.`,
+              desc: `Modern businesses need social media accounts, we create the neccessary assets to ensure that these profiles reflect your business and brand accurately. We will generate banners and images, and where applicable will set up automated posts and actions derived from your website. Don't be the business that has the wrong hours listed on their Google My Business, or the one that has an old phone number on their Facebook. We will make sure this is all set up for you perfectly.`,
             },
             {
               name: 'Email Marketing',

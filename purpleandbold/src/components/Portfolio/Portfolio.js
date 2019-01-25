@@ -5,7 +5,6 @@ import dimaMainSmall from '../../images/portfolio/dd/tinified/dimaduchet_main.pn
 import dima2Small from '../../images/portfolio/dd/tinified/dimaduchet_2.png'
 import dima3Small from '../../images/portfolio/dd/tinified/dimaduchet_3.png'
 
-
 import dimaMain from '../../images/portfolio/dd/dimaduchet_main.jpg'
 import dimaLogo from '../../images/portfolio/dd/dima_logo.svg'
 import dima2 from '../../images/portfolio/dd/dimaduchet_2.jpg'
@@ -67,7 +66,6 @@ class Portfolio extends Component {
             alt: 'Dima Duchet Artist Portfolio Landing Page',
           },
           altImages: [
-
             {
               src: dimaLogo,
               alt:
@@ -97,7 +95,6 @@ class Portfolio extends Component {
             alt: 'Nexus Technology Group Full Logo',
           },
           altImages: [
-
             {
               src: ntg1,
               alt: 'Nexus Technology Group Smaller Logo',
@@ -203,7 +200,7 @@ class Portfolio extends Component {
                   </p>
                 </div>
 
-                <a href={this.state.inModal.siteLink}>
+                <a href={`//${this.state.inModal.siteLink}`} target="_blank">
                   <button>Visit Live Site</button>
                 </a>
               </div>
