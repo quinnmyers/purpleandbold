@@ -91,11 +91,20 @@
   opacity: 0
   transform: translateX(-1800px) scale(0.3)
 .ril-image-current
+  // height: 150%
+  max-height: 100vh
+  // max-width: 90vw
   // height: 100vh
   // max-width: 100vw
   @include tablet
-    height: auto
-    max-height: 100vh
-    width: 100%
-    max-width: 100vw
+    // height: auto
+
+    // width: 100%
+    max-width: 100%
     transform: translateX(0px) !important
+.ril-image-prev
+  // min-width: 90vw
+  // height: 150%
+  max-height: 100vh
+  @include tablet
+    max-width: 70% 
