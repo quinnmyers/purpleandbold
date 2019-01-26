@@ -35,6 +35,7 @@ class Contact extends Component {
     this.addCustomTag = this.addCustomTag.bind(this)
     this.onSliderChange = this.onSliderChange.bind(this)
     this.pushHidden = this.pushHidden.bind(this)
+    this.enterHandler = this.enterHandler.bind(this)
   }
   removeTag(i) {
     const tempTags = this.state.pickedTags
@@ -80,7 +81,13 @@ class Contact extends Component {
     })
     this.pushHidden()
   }
-
+  enterHandler(event) {
+    if (event.key === "Enter") {
+      event.preventDefault(); // Let's stop this event.
+      event.stopPropagation(); // Really this time.
+      this.addCustomTag()
+    }
+  }
   render() {
     return (
       <section id="contact" className={style.section}>
@@ -91,7 +98,7 @@ class Contact extends Component {
             </div>
             <form
               method="POST"
-              action="https://formfor.site/send/nHLl9Gl7zttcbnyXbjDB4WGA2Hxzxq"
+              action="https://formfor.site/send/f9sTRegHMvoV5rIl1riKHnpQl3yK23"
             >
               <div className={style.contact__body}>
                 <div
@@ -141,6 +148,7 @@ class Contact extends Component {
                       {' '}
                       Telephone *
                       <input
+                        required
                         requiredtype="text"
                         name="telephone"
                         onChange={this.handleChange}
@@ -158,6 +166,7 @@ class Contact extends Component {
                       {' '}
                       Email *
                       <input
+                        required
                         requiredtype="text"
                         name="email"
                         onChange={this.handleChange}
@@ -186,6 +195,7 @@ class Contact extends Component {
                         enter custom tags for what your looking for help with
                       </label>
                       <input
+                        onKeyDown={this.enterHandler}
                         id="custom__tag"
                         type="text"
                         placeholder="Enter Your Own"
@@ -193,7 +203,7 @@ class Contact extends Component {
                         name="customTag"
                         value={this.state.customTag}
                       />
-                      <button onClick={() => this.addCustomTag()}> +</button>
+                      <button onClick={() => this.addCustomTag()} type="button"> +</button>
                     </div>
                     <h4>Budget</h4>
                     <div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PortfolioNav from './PortfolioNav'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 // smaller
 import dimaMainSmall from '../../images/portfolio/dd/tinified/dimaduchet_main.png'
 import dima2Small from '../../images/portfolio/dd/tinified/dimaduchet_2.png'
@@ -148,19 +149,28 @@ class Portfolio extends Component {
             <div className={style.portfolio}>
               <h2 className={style.section__header}>Portfolio</h2>
               <PortfolioNav filter={this.filter} list={this.state.tagArray} />
+
               <div className="portfolio__grid">
-                <div className="portfolio__grid__container">
+                <TransitionGroup className="portfolio__grid__container">
                   {this.state.showing.map((p, index) => (
-                    <div
+                    <CSSTransition
                       key={p.id}
-                      className={`item portfolio__grid__container__item ${p.type.toLowerCase()} is-visible`}
-                      onClick={() => this.openModal(index)}
+                      timeout={500}
+                      classNames="grid"
                     >
-                      <img src={p.mainImg.src} alt={p.mainImg.alt} />
-                    </div>
+                      <div
+
+                        className={`item portfolio__grid__container__item ${p.type.toLowerCase()} is-visible`}
+                        onClick={() => this.openModal(index)}
+                      >
+                        <img src={p.mainImg.src} alt={p.mainImg.alt} />
+                      </div>
+                    </CSSTransition>
                   ))}
-                </div>
+                </TransitionGroup>
+
               </div>
+
             </div>
           </Content>
           <Modal
