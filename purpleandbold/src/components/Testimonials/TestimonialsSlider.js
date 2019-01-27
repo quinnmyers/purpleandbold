@@ -19,7 +19,7 @@ class TestimonialsSlider extends Component {
           name: 'Robert Riordan',
           position: 'Actor, Singer',
           testimonial:
-            'Purple and Bold takes the picture in your head and brings it to life. They knows how to simplify tastefully and create solid options quickly. They are a real gem to work with too, and communicate very well.',
+            'Purple and Bold takes the picture in your head and brings it to life. They know how to simplify tastefully and create solid options quickly. They are a real gem to work with too, and communicate very well.',
         },
         {
           id: 3,

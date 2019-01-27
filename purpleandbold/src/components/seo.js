@@ -110,7 +110,7 @@ function SEO({ description, lang, meta, keywords, title }) {
     <!-- End Facebook Pixel Code -->`,
               }}
             />
-            <script
+            {/* <script
               async
               src="https://www.googletagmanager.com/gtag/js?id=UA-133235986-1"
             />
@@ -122,7 +122,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               
                 gtag('config', 'UA-133235986-1');`,
               }}
-            />
+            /> */}
           </div>
         )
       }}

@@ -32,13 +32,14 @@ module.exports = {
     `gatsby-plugin-sharp`,
     //plugins we added
     //google anayltics
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     // replace "UA-XXXXXXXXX-X" with your own Tracking ID
-    //     trackingId: 'UA-133235986-1',
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
+        trackingId: 'UA-133235986-1',
+        head: false,
+      },
+    },
     //sass loader
     `gatsby-plugin-sass`,
     //gatsby-source-contentful plugin
