@@ -10,6 +10,7 @@ import Landing from '../components/Landing/Landing'
 import Hero from '../components/Hero/Hero'
 import Services from '../components/Services/Services'
 import Contact from '../components/Contact/Contact'
+import AboutOne from '../components/AboutOne/AboutOne'
 import About from '../components/About/About'
 import Testimonials from '../components/Testimonials/Testimonials'
 import Portfolio from '../components/Portfolio/Portfolio'
@@ -30,10 +31,11 @@ class IndexPage extends React.Component {
     return (
       <div>
         <SEO />
-        <Landing didScroll={this.didScroll} />
+        {/* <Landing didScroll={this.didScroll} /> */}
         <Layout didScroll={this.state.didScroll}>
           <Hero />
           <About />
+          {/* <AboutOne /> */}
           <Services />
           {/* <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} /> */}
           <Testimonials />

@@ -1,0 +1,66 @@
+// this.state.topLoaded
+
+// this.state.middleLoaded
+
+//   this.state.leftMiddleLoaded
+
+//   this.state.middleLeftSecondLoaded
+
+//     this.state.rightMiddleLoaded
+
+
+
+//        this.loadTopText()
+//     this.loadMiddleText()
+//     this.loadMiddleLeftText()
+//     this.loadMiddleRightText()
+@import '../base.sass'
+
+
+section.about 
+  // background: khaki
+  // background: $light-grey
+  padding: 5em 0em
+  @include tablet-phone 
+    padding: 3.5em 0em
+  .about__container
+    display: flex
+    // background: lightgreen
+    overflow: none
+    @include tablet-phone 
+      flex-direction: column
+    &__animation 
+      display: flex
+      align-items: center
+      @include tablet-phone 
+        justify-content: center
+        margin-bottom: 2em 
+      @include phone-large 
+        transform: scale(0.9)
+      // background: pink
+      // max-width: 300px
+      // min-width: 300px
+      // overflow: hidden
+    &__content
+      display: flex
+      align-items: center
+      flex: 1
+      margin-left: 5.25em
+      transform: translateX(20vw)
+      opacity: 0
+      transition: all 1s ease-in-out
+      @media(max-width: 850px)
+        margin-left: 4em
+      @include tablet-phone
+        margin-left: 0em
+      @include tablet-phone 
+        transform: translateY(10vw)
+      &.loaded 
+        transform: translateX(0)
+        opacity: 1
+        @include tablet-phone 
+          transform: translateY(0)
+      
+      p 
+        line-height: 1.35em
+        font-size: 0.975em

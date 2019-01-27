@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import style from './footer.module.sass'
-import brand from '../../../images/brand.svg'
+// import brand from '../../../images/brand.svg'
+import brand from '../../../images/brand_purple.svg'
 class Footer extends Component {
   constructor(props) {
     super(props)

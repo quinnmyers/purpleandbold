@@ -4,20 +4,24 @@
 .hero
   display: flex
   height: auto
-  background: $accentdark
+  // background: $accentdark
+  background: $light-grey
   overflow: hidden
   padding: 0px 0px
   &__image__container
     display: flex
     justify-content: center
     position: relative
+    background: red
     img
-      transition: all 1s ease-in-out
       position: absolute
       right: 0
       bottom: 0 
       margin-right: -120px
       margin-bottom: -50px
+      transform: translateX(6%)
+      &.loaded 
+        animation: load-monitor 2s forwards
       @include edgesnap
         height: 160%
         margin-right: -250px
@@ -48,27 +52,56 @@
       display: flex
       flex-direction: column
       justify-content: space-around
+      // &__top, &__bottom > h4
+      //   opacity: 0 
+      //   transform: translateY(2vw)
+      //   transition: all 1.5s ease-in-out
+      //   &.loaded
+      //     opacity: 1 
+      //     transform: translateY(0)
       &__top 
+        // transform: translateY(-1vw)
+        transition: all 1.25s ease-in-out
         margin-bottom: 5.5em
+        opacity: 0
+        &.loaded
+          opacity: 1 
+          // transform: translateY(0)
         h4 
           font-size: 2.1em
           @media(max-width: 450px)
             font-size: 3.3em
             max-width: 56%
       &__bottom 
+        max-width: 90%
+        & > h4 
+          opacity: 0
+          // transform: translateX(1vw)
+          transition: all 2.75s ease-in-out
+          &.loaded 
+            opacity: 1
+            // transform: translateX(0)
         h4
           font-size: 1.6em
-          max-width: 60%
+          max-width: 70%
           margin-bottom: 1.1em
           @include tablet-phone 
             margin-bottom: 1.3em
           @media(max-width: 450px)
             font-size: 2.2em
             max-width: 70%
+            
       h4
         font-weight: $light
-        color: white
+        color: black
 
+
+@keyframes load-monitor
+  0%
+    opacity: 0 
+  100% 
+    transform: translateX(0)
+    opacity: 1
 
 //each new item added to [aboutSlides] needs to be added here, with the new number on the end
 //animation timing must be  [aboutSlides].length * 3
@@ -133,3 +166,5 @@
     opacity: 0
   100%
     opacity: 0
+
+

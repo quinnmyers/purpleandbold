@@ -143,8 +143,8 @@ class Portfolio extends Component {
   }
   render() {
     return (
-      <section className="portfolio">
-        <div id="portfolio">
+      <section id="portfolio" className="portfolio">
+        <div>
           <Content>
             <div className={style.portfolio}>
               <h2 className={style.section__header}>Portfolio</h2>
@@ -153,13 +153,8 @@ class Portfolio extends Component {
               <div className="portfolio__grid">
                 <TransitionGroup className="portfolio__grid__container">
                   {this.state.showing.map((p, index) => (
-                    <CSSTransition
-                      key={p.id}
-                      timeout={500}
-                      classNames="grid"
-                    >
+                    <CSSTransition key={p.id} timeout={500} classNames="grid">
                       <div
-
                         className={`item portfolio__grid__container__item ${p.type.toLowerCase()} is-visible`}
                         onClick={() => this.openModal(index)}
                       >
@@ -168,9 +163,7 @@ class Portfolio extends Component {
                     </CSSTransition>
                   ))}
                 </TransitionGroup>
-
               </div>
-
             </div>
           </Content>
           <Modal
@@ -179,6 +172,7 @@ class Portfolio extends Component {
             onRequestClose={this.closeModal}
             contentLabel="Example Modal"
             className={style.modal}
+            closeTimeoutMS={400}
           >
             <div className={style.body}>
               <div className={style.left}>

@@ -2,6 +2,13 @@
 .audit
   display: flex
   flex-direction: column
+  transform: translateY(5%) 
+  opacity: 0
+  transition: all 2s ease-in-out
+  &.loaded 
+    transform: translateY(0) 
+    opacity: 1
+
   &__content
     h3 
       margin-top: 2.25em

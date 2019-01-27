@@ -5,15 +5,15 @@ import './cta.sass'
 import Content from '../../utility/Content/Content'
 
 //images
-import plusIcon from '../../../images/plus-icon.svg'
+import plusIcon from '../../../images/plus-icon-purple.svg'
 
 class Cta extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      scrollShow: false,
-      firsedopend: false,
-      canShow: false,
+      scrollShow: true,
+      firsedopend: true,
+      canShow: true,
       toShow: false,
       open: false,
       collapse: false,
@@ -22,30 +22,31 @@ class Cta extends Component {
     // this.close = this.close.bind(this)
     // this.open = this.open.bind(this)
     this.toggleOpen = this.toggleOpen.bind(this)
-    this.scrollHandler = this.scrollHandler.bind(this)
+    // this.scrollHandler = this.scrollHandler.bind(this)
     this.toggleModal = this.toggleModal.bind(this)
   }
   componentDidMount() {
-    window.addEventListener('scroll', this.scrollHandler)
+    this.toggleOpen()
+    // window.addEventListener('scroll', this.scrollHandler)
   }
-  componentWillUnmount() {
-    window.removeEventListener('scroll')
-  }
-  static getDerivedStateFromProps(props, state) {
-    if (props.didScroll) {
-      return { canShow: true }
-    } else {
-      return null
-    }
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener('scroll')
+  // }
+  // static getDerivedStateFromProps(props, state) {
+  //   if (props.didScroll) {
+  //     return { canShow: true }
+  //   } else {
+  //     return null
+  //   }
+  // }
 
-  componentDidUpdate(nextProps, nextState, snap) {
-    if (!nextProps.didScroll) {
-      if (this.state.firsedopend === false) {
-        this.toggleOpen()
-      }
-    }
-  }
+  // componentDidUpdate(nextProps, nextState, snap) {
+  //   if (!nextProps.didScroll) {
+  //     if (this.state.firsedopend === false) {
+  //       this.toggleOpen()
+  //     }
+  //   }
+  // }
 
   toggleOpen() {
     setTimeout(() => {
@@ -71,20 +72,20 @@ class Cta extends Component {
     }
     // this.setState({ collapse: !this.state.collapse })
   }
-  scrollHandler() {
-    if (window.scrollY <= window.innerHeight) {
-      this.setState({ scrollShow: false })
-    } else {
-      this.setState({ scrollShow: true })
-    }
-  }
+  // scrollHandler() {
+  //   if (window.scrollY <= window.innerHeight) {
+  //     this.setState({ scrollShow: false })
+  //   } else {
+  //     this.setState({ scrollShow: true })
+  //   }
+  // }
 
   render() {
     return (
       <div
         className={`cta ${this.state.open ? 'open' : ' '}
         ${this.state.scrollShow ? 'cta__ult__open' : 'cta__ult__closed'} 
-                        ${this.props.didScroll ? 'cta__showing' : 'cta__gone'}
+                        ${this.state.scrollShow ? 'cta__showing' : 'cta__gone'}
                         ${this.state.collapse ? 'collapsed' : 'expanded'}`}
       >
         <Content>

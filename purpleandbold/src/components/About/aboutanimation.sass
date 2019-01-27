@@ -1,0 +1,196 @@
+@import '../base.sass'
+
+
+.about
+  //styled in about.sass
+  &__container
+    //styled in about.sass
+    &__animation
+      //styled in about.sass
+      &__top, &__middle
+        display: flex
+      &__top 
+        justify-content: flex-end
+        transform: translateX(-20vw)
+        margin-right: -.6em
+        transition: all 1s ease-in-out
+        opacity: 0
+        &.loaded
+          transform: translateX(0)
+          opacity: 1
+        h1 
+          font-size: 5.25em
+          font-weight: 300
+          @include tablet-phone 
+            font-size: 4.75em
+      &__middle
+        justify-content: space-between 
+        h1 
+          font-size: 4.5em
+          font-weight: 900
+          @include tablet-phone 
+            font-size: 4em
+        &__left 
+          transform: scale(2.00) rotate(-270deg)
+          opacity: 0
+          transition: all 1s ease-in-out
+          h1 
+            // font-weight: 300
+          &.loaded 
+            transform: scale(1) rotate(-270deg)
+            opacity: 1
+          &.pulling
+            transform: scale(1) rotate(0)
+            transition: all 1s ease-in-out
+            h1 
+              // font-weight: 900
+        &__right
+          transform: translateY(20vw)
+          opacity: 0
+          transition: all 1s ease-in-out
+          @include tablet-phone 
+            transform: translateX(20vw)
+          &.loaded
+            transform: translateY(0)
+            opacity: 1
+            @include tablet-phone 
+              transform: translateX(0vw)
+
+
+
+// @import '../base.sass'
+
+
+// .about
+//   //styled in about.sass
+//   &__container
+//     //styled in about.sass
+//     &__animation
+//       //styled in about.sass
+//       &__top, &__middle
+//         display: flex
+//       &__top 
+//         justify-content: flex-end
+//         letter-spacing: 12.5em
+//         // text-indent: -12.5em
+//         // text-align: right
+//         transform: translateX(-100%)
+//         margin-right: -.6em
+//         &.loaded
+//           animation: landing-top-load 2.5s forwards 
+//           h1 
+//             animation: landing-top-load 2s forwards
+//         h1 
+//           font-size: 5.25em
+//           font-weight: 300
+//           @include tablet-phone 
+//             font-size: 9em
+//       &__middle
+//         justify-content: space-between 
+//         width: 100%
+//         h1 
+//           font-size: 4.5em
+//           font-weight: 900
+//           @include tablet-phone 
+//             font-size: 8em
+//         &__left 
+//           // background: red
+//           // transform: translateX(-600%)
+//           &.loaded 
+//             animation: landing-middle-left-load 1.5s forwards
+//           &.after-load 
+//             animation: landing-middle-left-after-load 1.5s forwards
+//         &__right
+//           transform: translateX(-100vw)
+//           opacity: 0
+//           &.loaded
+//             animation: landing-middle-right-load 1.5s forwards
+//             opacity: 1
+//       // &__bottom 
+//       //   position: absolute
+//       //   bottom: 0
+//       //   right: 0
+//       //   height: 80px 
+//       //   width: 80px
+//       //   margin-right: 16em
+//       //   transform: rotateX(-180deg) scale(0.4)
+//       //   opacity: 0
+//       //   @include edgesnap 
+//       //     height: 7.25vw
+//       //     width: 7.25vw
+//       //   @include tablet-phone 
+//       //     height: 10vw 
+//       //     width: 10vw
+//       //     bottom: 28vw
+//       //   &.loaded 
+//       //     animation: landing-arrow-load 1.5s forwards
+//       //   &.after-load 
+//       //     margin-right: 0em
+//       //     transform: rotateX(0deg)  scale(1)
+//       //     opacity: 1
+//       //     animation: landing-arrow-after-load 2s infinite
+//       //   img 
+//       //     width: 100% 
+//       //     height: 100%
+//       //     transform: rotate(90deg)
+      
+      
+//   // letter-spacing: 3.5em
+//   //       text-indent: -12.5em
+//   //       text-align: right
+//   //       transform: translateX(-100%)
+// @keyframes landing-top-load
+//   0% 
+//     opacity: 0
+//   10%
+//     // letter-spacing: 3.5em
+//   75% 
+//     // letter-spacing: -.05em
+//   90% 
+//     opacity: 1
+//   100%
+//     transform: translateX(0)
+//     letter-spacing: .1em
+
+
+// @keyframes landing-middle-left-load
+//   0%
+//     opacity: 0
+//     transform: rotate(-180deg) 
+//   90% 
+//     opacity: 1
+//   100%
+//     transform: rotate(-360deg) translateX(0)
+
+// @keyframes landing-middle-left-after-load
+//   0%
+//     transform: rotate(0deg)
+//   100%
+//     transform: rotate(360deg)
+
+
+// @keyframes landing-middle-right-load
+//   0%
+//     opacity: 0
+//     transform: translateY(225px)
+//   100%
+//     transform: translateY(0px) translateX(0px)
+//     opactiy: 1
+
+  
+// @keyframes landing-arrow-load 
+//   0%
+//   100%
+//     margin-right: 0em
+//     transform: rotateX(0deg)  scale(1)
+//     opacity: 1
+
+// @keyframes landing-arrow-after-load
+//   0% 
+//   60% 
+//     margin-bottom: 1.5em
+//   85%
+//     margin-bottom: 0em
+//   100%
+//     margin-bottom: 0em
+    

@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 
 //components
-import A from "../../utility/link/A"
+import A from '../../utility/link/A'
 import Content from '../../utility/Content/Content'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 //images
-import brand from '../../../images/brand.svg'
+// import brand from '../../../images/brand.svg'
+import brand from '../../../images/brand_purple.svg'
+// import brand from '../../../images/brand_light.svg'
 
 //styles
 import './navigation.sass'
@@ -15,6 +17,8 @@ class Navigation extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      loaded: false,
+      textLoaded: false,
       mobileNavExpanded: false,
       focus: false,
       fixedNavClass: false,
@@ -45,9 +49,17 @@ class Navigation extends Component {
     }
     this.handleHamburgerClick = this.handleHamburgerClick.bind(this)
   }
-
+  componentDidMount() {
+    this.loadElements()
+  }
+  loadElements() {
+    this.setState({ loaded: true })
+    setTimeout(() => {
+      this.setState({ textLoaded: true })
+    }, 500)
+  }
   handleHamburgerClick() {
-    console.log("clicking");
+    console.log('clicking')
 
     this.setState({
       mobileNavExpanded: !this.state.mobileNavExpanded,
@@ -60,18 +72,28 @@ class Navigation extends Component {
 
   render() {
     return (
-      <div id="nav" className="navigation" ref={div => (this.navigation = div)}>
+      <div
+        id="nav"
+        className={`navigation ${this.state.loaded ? 'loaded' : ''}`}
+        ref={div => (this.navigation = div)}
+      >
         <Content>
           <nav>
             <div className="nav__container">
-              <div className="nav__container__brand">
-                <A href={'#hero'}
-                  hasOnClick={false}>
-
+              <div
+                className={`nav__container__brand ${
+                  this.state.textLoaded ? 'loaded' : ''
+                }`}
+              >
+                <A href={'#hero'} hasOnClick={false}>
                   <img src={brand} alt="purple and bold logo" />
                 </A>
               </div>
-              <div className="nav__container__navigation">
+              <div
+                className={`nav__container__navigation ${
+                  this.state.textLoaded ? 'loaded' : ''
+                }`}
+              >
                 {this.state.navItems.map(n => (
                   <A href={n.url} key={n.url}>
                     {n.name}
@@ -91,7 +113,7 @@ class Navigation extends Component {
                 <div
                   className={`nav__container__mobilenav__container ${
                     this.state.mobileNavExpanded ? 'expanded' : ''
-                    }`}
+                  }`}
                   ref={div => (this.mobilenav = div)}
                 >
                   {this.state.navItems.map(n => (
@@ -108,7 +130,7 @@ class Navigation extends Component {
                     <A
                       className={`nav__container__mobilenav__container__item ${
                         this.state.mobileNavExpanded ? 'expanded' : ''
-                        }`}
+                      }`}
                       hasOnClick={true}
                       onClickDo={this.handleHamburgerClick}
                       href={n.url}

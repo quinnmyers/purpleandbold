@@ -3,7 +3,7 @@
 .audit__hero
   display: flex
   width: 100%
-  background: $accentdark
+  background: $light-grey
   &__content
     // background: orange
     display: flex
@@ -29,15 +29,25 @@
       @include phone-large 
         padding: 2em 0em
       h2
-          color: white
+          color: black
           margin-bottom: 0.8em
+          opacity: 0
+          transition: all 2s ease-in-out
           @include edgesnap 
             font-size: 1.6em
           @include tablet-phone 
             font-size: 1.75em
+          &.loaded 
+            opacity: 1
       p
           font-size: 1.1em
-          color: lightgray
+          color: $darkgrey
+          transform: translateY(25%)
+          opacity: 0
+          transition: all 2s ease-in-out
+          &.loaded 
+            transform: translateY(0)
+            opacity: 1
           @include edgesnap 
             font-size: 1em
           @include tablet-phone 
@@ -48,13 +58,19 @@
       margin-left: 2em
       display: flex
       align-self: center 
+      transform: scale(0.75)
+      opacity: 0
+      transition: all 2s ease-in-out
       // background: lightyellow
+      &.loaded 
+        transform: scale(1)
+        opacity: 1
       @media(max-width: 860px)
         max-width: 30%
       @include tablet-phone
         justify-content: center
         max-width: 100%
-        width: 100%
+        width: 80%
         margin-left: 0em
         height: auto
       img 

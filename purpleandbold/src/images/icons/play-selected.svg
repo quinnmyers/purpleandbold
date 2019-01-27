@@ -1,35 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="89px" height="80px" viewBox="0 0 89 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
-    <title>Play</title>
+<svg width="81px" height="72px" viewBox="0 0 81 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>play-selected</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
-            <stop stop-color="#FFB476" offset="0%"></stop>
+        <filter x="-17.4%" y="-20.0%" width="134.8%" height="140.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.926575506   0 0 0 0 0.482836174   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#AF25CD" offset="0%"></stop>
             <stop stop-color="#FF6797" offset="100%"></stop>
         </linearGradient>
-        <path d="M75.5537298,33.239438 L16.4113315,59.4886474 C14.0601177,60.5321882 11.0424358,59.9276626 9.67115035,58.1384017 C9.23160412,57.5648794 9,56.9128415 9,56.2489041 L9,3.75048514 C9,1.67914939 11.2065196,0 13.9283995,0 C14.8008598,0 15.6576831,0.176249472 16.4113315,0.51074175 L75.5537298,26.7599512 C77.9049436,27.803492 78.6993325,30.0999314 77.328047,31.8891923 C76.8995995,32.448233 76.2883484,32.9133917 75.5537298,33.239438 Z" id="path-2"></path>
-        <filter x="-21.7%" y="-25.0%" width="143.5%" height="150.0%" filterUnits="objectBoundingBox" id="filter-3">
-            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
-            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.411764706   0 0 0 0 0.588235294  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
-        </filter>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Desktop-HD" transform="translate(-1116.000000, -4655.000000)">
-            <g id="Group-61" transform="translate(0.000000, 4473.000000)">
-                <g id="Group-45" transform="translate(999.000000, 64.000000)">
-                    <g id="t_cont_grey_O_outline">
-                        <g id="Group-59" transform="translate(118.000000, 128.000000)">
-                            <g id="Play">
-                                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
-                                <path stroke="url(#linearGradient-1)" stroke-width="2" d="M75.1480599,32.3254184 C75.7347062,32.0650467 76.2113643,31.7023125 76.5343376,31.2808952 C77.4852964,30.040079 76.9422748,28.4702984 75.1480599,27.6739708 L16.0056616,1.42476139 C15.381658,1.14780945 14.6630936,1 13.9283995,1 C11.7084999,1 10,2.30015911 10,3.75048514 L10,56.2489041 C10,56.6876608 10.1561677,57.1273215 10.4648598,57.5301047 C11.5411191,58.9344137 14.0586905,59.4387533 16.0056616,58.5746278 L75.1480599,32.3254184 Z" stroke-linejoin="square" fill="#102B3F" fill-rule="evenodd"></path>
-                            </g>
-                        </g>
-                    </g>
-                </g>
+        <g id="play-selected" filter="url(#filter-1)" transform="translate(6.000000, 6.000000)">
+            <g id="path-2-link" fill="#000000">
+                <path d="M66.5537298,33.239438 L7.4113315,59.4886474 C5.0601177,60.5321882 2.0424358,59.9276626 0.67115035,58.1384017 C0.23160412,57.5648794 0,56.9128415 0,56.2489041 L0,3.75048514 C0,1.67914939 2.2065196,0 4.9283995,0 C5.8008598,0 6.6576831,0.176249472 7.4113315,0.51074175 L66.5537298,26.7599512 C68.9049436,27.803492 69.6993325,30.0999314 68.328047,31.8891923 C67.8995995,32.448233 67.2883484,32.9133917 66.5537298,33.239438 Z" id="path-2"></path>
             </g>
+            <path d="M66.1480599,32.3254184 C66.7347062,32.0650467 67.2113643,31.7023125 67.5343376,31.2808952 C68.4852964,30.040079 67.9422748,28.4702984 66.1480599,27.6739708 L7.0056616,1.42476139 C6.381658,1.14780945 5.6630936,1 4.9283995,1 C2.7084999,1 1,2.30015911 1,3.75048514 L1,56.2489041 C1,56.6876608 1.1561677,57.1273215 1.4648598,57.5301047 C2.5411191,58.9344137 5.0586905,59.4387533 7.0056616,58.5746278 L66.1480599,32.3254184 Z" id="Path" stroke="url(#linearGradient-2)" stroke-width="2" fill="#2C3031"></path>
         </g>
     </g>
 </svg>

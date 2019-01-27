@@ -40,7 +40,11 @@ class Testimonials extends Component {
 
               <div className="testimonials__content__container__cta">
                 <h3>Need help with your digital strategy?</h3>
-                <Button text="Contact Us Today" section="#contact" />
+                <Button
+                  text="Contact Us Today"
+                  section="#contact"
+                  loadButton="true"
+                />
               </div>
             </div>
           </div>

@@ -1,7 +1,8 @@
 @import '../vars.sass'
 @import '../base.sass'
 
-$gradient: linear-gradient(145deg, #FED766 0%,#ff6797 85%)
+// $gradient: linear-gradient(145deg, #FED766 0%,#ff6797 85%)
+$gradient: linear-gradient(145deg, rgb(175,37,205) 0%,#ff6797 85%)
 $inputback: #f7f3f3
 $cardback: rgba(255, 255, 255, .25)
 $inputColor: black
@@ -10,6 +11,8 @@ $disabled: #fc3a3a45
 .section
     width: 100%
     height: auto
+    position: relative 
+    z-index: 2
     color: $maintextcolor
     background-image: $gradient
     font-family: "avenir", sans-serif
@@ -27,6 +30,13 @@ $disabled: #fc3a3a45
             flex-direction: column
             .real_message
                 visibility: hidden
+        h4.phone
+          max-width: 100%
+          transform: translateY(-100%)
+          a, a:visited, a:hover
+            color: white
+          @include phone-large 
+            text-decoration: underline
         &__body, form
             display: flex
             justify-content: center

@@ -9,10 +9,10 @@ import './button.sass'
 
 //section must be in ID format, like "#contact" for Contact Section
 //text is inner text of button
-const Button = ({ section, text }) => (
-  <div className="button">
+const Button = ({ section, text, loadButton }) => (
+  <div className={`button ${loadButton ? 'loaded' : ''}`}>
     <AnchorLink href={section} offset="70">
-      {text}
+      <div className={`spacer ${loadButton ? 'loaded' : ''}`}>{text}</div>
     </AnchorLink>
   </div>
 )

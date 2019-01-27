@@ -71,7 +71,7 @@ class Contact extends Component {
   pushHidden() {
     this.hiddenRef.current.value = `${this.state.priceMin}- ${
       this.state.priceMax
-      } ${this.state.pickedTags}`
+    } ${this.state.pickedTags}`
   }
 
   onSliderChange(e) {
@@ -82,9 +82,9 @@ class Contact extends Component {
     this.pushHidden()
   }
   enterHandler(event) {
-    if (event.key === "Enter") {
-      event.preventDefault(); // Let's stop this event.
-      event.stopPropagation(); // Really this time.
+    if (event.key === 'Enter') {
+      event.preventDefault() // Let's stop this event.
+      event.stopPropagation() // Really this time.
       this.addCustomTag()
     }
   }
@@ -107,7 +107,7 @@ class Contact extends Component {
                   <div
                     className={`${style.flex__col} ${style.transback} ${
                       style.contact__body__left__name
-                      }`}
+                    }`}
                   >
                     <label htmlFor="name">
                       {' '}
@@ -125,7 +125,7 @@ class Contact extends Component {
                   <div
                     className={`${style.flex__col} ${style.transback} ${
                       style.contact__body__left__company
-                      }`}
+                    }`}
                   >
                     <label htmlFor="company">
                       {' '}
@@ -142,7 +142,7 @@ class Contact extends Component {
                   <div
                     className={`${style.flex__col} ${style.transback} ${
                       style.contact__body__left__telephone
-                      }`}
+                    }`}
                   >
                     <label htmlFor="Telephone">
                       {' '}
@@ -160,7 +160,7 @@ class Contact extends Component {
                   <div
                     className={`${style.flex__col} ${style.transback} ${
                       style.contact__body__left__email
-                      }`}
+                    }`}
                   >
                     <label htmlFor="email">
                       {' '}
@@ -178,7 +178,7 @@ class Contact extends Component {
                   <div
                     className={`${style.flex__col} ${style.transback} ${
                       style.contact__body__left__details
-                      }`}
+                    }`}
                   >
                     <label>Project Details</label>
                     <div className={style.tag}>
@@ -203,7 +203,10 @@ class Contact extends Component {
                         name="customTag"
                         value={this.state.customTag}
                       />
-                      <button onClick={() => this.addCustomTag()} type="button"> +</button>
+                      <button onClick={() => this.addCustomTag()} type="button">
+                        {' '}
+                        +
+                      </button>
                     </div>
                     <h4>Budget</h4>
                     <div>
@@ -228,7 +231,7 @@ class Contact extends Component {
                   <div
                     className={`${style.flex__col} ${
                       style.contact__body__right__compose
-                      }`}
+                    }`}
                   >
                     <p>
                       Hello. My name is{' '}
@@ -299,7 +302,7 @@ class Contact extends Component {
                   <div
                     className={`${style.flex__col} ${style.transback} ${
                       style.contact__body__right__missed
-                      }`}
+                    }`}
                   >
                     <label htmlFor="missed">Did We Miss Anything?</label>
                     <textarea name="missed" id="missed" name="missed" />
@@ -320,6 +323,9 @@ class Contact extends Component {
                 value="Send Message"
                 className={style.send}
               />
+              <h4 className={style.phone}>
+                Or Call Us At: <a href="tel:702-577-0322">702-577-0322</a>
+              </h4>
             </form>
           </div>
         </Content>
