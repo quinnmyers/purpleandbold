@@ -12,46 +12,27 @@ class Cta extends Component {
     super(props)
     this.state = {
       scrollShow: true,
-      firsedopend: true,
       canShow: true,
       toShow: false,
       open: false,
       collapse: false,
       textVisible: true,
+      ult: false
     }
-    // this.close = this.close.bind(this)
-    // this.open = this.open.bind(this)
     this.toggleOpen = this.toggleOpen.bind(this)
-    // this.scrollHandler = this.scrollHandler.bind(this)
     this.toggleModal = this.toggleModal.bind(this)
   }
   componentDidMount() {
     this.toggleOpen()
-    // window.addEventListener('scroll', this.scrollHandler)
   }
-  // componentWillUnmount() {
-  //   window.removeEventListener('scroll')
-  // }
-  // static getDerivedStateFromProps(props, state) {
-  //   if (props.didScroll) {
-  //     return { canShow: true }
-  //   } else {
-  //     return null
-  //   }
-  // }
-
-  // componentDidUpdate(nextProps, nextState, snap) {
-  //   if (!nextProps.didScroll) {
-  //     if (this.state.firsedopend === false) {
-  //       this.toggleOpen()
-  //     }
-  //   }
-  // }
 
   toggleOpen() {
     setTimeout(() => {
       this.setState({ open: true })
     }, 500)
+    setTimeout(() => {
+      this.setState({ ult: true });
+    }, 4000);
   }
 
   toggleModal() {
@@ -70,7 +51,6 @@ class Cta extends Component {
         this.setState({ collapse: true })
       }, 400)
     }
-    // this.setState({ collapse: !this.state.collapse })
   }
   // scrollHandler() {
   //   if (window.scrollY <= window.innerHeight) {
@@ -84,7 +64,8 @@ class Cta extends Component {
     return (
       <div
         className={`cta ${this.state.open ? 'open' : ' '}
-        ${this.state.scrollShow ? 'cta__ult__open' : 'cta__ult__closed'} 
+        ${this.state.ult ? 'cta__ult__open' : 'cta__ult__closed'} 
+
                         ${this.state.scrollShow ? 'cta__showing' : 'cta__gone'}
                         ${this.state.collapse ? 'collapsed' : 'expanded'}`}
       >
@@ -95,7 +76,7 @@ class Cta extends Component {
             <div
               className={`cta__content__left ${
                 this.state.textVisible ? 'visible' : ''
-              }`}
+                }`}
             >
               <div className="cta__content__left__header">
                 <h4>
@@ -113,7 +94,7 @@ class Cta extends Component {
             <div
               className={`cta__content__right ${
                 this.state.textVisible ? 'visible' : ''
-              }`}
+                }`}
             >
               <div className="cta__content__right__signup">
                 {/* Begin Mailchimp Signup Form */}
