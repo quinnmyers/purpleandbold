@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import ReactGA from 'react-ga'
 
 //slide up slide down plugin
 import { SlideDown } from 'react-slidedown'
@@ -21,12 +22,18 @@ class ServiceListItem extends Component {
   toggleSlide() {
     this.setState({ open: !this.state.open })
   }
+  logEvent() {
+    ReactGA.event({
+      category: 'Service Click',
+      action: 'User clicked on Service Item',
+    })
+  }
   render() {
     return (
       <div className="service__block__right__item">
         <div
           className="service__block__right__item__header"
-          onClick={this.toggleSlide.bind(this)}
+          onClick={[this.toggleSlide.bind(this), this.logEvent]}
         >
           <h4 ref={h4 => (this.title = h4)}>{this.props.name}</h4>
           <img
