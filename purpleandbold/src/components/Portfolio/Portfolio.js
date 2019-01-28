@@ -20,6 +20,12 @@ import PhotoArray from './photoArray'
 import Modal from 'react-modal'
 import './portfolio.sass'
 
+//one commercial
+import oneCommHome from '../../images/portfolio/onecomm/one_comm_home.jpg'
+import oneCommIndex from '../../images/portfolio/onecomm/one_comm_index.jpg'
+import oneCommListing from '../../images/portfolio/onecomm/one__comm__listing.jpg'
+import oneCommContact from '../../images/portfolio/onecomm/one_comm_contact.jpg'
+
 import style from './portfolio.module.sass'
 
 class Portfolio extends Component {
@@ -58,6 +64,32 @@ class Portfolio extends Component {
       portfolioPieces: [
         {
           id: 0,
+          name: 'One Commercial Website',
+          type: 'Website',
+          services: ['web development, web design'],
+          siteLink: 'one-commercial.purupleanbold.gq',
+          mainImg: {
+            src: oneCommHome,
+            alt: 'One Commercial Home Page',
+          },
+          altImages: [
+            {
+              src: oneCommIndex,
+              alt: 'One Commercial Home Page',
+            },
+            {
+              src: oneCommListing,
+              alt: 'One Commercial Home Page',
+            },
+            {
+              src: oneCommContact,
+              alt: 'One Commercial Home Page',
+            },
+          ],
+          description: `We made One Commercial a website that took control out of the hands of 3rd party companies and put them in control of the information they present to clients. One Commercial's website serves as a central location for all their listings, giving them a great resource to point potential clients to, with easy ways to get in contact about specific properties if they need more information. Also, we set the website up so it's very easy for One Commercial to share their listings on social media, with a beautiful and information rich experience ready for people when they click-through.`,
+        },
+        {
+          id: 1,
           name: 'Dima Duchet Portfolio Website',
           type: 'Website',
           services: ['web design', 'web development'],
@@ -86,7 +118,7 @@ class Portfolio extends Component {
             'Dima Duchet was in need of a portfolio website to showcase her artwork. We made a beautiful, fast, and responsive website for her that made sure not to detract from her artwork, since that of course had to be the main attraction. We also made sure it was easy and seemless for her to upgrade the website herself as she adds more work to it in the future.',
         },
         {
-          id: 1,
+          id: 2,
           name: 'Nexus Technology Group Logo',
           type: 'Logo',
           services: ['logo design'],
