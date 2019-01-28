@@ -22,6 +22,10 @@ class ServiceListItem extends Component {
   toggleSlide() {
     this.setState({ open: !this.state.open })
   }
+  handleClick() {
+    this.toggleSlide()
+    this.logEvent()
+  }
   logEvent() {
     ReactGA.event({
       category: 'Service Click',
@@ -33,7 +37,8 @@ class ServiceListItem extends Component {
       <div className="service__block__right__item">
         <div
           className="service__block__right__item__header"
-          onClick={[this.toggleSlide.bind(this), this.logEvent]}
+          onClick={this.handleClick.bind(this)}
+          // onClick={[this.toggleSlide.bind(this), this.logEvent]}
         >
           <h4 ref={h4 => (this.title = h4)}>{this.props.name}</h4>
           <img
