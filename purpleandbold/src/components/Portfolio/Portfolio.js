@@ -68,7 +68,7 @@ class Portfolio extends Component {
           name: 'One Commercial Website',
           type: 'Website',
           services: ['web development, web design'],
-          siteLink: 'one-commercial.purupleanbold.gq',
+          siteLink: 'one-commercial.purpleandbold.gq',
           mainImg: {
             src: oneCommHome,
             alt: 'One Commercial Home Page',
