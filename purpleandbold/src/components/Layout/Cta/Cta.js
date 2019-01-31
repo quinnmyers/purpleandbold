@@ -3,6 +3,7 @@ import './cta.sass'
 
 //components
 import Content from '../../utility/Content/Content'
+import ReactGA from 'react-ga'
 
 //images
 import plusIcon from '../../../images/plus-icon-purple.svg'
@@ -17,7 +18,8 @@ class Cta extends Component {
       open: false,
       collapse: false,
       textVisible: true,
-      ult: false
+      ult: false,
+      analyticsClickFired: false,
     }
     this.toggleOpen = this.toggleOpen.bind(this)
     this.toggleModal = this.toggleModal.bind(this)
@@ -31,8 +33,8 @@ class Cta extends Component {
       this.setState({ open: true })
     }, 500)
     setTimeout(() => {
-      this.setState({ ult: true });
-    }, 4000);
+      this.setState({ ult: true })
+    }, 4000)
   }
 
   toggleModal() {
@@ -51,6 +53,19 @@ class Cta extends Component {
         this.setState({ collapse: true })
       }, 400)
     }
+    // if (!this.state.analyticsClickFired) {
+    //   this.setState({ analyticsClickFired: true })
+    //   this.logEvent()
+    // } else {
+    //   return
+    // }
+    this.logToggleEvent()
+  }
+  logToggleEvent() {
+    ReactGA.event({
+      category: 'CTA Toggle Click',
+      action: 'User toggled CTA',
+    })
   }
   // scrollHandler() {
   //   if (window.scrollY <= window.innerHeight) {
@@ -76,7 +91,7 @@ class Cta extends Component {
             <div
               className={`cta__content__left ${
                 this.state.textVisible ? 'visible' : ''
-                }`}
+              }`}
             >
               <div className="cta__content__left__header">
                 <h4>
@@ -94,7 +109,7 @@ class Cta extends Component {
             <div
               className={`cta__content__right ${
                 this.state.textVisible ? 'visible' : ''
-                }`}
+              }`}
             >
               <div className="cta__content__right__signup">
                 {/* Begin Mailchimp Signup Form */}

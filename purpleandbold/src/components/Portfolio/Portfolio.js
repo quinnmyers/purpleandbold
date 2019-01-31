@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PortfolioNav from './PortfolioNav'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import ReactGA from 'react-ga'
 // smaller
 import dimaMainSmall from '../../images/portfolio/dd/tinified/dimaduchet_main.png'
 import dima2Small from '../../images/portfolio/dd/tinified/dimaduchet_2.png'
@@ -173,6 +174,16 @@ class Portfolio extends Component {
   selectedPiece(index) {
     return `potfolioPieces[index]`
   }
+  handlePortfolioItemClick(index) {
+    this.openModal(index)
+    this.logPortfolioEvent()
+  }
+  logPortfolioEvent() {
+    ReactGA.event({
+      category: 'Portfolio Click',
+      action: 'User clicked portfolio item',
+    })
+  }
   render() {
     return (
       <section id="portfolio" className="portfolio">
@@ -188,7 +199,10 @@ class Portfolio extends Component {
                     <CSSTransition key={p.id} timeout={500} classNames="grid">
                       <div
                         className={`item portfolio__grid__container__item ${p.type.toLowerCase()} is-visible`}
-                        onClick={() => this.openModal(index)}
+                        onClick={this.handlePortfolioItemClick.bind(
+                          this,
+                          index
+                        )}
                       >
                         <img src={p.mainImg.src} alt={p.mainImg.alt} />
                       </div>

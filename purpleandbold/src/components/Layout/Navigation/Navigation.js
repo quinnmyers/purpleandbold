@@ -3,7 +3,8 @@ import React, { Component } from 'react'
 //components
 import A from '../../utility/link/A'
 import Content from '../../utility/Content/Content'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
+import ReactGA from 'react-ga'
+// import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 //images
 // import brand from '../../../images/brand.svg'
@@ -59,8 +60,7 @@ class Navigation extends Component {
     }, 500)
   }
   handleHamburgerClick() {
-    console.log('clicking')
-
+    // this.logEvent('Hamburger')
     this.setState({
       mobileNavExpanded: !this.state.mobileNavExpanded,
     })
@@ -69,7 +69,16 @@ class Navigation extends Component {
     const navHeight = navStyle.getPropertyValue('height')
     this.mobilenav.style.marginTop = `${navHeight}`
   }
-
+  handleMobileNavClick() {
+    this.handleHamburgerClick()
+    this.logNavEvent()
+  }
+  logNavEvent() {
+    ReactGA.event({
+      category: `Nav Click`,
+      action: `User click on Navigation Link`,
+    })
+  }
   render() {
     return (
       <div
@@ -95,7 +104,13 @@ class Navigation extends Component {
                 }`}
               >
                 {this.state.navItems.map(n => (
-                  <A href={n.url} key={n.url}>
+                  <A
+                    href={n.url}
+                    key={n.url}
+                    // onClick={this.testFunction.bind(this)}
+                    hasOnClick={true}
+                    onClickDo={this.logNavEvent.bind(this)}
+                  >
                     {n.name}
                   </A>
                 ))}
@@ -132,7 +147,7 @@ class Navigation extends Component {
                         this.state.mobileNavExpanded ? 'expanded' : ''
                       }`}
                       hasOnClick={true}
-                      onClickDo={this.handleHamburgerClick}
+                      onClickDo={this.handleMobileNavClick.bind(this)}
                       href={n.url}
                       key={n.url}
                     >
