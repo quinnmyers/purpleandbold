@@ -213,6 +213,7 @@ class Portfolio extends Component {
             </div>
           </Content>
           <Modal
+            ariaHideApp={false}
             isOpen={this.state.modalIsOpen}
             onAfterOpen={this.afterOpenModal}
             onRequestClose={this.closeModal}
