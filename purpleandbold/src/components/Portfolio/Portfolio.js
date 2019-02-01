@@ -7,13 +7,14 @@ import dimaMainSmall from '../../images/portfolio/dd/tinified/dimaduchet_main.pn
 import dima2Small from '../../images/portfolio/dd/tinified/dimaduchet_2.png'
 import dima3Small from '../../images/portfolio/dd/tinified/dimaduchet_3.png'
 
-import dimaMain from '../../images/portfolio/dd/dimaduchet_main.jpg'
+// import dimaMain from '../../images/portfolio/dd/dimaduchet_main.jpg'
 import dimaLogo from '../../images/portfolio/dd/dima_logo.svg'
-import dima2 from '../../images/portfolio/dd/dimaduchet_2.jpg'
-import dima3 from '../../images/portfolio/dd/dimaduchet_3.jpg'
+// import dima2 from '../../images/portfolio/dd/dimaduchet_2.jpg'
+// import dima3 from '../../images/portfolio/dd/dimaduchet_3.jpg'
 
-import ntgMainpng from '../../images/portfolio/ntg/ntg_main.png'
-import ntg1png from '../../images/portfolio/ntg/ntg_1.png'
+// import ntgMainpng from '../../images/portfolio/ntg/ntg_main.png'
+// import ntg1png from '../../images/portfolio/ntg/ntg_1.png'
+
 import ntgMain from '../../images/portfolio/ntg/ntg_main.svg'
 import ntg1 from '../../images/portfolio/ntg/ntg_1.svg'
 import Content from '../utility/Content/Content'

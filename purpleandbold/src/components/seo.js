@@ -63,16 +63,16 @@ function SEO({ description, lang, meta, keywords, title }) {
                 .concat(
                   keywords.length > 0
                     ? {
-                        name: `keywords`,
-                        content: keywords.join(`, `),
-                      }
+                      name: `keywords`,
+                      content: keywords.join(`, `),
+                    }
                     : []
                 )
                 .concat(meta)}
             />
             <script
               dangerouslySetInnerHTML={{
-                __html: ` <!-- Facebook Pixel Code -->
+                __html: `
     <script>
       !(function(f, b, e, v, n, t, s) {
         if (f.fbq) return;
@@ -106,8 +106,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         width="1"
         style="display:none"
         src="https://www.facebook.com/tr?id=1124198527744940&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Facebook Pixel Code -->`,
+    /></noscript>`,
               }}
             />
             {/* <script
