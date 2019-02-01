@@ -70,7 +70,8 @@ function SEO({ description, lang, meta, keywords, title }) {
                 )
                 .concat(meta)}
             />
-            <script
+            {/* for testing  */}
+            {/* <script
               dangerouslySetInnerHTML={{
                 __html: `
     <script>
@@ -108,7 +109,10 @@ function SEO({ description, lang, meta, keywords, title }) {
         src="https://www.facebook.com/tr?id=1124198527744940&ev=PageView&noscript=1"
     /></noscript>`,
               }}
-            />
+            /> */}
+
+            {/* for testing */}
+
             {/* <script
               async
               src="https://www.googletagmanager.com/gtag/js?id=UA-133235986-1"
