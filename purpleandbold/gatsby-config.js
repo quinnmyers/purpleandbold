@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Purple and Bold`,
     description: `Las Vegas Digital Agency Specializing in Web Development, Design, and Marketing.`,
-    author: `Purple and Boldsdfs`,
+    author: `Purple and Bold`,
   },
   plugins: [
     {
