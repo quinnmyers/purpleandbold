@@ -7,9 +7,13 @@ import Layout from '../components/layout'
 
 //components
 import PostPreview from '../components/Blog/PostPreview'
+import PostHero from '../components/Blog/PostHero'
 
 //images
 import AnalFeatured from '../images/blog/analytics/blog-analytics-noreflect.jpg'
+
+//styles
+import '../components/blog/blogindex.sass'
 
 class Blog extends Component {
   constructor(props) {
@@ -38,18 +42,32 @@ class Blog extends Component {
           <br />
           <br />
           <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <PostPreview
-            img={AnalFeatured}
-            title="Analytics In Modern Websites"
-            desc={`Learn what analytics are, how to use analytics, and why analytics are important to your business' success`}
-            author={`Quinn Myers`}
-            date={`2/6/19`}
-          />
+          <div className="test__components">
+            <PostPreview
+              img={AnalFeatured}
+              title="Analytics In Modern Websites"
+              desc={`Learn what analytics are, how to use analytics, and why analytics are important to your business' success`}
+              author={`Quinn Myers`}
+              date={`2/6/19`}
+            />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <PostHero
+              img={AnalFeatured}
+              title="Analytics In Modern Websites"
+              desc={`Learn what analytics are, how to use analytics, and why analytics are important to your business' success`}
+              author={`Quinn Myers`}
+              date={`2/6/19`}
+            />
+          </div>
         </Content>
       </Layout>
     )

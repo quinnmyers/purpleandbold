@@ -5,12 +5,18 @@
   margin-left: 150px
   margin-top: 150px
   margin-bottom: 150px
+  &:hover 
+    cursor: pointer
+    .postpreview__image 
+      box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2)
+      transform: scale(1.01) translateY(-.3em)
   &__image
     // background: lightgreen
     padding: 2.8em 1em
     border-radius: 22px
     width: 100%
     box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15)
+    transition: all .55s ease-in-out
     img
       width: 100%
 
