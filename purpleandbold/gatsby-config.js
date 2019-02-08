@@ -60,13 +60,17 @@ module.exports = {
         // GitHub Flavored Markdown mode (default: true)
         gfm: true,
         // Plugins configs
-        plugins: [{
-          resolve: `gatsby-remark-images`,
-          options: {
-            maxWidth: 390,
-            wrapperStyle: { float: "" }
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 490,
+              wrapperStyle: `float: right; width: 50%; margin-right: 0; margin-top: 6em;`,
+
+              linkImagesToOriginal: false
+            },
           },
-        },],
+        ],
       },
     },
     //sass loader

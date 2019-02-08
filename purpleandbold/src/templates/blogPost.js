@@ -1,34 +1,132 @@
 import React, { Component } from 'react';
 import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Content from '../components/utility/Content/Content'
+import PostHero from '../components/Blog/PostHero'
+import PostPreview from '../components/Blog/PostPreview'
+
 import "./blogpost.sass"
+
 class BlogPostTemplate extends Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            showing: [],
+            posts: []
+        }
+        this.filter = this.filter.bind(this)
+    }
+    static getDerivedStateFromProps(nextProps, prevState) {
+        return {
+            posts: nextProps.data.allMarkdownRemark.edges
+        }
     }
     componentDidMount() {
-        console.log(this.props);
+        // console.log(this.props.data.allMarkdownRemark.edges);
+
+        // this.setState({ posts: this.props.data.allMarkdownRemark.edges })
+        this.filter(this.props.data.markdownRemark.frontmatter.tags)
+    }
+
+    componentWillUnmount() {
+    }
+    filter(tags) {
+        console.log("filtering");
+        const posts = this.state.posts
+        const index = posts.findIndex(post => post.node.id == this.props.data.markdownRemark.id)
+        console.log("state", this.state);
+
+        console.log("name", this.props.data.markdownRemark.frontmatter.title);
+        console.log("tags", tags);
+
+        console.log("post befor", posts);
+        posts.splice(index, 1)
+        console.log("post after", posts);
+
+        let temparray = []
+        //first try
+
+        // this.props.data.allMarkdownRemark.edges.forEach(element => {
+        //     tag.forEach(tagel => {
+        //         element.node.frontmatter.tag.forEach(tag => {
+
+        //             if (tag === tagel) {
+        //                 temparray.push(element)
+        //                 break
+        //             } else {
+        //                 return
+        //             }
+        //         })
+        //     });
+        // })
+        // failed because no brake 
+        //second try
+
+        // tags.forEach(tag => {
+        //     const finding = posts.find(post => {
+        //         for (let i = 0; i < post.node.frontmatter.tags.length; i++) {
+        //             const element = post.node.frontmatter.tags[i];
+        //             return element === tag
+        //         }
+        //         // return post.node.frontmatter.tags[0] === tag
+        //     })
+        //     console.log("tag", tag, "finding", finding);
+        //     temparray.push(finding)
+
+        // });
+        // failed becaue of limmits in find
+        //third try 
+        // loop over all posts
+        posts.forEach(post => {
+            // loop over the tags you are matching to 
+            for (let i = 0; i < tags.length; i++) {
+                const tag = tags[i];
+                // inside of the loop of tags you are matching too we loop over the tages on each post
+                for (let pi = 0; pi < post.node.frontmatter.tags.length; pi++) {
+                    const ptag = post.node.frontmatter.tags[pi];
+                    // now we check if the tag on the post matches the tag we are looping over on line 61
+                    if (tag === ptag) {
+                        // if its true then we push the whole post el from the foreach loop into an array and brake witch kills all of the for loops 
+                        temparray.push(post)
+                        break
+                    }
+                }
+            }
+        });
+        // if there are no posts that match our tags then it will just show all of the posts 
+        if (temparray.length === 0) {
+            console.log("hit 0");
+
+            temparray = posts
+        }
+        console.log("temp", temparray);
+
+        // setting the state that we loop over to show the posts at the bottom of the page 
+        this.setState({ showing: temparray })
 
     }
+
     render() {
-        const post = this.props.data.markdownRemark
         const { previous, next } = this.props.pageContext
+        const post = this.props.data.markdownRemark
+        const posts = this.props.data.allMarkdownRemark.edges
+        console.log("posts render", posts);
+
 
         return (
             <Layout>
                 <SEO />
                 <Content>
                     <div className="blog">
-                        <Img fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />
+                        <PostHero
+                            img={post.frontmatter.featuredImage.childImageSharp.fluid}
+                            title={post.frontmatter.title}
+                            desc={post.frontmatter.exceprt}
+                            author={post.frontmatter.author}
+                            date={post.frontmatter.date}
+                        />
 
-                        <h2>{post.frontmatter.title}</h2>
-                        <p>
-                            {post.frontmatter.date}
-                        </p>
                         <div className="blog__body">
                             <div className="blog__body__icons">
                                 <a href="google.com" aria-label="link to navigation bar">
@@ -46,6 +144,21 @@ class BlogPostTemplate extends Component {
                             </div>
                             <div className="blog__body__post">
                                 <div className="blog__body__post__content" dangerouslySetInnerHTML={{ __html: post.html }} />
+                                <div className="blog__body__post__more">
+                                    {this.state.showing.map(oPost => (
+                                        <div key={oPost.node.id}>
+                                            <PostPreview
+                                                slug={oPost.node.fields.slug}
+                                                img={oPost.node.frontmatter.featuredImage.childImageSharp.fluid}
+                                                title={oPost.node.frontmatter.title}
+                                                desc={oPost.node.frontmatter.excerpt}
+                                                author={oPost.node.frontmatter.author}
+                                                date={oPost.node.frontmatter.date}
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+
                                 <ul>
                                     <li>
                                         {previous && (
@@ -91,6 +204,28 @@ query($slug: String!) {
       date(formatString: "MMMM DD, YYYY")
     }
     }
+    allMarkdownRemark {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            id
+            frontmatter {
+              tags
+              exceprt
+              title
+              featuredImage {
+                childImageSharp {
+                  fluid(maxWidth: 200) {
+                    ...GatsbyImageSharpFluid_noBase64
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
   }`
 
 export default BlogPostTemplate

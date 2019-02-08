@@ -1,8 +1,8 @@
 ---
-title: Hello World egg
+title: Hello World
 date: "2015-05-01T22:12:03.284Z"
 author: "cole-php wizzard"
-tags: ["marketing" ,"eggs" ]
+tags: ["website" ,"eggs" ]
 featuredImage: cover.jpg
 exceprt: "I love eggs"
 ---
