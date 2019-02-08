@@ -1,0 +1,31 @@
+@import '../components/base.sass'
+
+.blog
+    display: flex
+    flex-direction: column
+    &__body
+        align-self: center
+        display: flex
+        width: 80%
+        &__icons
+            margin: 10px
+            flex-direction: column
+            display: flex
+            position: sticky
+            top: 0
+            a
+                margin-bottom: 7px
+        &__post
+            display: flex
+            flex-direction: column
+            &__content
+
+                color: $bloggrey
+                blockquote
+                    color: black
+                    border-left: 1px solid black
+                    padding: 10px
+                    margin: 10px
+                    // background: red
+                img
+                    float: left
