@@ -2,7 +2,7 @@
 title: Hello World wizzard
 date: '2015-05-01T22:12:03.284Z'
 author: 'Quinn Myers'
-tags: ['website', 'wizzard']
+tags: ['website', 'design', 'wizzard']
 featuredImage: blog-analytics-noreflect.jpg
 exceprt: 'I love eggs'
 ---
