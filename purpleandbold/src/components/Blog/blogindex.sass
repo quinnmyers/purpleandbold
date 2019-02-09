@@ -53,6 +53,14 @@
           margin-right: 1.15em
           border-radius: 100px
           line-height: 1em
+          display: inline-block
+          animation: emptyback .5s forwards
+          transition: all 0.3s ease
+          background: linear-gradient(to bottom, white 50%, black 50%)
+          background-size: 110% 200% 
+          background-position: right top
+        .showing 
+          animation: portfolio-tag-bounce .5s forwards, filback .5s .6s forwards
       &__search 
         display: flex
         width: 20%
@@ -66,3 +74,45 @@
       display: flex
       width: 100% 
       justify-content: space-between
+
+
+@keyframes filback
+  0%
+    color: black
+    background-position: right top
+
+  100%
+    color: white
+    background-position: right bottom
+@keyframes emptyback
+  0%
+    color: white
+    background-position: right bottom
+
+  100%
+    color: black
+    background-position: right top
+
+@keyframes portfolio-tag-bounce 
+  from,
+  20%,
+  53%,
+  80%,
+  
+  to
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    transform: translate3d(0, 0, 0)
+
+  20%,
+  23%
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+    transform: translate3d(0, -15px, 0)
+
+  50%
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+    transform: translate3d(0, -7px, 0)
+
+
+  70%
+    transform: translate3d(0, -2px, 0)
+  85%

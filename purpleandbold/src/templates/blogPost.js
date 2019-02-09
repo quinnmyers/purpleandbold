@@ -32,21 +32,12 @@ class BlogPostTemplate extends Component {
     componentWillUnmount() {
     }
     filter(tags) {
-        console.log("filtering");
+
         const posts = this.state.posts
         const index = posts.findIndex(post => post.node.id == this.props.data.markdownRemark.id)
         const currentPost = posts[index]
-        console.log("state", this.state);
 
-        console.log("name", this.props.data.markdownRemark.frontmatter.title);
-        console.log("tags", tags);
-        console.log("curent before splice", currentPost);
-
-        console.log("post befor", posts);
         posts.splice(index, 1)
-        console.log("curent after splice", currentPost);
-        console.log("post after", posts);
-
         let temparray = []
         //first try
 
@@ -103,17 +94,12 @@ class BlogPostTemplate extends Component {
 
             temparray = posts
         }
-        console.log("temp", temparray);
-
         // setting the state that we loop over to show the posts at the bottom of the page 
         posts.push(currentPost)
         this.setState({
             showing: temparray,
             posts: posts
         })
-
-        console.log("curent after all", currentPost);
-
 
     }
 
