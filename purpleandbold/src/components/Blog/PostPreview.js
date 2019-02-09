@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from "gatsby"
-
+import Img from 'gatsby-image'
+import { Link } from 'gatsby'
 
 //styles
 import './postpreview.sass'
@@ -10,7 +10,7 @@ const PostPreview = ({ slug, img, title, desc, author, date }) => (
   <Link to={slug}>
     <div className="postpreview">
       <div className="postpreview__image">
-        <img src={img} alt="" />
+        <Img fluid={img} />
       </div>
       <div className="postpreview__info">
         <h3>{title}</h3>

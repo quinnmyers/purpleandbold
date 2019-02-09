@@ -22,19 +22,25 @@ class Blog extends Component {
   }
   render() {
     const data = this.props.data.allMarkdownRemark.edges
-    const testExcerpt = ''
     return (
       <Layout>
         <Content>
           {data.map(post => (
             <div className="post" key={post.id}>
-              <Img
+              <PostPreview
+                img={post.node.frontmatter.featuredImage.childImageSharp.fluid}
+                title={post.node.frontmatter.title}
+                desc={post.node.frontmatter.exceprt}
+                author={`Quinn Myers`}
+                date={`2/6/19`}
+              />
+              {/* <Img
                 fluid={
                   post.node.frontmatter.featuredImage.childImageSharp.fluid
                 }
               />
               <h2>{post.node.frontmatter.title}</h2>
-              <p>{post.node.frontmatter.exceprt}</p>
+              <p>{post.node.frontmatter.exceprt}</p> */}
             </div>
           ))}
           <br />
@@ -43,23 +49,6 @@ class Blog extends Component {
           <br />
           <br />
           <div className="test__components">
-            <PostPreview
-              img={AnalFeatured}
-              title="Analytics In Modern Websites"
-              desc={`Learn what analytics are, how to use analytics, and why analytics are important to your business' success`}
-              author={`Quinn Myers`}
-              date={`2/6/19`}
-            />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
             <PostHero
               img={AnalFeatured}
               title="Analytics In Modern Websites"

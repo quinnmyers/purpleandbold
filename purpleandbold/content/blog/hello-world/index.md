@@ -1,10 +1,10 @@
 ---
 title: Hello World wizzard
-date: "2015-05-01T22:12:03.284Z"
-author: "cole-php wizzard"
-tags: ["website" ,"wizzard",  ]
-featuredImage: cover.jpg
-exceprt: "I love eggs"
+date: '2015-05-01T22:12:03.284Z'
+author: 'Quinn Myers'
+tags: ['website', 'wizzard']
+featuredImage: blog-analytics-noreflect.jpg
+exceprt: 'I love eggs'
 ---
 
 This is my first post on my new fake blog! How exciting!
