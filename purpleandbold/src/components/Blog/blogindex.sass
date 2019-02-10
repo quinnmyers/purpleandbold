@@ -71,9 +71,18 @@
           border-bottom: 1px solid $bloggrey
           width: 100%
     &__grid 
-      display: flex
-      width: 100% 
-      justify-content: space-between
+      display: grid
+      // grid-auto-rows: 300px
+      grid-gap: 25px
+      grid-template-columns: repeat(3, 1fr)
+      // min-height: 35vw
+      grid-auto-flow: row
+      width: 100%
+      background: red
+      background: lightgreen
+      .post
+        // display: flex
+        background: orange
 
 
 @keyframes filback

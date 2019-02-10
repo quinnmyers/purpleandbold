@@ -50,11 +50,9 @@ class Blog extends Component {
     }
     this.setState({ pickedTags: otherpicked })
     this.filter(otherpicked)
-
   }
 
   filter(tags) {
-
     const posts = this.state.posts
     let temparray = new Set()
     // loop over all posts
@@ -80,10 +78,7 @@ class Blog extends Component {
     }
     // setting the state that we loop over to show the posts at the bottom of the page
     const newarr = Array.from(temparray)
-      ;
-
     this.setState({ showing: newarr })
-
   }
 
   render() {
@@ -131,7 +126,7 @@ class Blog extends Component {
                         ? 'showing'
                         : ''
                     }
-                    onClick={() => this.buildFilterArray("marketing")}
+                    onClick={() => this.buildFilterArray('marketing')}
                   >
                     marketing
                   </button>
@@ -144,10 +139,10 @@ class Blog extends Component {
                     design
                   </button>
                 </div>
-                <div className="blogindex__posts__filters__search">
+                {/* <div className="blogindex__posts__filters__search">
                   <img src="http://placehold.it/35x35" alt="" />
                   <input type="text" />
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="blogindex__posts__grid">
