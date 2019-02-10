@@ -1,6 +1,6 @@
 ---
-title: Hello World wizzard
-date: '2014-06-06T22:12:03.284Z'
+title: 3-3-3 THIRD
+date: '2017-03-03T22:12:03.284Z'
 author: 'Quinn Myers'
 tags: ['marketing']
 featuredImage: blog-analytics-noreflect.jpg

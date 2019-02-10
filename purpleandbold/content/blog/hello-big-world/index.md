@@ -1,10 +1,10 @@
 ---
-title: Why PHP Is A Better Language Than JS
-date: '2015-05-01T22:12:03.284Z'
+title: 111 Why PHP Is A Better Language Than JS
+date: '2016-04-04T22:12:03.284Z'
 author: 'Cole Smith'
-tags: ['marketing', 'eggs']
+tags: ['marketing']
 featuredImage: blog-analytics-noreflect.jpg
-exceprt: 'I love eggs'
+description: 'I love eggs'
 ---
 
 ## What are analytics

@@ -1,7 +1,7 @@
 ---
-title: Hello World
-date: '2015-05-05T22:12:03.284Z'
-author: 'Quinn Myers'
+title: 1-1-1 FIRST
+date: '2019-01-01T22:12:03.284Z'
+author: 'Cole Smith'
 tags: ['marketing']
 featuredImage: blog-analytics-noreflect.jpg
 description: 'I love eggs'

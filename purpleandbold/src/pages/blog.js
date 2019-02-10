@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Content from '../components/utility/Content/Content'
-import Img from 'gatsby-image'
-import GatsbyImage from 'gatsby-image'
+// import Img from 'gatsby-image'
+// import GatsbyImage from 'gatsby-image'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 
@@ -14,7 +14,7 @@ import AnalFeatured from '../images/blog/analytics/blog-analytics-noreflect.jpg'
 
 //styles
 import '../components/Blog/blogindex.sass'
-import { set } from 'react-ga';
+import { set } from 'react-ga'
 
 class Blog extends Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class Blog extends Component {
     this.state = {
       posts: [],
       showing: [],
-      pickedTags: []
+      pickedTags: [],
     }
     this.filter = this.filter.bind(this)
     this.buildFilterArray = this.buildFilterArray.bind(this)
@@ -36,7 +36,7 @@ class Blog extends Component {
   componentDidMount() {
     this.setState({
       showing: this.props.data.allMarkdownRemark.edges,
-      posts: this.props.data.allMarkdownRemark.edges
+      posts: this.props.data.allMarkdownRemark.edges,
     })
   }
   buildFilterArray(tag) {
@@ -57,26 +57,26 @@ class Blog extends Component {
     let temparray = new Set()
     // loop over all posts
     posts.forEach(post => {
-      // loop over the tags you are matching to 
+      // loop over the tags you are matching to
       for (let i = 0; i < tags.length; i++) {
-        const tag = tags[i];
+        const tag = tags[i]
         // inside of the loop of tags you are matching too we loop over the tages on each post
         for (let pi = 0; pi < post.node.frontmatter.tags.length; pi++) {
-          const ptag = post.node.frontmatter.tags[pi];
+          const ptag = post.node.frontmatter.tags[pi]
           // now we check if the tag on the post matches the tag we are looping over on line 61
           if (tag === ptag) {
-            // if its true then we push the whole post el from the foreach loop into an array and brake witch kills all of the for loops 
+            // if its true then we push the whole post el from the foreach loop into an array and brake witch kills all of the for loops
             temparray.add(post)
             break
           }
         }
       }
     })
-    // if there are no posts that match our tags then it will just show all of the posts 
+    // if there are no posts that match our tags then it will just show all of the posts
     if (temparray.size === 0) {
       temparray = new Set([...posts])
     }
-    // setting the state that we loop over to show the posts at the bottom of the page 
+    // setting the state that we loop over to show the posts at the bottom of the page
     const newarr = Array.from(temparray)
     this.setState({ showing: newarr })
   }
@@ -112,9 +112,32 @@ class Blog extends Component {
               <div className="blogindex__posts__filters">
                 <div className="blogindex__posts__filters__buttons">
                   <h5>Categories:</h5>
-                  <button className={this.state.pickedTags.includes("website") ? "showing" : ""} onClick={() => this.buildFilterArray("website")}>websites</button>
-                  <button className={this.state.pickedTags.includes("marketing") ? "showing" : ""} onClick={() => this.buildFilterArray("marketing")}>marketing</button>
-                  <button className={this.state.pickedTags.includes("design") ? "showing" : ""} onClick={() => this.buildFilterArray("design")}>design</button>
+                  <button
+                    className={
+                      this.state.pickedTags.includes('website') ? 'showing' : ''
+                    }
+                    onClick={() => this.buildFilterArray('website')}
+                  >
+                    websites
+                  </button>
+                  <button
+                    className={
+                      this.state.pickedTags.includes('marketing')
+                        ? 'showing'
+                        : ''
+                    }
+                    onClick={() => this.buildFilterArray('marketing')}
+                  >
+                    marketing
+                  </button>
+                  <button
+                    className={
+                      this.state.pickedTags.includes('design') ? 'showing' : ''
+                    }
+                    onClick={() => this.buildFilterArray('design')}
+                  >
+                    design
+                  </button>
                 </div>
                 <div className="blogindex__posts__filters__search">
                   <img src="http://placehold.it/35x35" alt="" />
@@ -130,9 +153,9 @@ class Blog extends Component {
                       post.node.frontmatter.featuredImage.childImageSharp.fluid
                     }
                     title={post.node.frontmatter.title}
-                    desc={post.node.frontmatter.exceprt}
-                    author={`Quinn Myers`}
-                    date={`2/6/19`}
+                    desc={post.node.frontmatter.description}
+                    author={post.node.frontmatter.description}
+                    date={post.node.frontmatter.date}
                     slug={post.node.fields.slug}
                   />
                 </div>
@@ -155,7 +178,9 @@ export const query = graphql`
           id
           frontmatter {
             tags
-            exceprt
+            description
+            date(formatString: "MMMM DD, YYYY")
+            author
             title
             featuredImage {
               childImageSharp {
