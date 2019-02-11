@@ -4,15 +4,21 @@
   display: flex 
   flex-direction: column 
   align-items: center
+  @include edgesnap 
+    width: 100%
   &__header 
     display: flex
     flex-direction: column 
     align-items: center
     margin: 3em 0em
+    @include tablet-phone 
+      margin: 2em 0em
     h2 
       font-size: 2em
       padding: 0px
-      margin-bottom: .375em    
+      margin-bottom: .375em  
+      @include tablet-phone 
+        margin-bottom: .275em  
     p 
       font-size: 1.05em
       max-width: 65%
@@ -20,6 +26,10 @@
       letter-spacing: .015em
       text-align: center
       color: $bloggrey
+      @include edgesnap 
+        max-width: 85%
+      @include tablet-phone
+        max-width: 100%
   &__featured, &__posts 
     h4 
       font-size: 1.6em
@@ -78,11 +88,16 @@
       // min-height: 35vw
       grid-auto-flow: row
       width: 100%
-      background: red
-      background: lightgreen
+      // background: red
+      // background: lightgreen
+      @include tablet-phone 
+        grid-template-columns: repeat(2, 1fr)
+      @media(max-width: 500px)
+        grid-template-columns: repeat(1, 1fr)
+        width: 85%
       .post
         // display: flex
-        background: orange
+        // background: orange
 
 
 @keyframes filback
