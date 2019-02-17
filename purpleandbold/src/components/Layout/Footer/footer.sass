@@ -1,0 +1,98 @@
+@import '../../base.sass'
+
+.footer 
+  display: flex
+  height: 125px
+  padding: 1em 0em
+  margin-bottom: 75px
+  @include edgesnap 
+    font-size: 1.55vw
+  @include tablet 
+    font-size: 1.9vw
+  @include tablet-phone 
+    margin-bottom: 0px
+  @media(max-width: 500px)
+    font-size: 2.55vw 
+  &__container
+    display: flex
+    @include tablet-phone 
+      flex-wrap: wrap
+      width: 60%
+      margin: 0 auto
+    @media(max-width: 500px)
+      width: 80%
+    &__left, &__center, &__right 
+      display: flex
+      flex-direction: column
+    &__left, &__right 
+      justify-content: space-between
+      width: 25% 
+      // background: pink
+      font-size: 0.85em
+      @include tablet 
+        width: 35%
+      @include tablet-phone 
+        // width: 50%
+        flex: 2
+        height: auto
+        padding-bottom: 8em
+      @media(max-width: 500px)
+        padding-bottom: 15em
+      ul 
+        display: flex 
+        flex-direction: column
+        justify-content: space-between
+        height: 100%
+        list-style: none 
+        li 
+          a, a:visited 
+            color: $darkgrey
+    &__left
+      img 
+        cursor: pointer
+        height: 20px
+        margin-right: .5em
+        @include tablet 
+          height: 17px
+        @include tablet-phone 
+          margin-top: 1em
+          order: 2
+    &__center 
+      position: relative
+      align-items: center
+      justify-content: center
+      width: 50%
+      text-align: center
+      @include tablet 
+        width: 100%
+      @include tablet-phone
+        padding: 2em 0em
+        margin-bottom: 2em
+      span 
+        position: absolute
+        bottom: 0
+        font-size: 0.7em
+        @include tablet 
+          max-width: 75%
+      img
+        max-width: 50%
+        @include tablet 
+          max-width: 70% 
+        @include tablet-phone 
+          order: 1
+          max-width: 100%
+        @media(max-width: 500px)
+          max-width: 80%
+    &__right
+      text-align: right
+      @include tablet-phone 
+        order: 3
+      ul 
+        display: flex 
+        flex-direction: column
+        list-style: none 
+        li 
+          a, a:visited 
+            color: $darkgrey
+
+  

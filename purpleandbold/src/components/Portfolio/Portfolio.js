@@ -50,16 +50,16 @@ class Portfolio extends Component {
       },
       tagArray: [
         {
-          name: 'Website',
+          name: 'website',
         },
         {
-          name: 'Logo',
+          name: 'logo',
         },
         {
-          name: 'Branding',
+          name: 'branding',
         },
         {
-          name: 'Graphic',
+          name: 'graphic',
         },
       ],
       showing: [],

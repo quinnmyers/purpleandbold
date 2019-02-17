@@ -3,6 +3,9 @@ import React, { Component } from 'react'
 //styles
 import './aboutanimation.sass'
 
+//images
+import plusIcon from '../../images/plus-icon.svg'
+
 class AboutAnimation extends Component {
   constructor(props) {
     super(props)
@@ -34,12 +37,15 @@ class AboutAnimation extends Component {
         </div>
 
         <div className={`about__container__animation__middle`}>
-          <div
-            className={`about__container__animation__middle__left ${
-              this.state.arrowLoaded ? 'loaded' : ''
-            } ${this.state.arrowPulling ? 'pulling' : ''}`}
-          >
-            <h1>+</h1>
+          <div className={`about__container__animation__middle__left `}>
+            {/* <h1>+</h1> */}
+            <img
+              className={`${this.state.arrowLoaded ? 'loaded' : ''} ${
+                this.state.arrowPulling ? 'pulling' : ''
+              }`}
+              src={plusIcon}
+              alt={`plus icon representing word "and" with a purple gradient`}
+            />
           </div>
 
           <div

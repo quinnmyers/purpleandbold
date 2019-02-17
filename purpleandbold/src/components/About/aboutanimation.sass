@@ -12,7 +12,7 @@
       &__top 
         justify-content: flex-end
         transform: translateX(-20vw)
-        margin-right: -.6em
+        // margin-right: -.6em
         transition: all 1s ease-in-out
         opacity: 0
         &.loaded
@@ -21,19 +21,48 @@
         h1 
           font-size: 5.25em
           font-weight: 300
+          letter-spacing: .025em
           @include tablet-phone 
             font-size: 4.75em
       &__middle
         justify-content: space-between 
+        width: 100%
+        line-height: 3em
+        margin-top: 1em
         h1 
           font-size: 4.5em
-          font-weight: 900
+          font-weight: 600
           @include tablet-phone 
             font-size: 4em
         &__left 
-          transform: scale(2.00) rotate(-270deg)
-          opacity: 0
-          transition: all 1s ease-in-out
+          // transform: scale(2.00) rotate(-270deg)
+          // opacity: 0
+          // transition: all 1s ease-in-out
+          // background: lightgreen
+          width: 30%
+          display: flex 
+          justify-content: flex-end
+          flex-direction: column
+          position: relative 
+          img 
+            display: flex 
+            position: absolute 
+            left: 0
+            justify-content: flex-start
+            align-items: flex-start 
+            align-content: flex-start
+            height: 100%
+            width: auto
+            // background: red
+            transform: scale(2.00) rotate(-270deg)
+            opacity: 0
+            transition: all 1s ease-in-out
+            &.loaded 
+              transform: scale(1) rotate(-270deg)
+              opacity: 1
+            &.pulling
+              transform: scale(1) rotate(0)
+              transition: all 1s ease-in-out
           h1 
             // font-weight: 300
           &.loaded 
@@ -45,11 +74,16 @@
             h1 
               // font-weight: 900
         &__right
+          display: flex
           transform: translateY(20vw)
+          // background: orange 
+          width: 70%
           opacity: 0
           transition: all 1s ease-in-out
           @include tablet-phone 
             transform: translateX(20vw)
+          h1 
+            font-size: 5em
           &.loaded
             transform: translateY(0)
             opacity: 1

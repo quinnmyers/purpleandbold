@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 //components
 import Content from '../utility/Content/Content'
+import Spacer from '../utility/Spacer/Spacer'
 import AboutAnimation from './AboutAnimation'
 
 //styles
@@ -35,6 +36,7 @@ class About extends Component {
                 this.state.loaded ? 'loaded' : ''
               }`}
             >
+              <h2 classname="section-header">Learn More About Us</h2>
               <p>
                 At Purple and Bold, we provide custom-tailored digital solutions
                 to businesses, offering personalized services and products as
@@ -53,6 +55,7 @@ class About extends Component {
             </div>
           </div>
         </Content>
+        <Spacer />
       </section>
     )
   }

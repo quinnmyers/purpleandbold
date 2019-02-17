@@ -1,8 +1,10 @@
-@import '../vars.sass'
 @import '../base.sass'
 
 .wrapper
+  display: flex
   margin-bottom: .6em
+  @include tablet-phone
+    flex-wrap: wrap
   @include phone-large 
     display: flex 
     justify-content: space-between
@@ -10,15 +12,20 @@
     display: flex 
     width: 100% 
     justify-content: space-between
+  h4 
+    font-weight: 400
+    margin-right: .65em
   .tags 
     animation: emptyback .5s forwards
     display: inline-block
     cursor: pointer
-    font-family: $subfont
-    font-size: .9em
-    border: 1px solid black
+    font-family: $mainfont
+    font-size: .8em
+    color: $darkgrey
+    border: 1px solid $darkgrey
     margin: 0px 5px
-    padding: 4px 15px
+    padding: .275em 1.2em
+    line-height: 1em
     border-radius: 100px
     transition: all 0.3s ease
     background: linear-gradient(to bottom, white 50%, black 50%)
@@ -26,6 +33,9 @@
     background-position: right top
     @include edgesnap 
       padding: .375em 1.8em
+    @include tablet-phone 
+      font-size: 0.7em
+      padding: .275em 1.2em
     @include phone-large
       font-size: 0.85em
     &.grow 

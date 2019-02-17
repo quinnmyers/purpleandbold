@@ -7,9 +7,8 @@ import ReactGA from 'react-ga'
 // import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 //images
-// import brand from '../../../images/brand.svg'
-import brand from '../../../images/brand_purple.svg'
-// import brand from '../../../images/brand_light.svg'
+// import brand from '../../../images/brand_purple.svg'
+import brand from '../../../images/pb-logo.svg'
 
 //styles
 import './navigation.sass'
@@ -40,6 +39,11 @@ class Navigation extends Component {
           name: 'Portfolio',
           url: '#portfolio',
           alt: 'link to portfolio section',
+        },
+        {
+          name: 'Blog',
+          url: '/blog',
+          alt: 'link to blog',
         },
         {
           name: 'Contact',

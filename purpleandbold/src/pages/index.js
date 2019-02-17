@@ -7,13 +7,16 @@ import SEO from '../components/seo'
 
 //components
 import Landing from '../components/Landing/Landing'
+import HeroNew from '../components/Hero/HeroNew'
 import Hero from '../components/Hero/Hero'
 import Services from '../components/Services/Services'
 import Contact from '../components/Contact/Contact'
 import AboutOne from '../components/AboutOne/AboutOne'
 import About from '../components/About/About'
 import Testimonials from '../components/Testimonials/Testimonials'
+import TestimonialsNew from '../components/Testimonials/TestimonialsNew'
 import Portfolio from '../components/Portfolio/Portfolio'
+import BlogFeature from '../components/Blog/BlogFeature/BlogFeature'
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -33,12 +36,15 @@ class IndexPage extends React.Component {
         <SEO />
         {/* <Landing didScroll={this.didScroll} /> */}
         <Layout didScroll={this.state.didScroll}>
-          <Hero />
+          <HeroNew />
           <About />
-          {/* <AboutOne /> */}
           <Services />
+          <BlogFeature />
+          {/* <Hero /> */}
+          {/* <AboutOne /> */}
           {/* <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} /> */}
-          <Testimonials />
+          {/* <Testimonials /> */}
+          <TestimonialsNew />
           <Portfolio />
           <Contact />
         </Layout>

@@ -7,6 +7,7 @@ import WebsitesImage from './ServiceImages/WebsitesImage'
 import CreativeImage from './ServiceImages/CreativeImage'
 import BrandingImage from './ServiceImages/BrandingImage'
 import MarketingImage from './ServiceImages/MarketingImage'
+import TextBlock from '../utility/TextBlock/TextBlock'
 
 //styles
 import './services.sass'
@@ -154,7 +155,11 @@ class Services extends Component {
       <section className="services" id="services">
         <Content>
           <div className="services__container">
-            <h2 className="section-header">Services</h2>
+            {/* <h2 className="section-header">Services</h2> */}
+            <TextBlock
+              header={`Services`}
+              text={`We offer every service necessary to get your busines to the next level, quickly. Or, if you’re thinking of starting a new business, we will help you get started the right way and get off the ground in no time. We love talking to people about their current business or future endeavors and explaining to them what we do and how we help, contact us today and let’s start the conversation.`}
+            />
             {this.state.services.map(s => (
               <ServiceBlock
                 name={s.serviceName}

@@ -1,6 +1,4 @@
 @import '../../base.sass'
-
-
     
 .navigation 
   position: sticky 
@@ -9,7 +7,7 @@
   box-shadow: 0px 0px 3px 0px rgba(145,145,145,0.6)
   // transform: translateY(-100%)
   z-index: 99
-  height: 80px
+  height: 65px
   display: flex 
   @include edgesnap 
     height: 75px
@@ -33,7 +31,8 @@ nav
       display: flex
       bcakground: red 
       align-items: center
-      width: 245px
+      width: 215px
+      margin-top: .4em
       // transform: translateY(-1vw)
       opacity: 0
       transition: all 1s ease-in-out
@@ -71,8 +70,8 @@ nav
       a:hover 
         color: $accentlight
       a 
-        font-size: 1.025em
-        margin-left: 1.2em
+        font-size: 1em
+        margin-left: 1.15em
         // padding: 0px 4px
         // background: orange
         transition: all 0.2s ease-in-out
@@ -80,8 +79,9 @@ nav
           font-size: 0.945em
         &:nth-last-child(1)
           border: 1px solid black
-          border-radius: 3px
-          padding: 0.34em 1.1em
+          // border-radius: 3px
+          border-radius: 100px
+          padding: 0.22em 1.3em
           &:hover 
             color: $accentlight
             border: 1px solid $accentlight

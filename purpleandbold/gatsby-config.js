@@ -16,7 +16,7 @@ module.exports = {
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: 'standalone',
-        icon: 'src/images/favicon.png', // This path is relative to the root of the site.
+        icon: 'src/images/favicon-32x32.png', // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-offline`,
@@ -67,7 +67,7 @@ module.exports = {
               maxWidth: 490,
               wrapperStyle: `float: right; width: 50%; margin-right: 0; margin-top: 6em;`,
 
-              linkImagesToOriginal: false
+              linkImagesToOriginal: false,
             },
           },
         ],

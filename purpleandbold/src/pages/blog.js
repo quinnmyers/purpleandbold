@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Content from '../components/utility/Content/Content'
+import TextBlock from '../components/utility/TextBlock/TextBlock'
 // import Img from 'gatsby-image'
 // import GatsbyImage from 'gatsby-image'
 import { Link, graphql } from 'gatsby'
@@ -88,13 +89,17 @@ class Blog extends Component {
         <Content>
           <div className="blogindex">
             <div className="blogindex__header">
-              <h2>Welcome to Our Blog</h2>
+              <TextBlock
+                header={`Welcome to Our Blog`}
+                text={`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`}
+              />
+              {/* <h2>Welcome to Our Blog</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat.{' '}
-              </p>
+              </p> */}
             </div>
             <div className="blogindex__featured">
               <h4>Featured Post</h4>

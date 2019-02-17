@@ -6,7 +6,7 @@ import Content from '../../utility/Content/Content'
 import ReactGA from 'react-ga'
 
 //images
-import plusIcon from '../../../images/plus-icon-purple.svg'
+import plusIcon from '../../../images/plus-and-icon.svg'
 
 class Cta extends Component {
   constructor(props) {

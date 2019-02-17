@@ -40,6 +40,7 @@ class PortfolioNav extends Component {
   render() {
     return (
       <div className={style.wrapper}>
+        <h4>Categories:</h4>
         {this.props.list.map((tag, index) => (
           <button
             id={tag.name}

@@ -5,6 +5,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import Content from '../utility/Content/Content'
 import 'rc-slider/assets/index.css'
 import { Range } from 'rc-slider'
+import Spacer from '../utility/Spacer/Spacer'
 
 //images
 import x from '../../images/icons/x.svg'
@@ -93,6 +94,7 @@ class Contact extends Component {
       <section id="contact" className={style.section}>
         <Content>
           <div className={style.contact}>
+            <Spacer />
             <div className={style.Contact__title}>
               <h2 className={style.section__header}>Contact Us</h2>
             </div>
@@ -327,6 +329,7 @@ class Contact extends Component {
                 Or Call Us At: <a href="tel:702-577-0322">702-577-0322</a>
               </h4>
             </form>
+            <Spacer />
           </div>
         </Content>
       </section>
