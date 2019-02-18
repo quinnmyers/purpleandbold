@@ -16,7 +16,6 @@ class A extends Component {
             this.setState({ isHome: true })
         }
         this.setState({ homePath: window.location.origin })
-        console.log("firstcar", this.props.href.charAt(0) === "#", "href", this.props.href);
 
 
     }
