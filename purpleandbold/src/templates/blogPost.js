@@ -6,6 +6,7 @@ import Content from '../components/utility/Content/Content'
 import PostHero from '../components/Blog/PostHero'
 import PostPreview from '../components/Blog/PostPreview'
 import Spacer from '../components/utility/Spacer/Spacer'
+import Button from '../components/utility/Button/Button'
 
 import './blogpost.sass'
 
@@ -199,25 +200,8 @@ class BlogPostTemplate extends Component {
                     className="blog__body__center__post__content"
                     dangerouslySetInnerHTML={{ __html: post.html }}
                   />
-                  {/* <div className="blog__body__center__post__more">
-                    {this.state.showing.map(oPost => (
-                      <div key={oPost.node.id}>
-                        <PostPreview
-                          slug={oPost.node.fields.slug}
-                          img={
-                            oPost.node.frontmatter.featuredImage.childImageSharp
-                              .fluid
-                          }
-                          title={oPost.node.frontmatter.title}
-                          desc={oPost.node.frontmatter.description}
-                          author={oPost.node.frontmatter.author}
-                          date={oPost.node.frontmatter.date}
-                        />
-                      </div>
-                    ))}
-                  </div> */}
                 </div>
-                <ul>
+                {/* <ul>
                   <li>
                     {previous && (
                       <Link to={previous.fields.slug} rel="prev">
@@ -232,10 +216,34 @@ class BlogPostTemplate extends Component {
                       </Link>
                     )}
                   </li>
-                </ul>
-                <Link to={`/blog`}>See All Posts</Link>
+                </ul> */}
+                {/* <Link to={`/blog`}>See All Posts</Link> */}
               </div>
               <div className="blog__body__right" />
+            </div>
+            <h2 className={`related__title`}>Related Posts</h2>
+            <div className="blog__more">
+              {this.state.showing.map(oPost => (
+                <div className="blog__more__item" key={oPost.node.id}>
+                  <PostPreview
+                    slug={oPost.node.fields.slug}
+                    img={
+                      oPost.node.frontmatter.featuredImage.childImageSharp.fluid
+                    }
+                    title={oPost.node.frontmatter.title}
+                    desc={oPost.node.frontmatter.description}
+                    author={oPost.node.frontmatter.author}
+                    date={oPost.node.frontmatter.date}
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="see__all__posts">
+              <Button
+                section="/blog"
+                text="View All Blog Posts"
+                loadButton={true}
+              />
             </div>
           </div>
         </Content>
