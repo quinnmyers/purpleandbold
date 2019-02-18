@@ -21,7 +21,7 @@ class HeroNew extends Component {
   render() {
     return (
       <div className="hero">
-        <Spacer />
+        {/* <Spacer /> */}
         <Content>
           <div className="hero__container">
             <div className="hero__container__content">
@@ -55,7 +55,7 @@ class HeroNew extends Component {
             </div>
           </div>
         </Content>
-        <Spacer />
+        {/* <Spacer /> */}
       </div>
     )
   }

@@ -48,7 +48,7 @@ class TestimonialsNew extends Component {
   render() {
     return (
       <div>
-        <Spacer />
+        {/* <Spacer /> */}
         <div className="testimonialsnew">
           <Content>
             <div className="testimonialsnew__container">
@@ -75,7 +75,7 @@ class TestimonialsNew extends Component {
             </div>
           </Content>
         </div>
-        <Spacer />
+        {/* <Spacer /> */}
       </div>
     )
   }

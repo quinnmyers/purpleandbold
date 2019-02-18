@@ -55,7 +55,7 @@ class About extends Component {
             </div>
           </div>
         </Content>
-        <Spacer />
+        {/* <Spacer /> */}
       </section>
     )
   }

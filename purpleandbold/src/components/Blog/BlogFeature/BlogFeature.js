@@ -14,7 +14,7 @@ import AnalFeatured from '../../../images/blog/analytics/blog-analytics-noreflec
 
 const BlogFeature = () => (
   <div className={`blog__feature`}>
-    <Spacer />
+    {/* <Spacer /> */}
     <Content>
       <div className={`blog__feature__content`}>
         <TextBlock
