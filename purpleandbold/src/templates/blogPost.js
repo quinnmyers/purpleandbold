@@ -54,9 +54,9 @@ class BlogPostTemplate extends Component {
     console.log(this.contentBlock.getBoundingClientRect())
     this.contentBlock.style.marginLeft = `-${
       this.shareIcons.getBoundingClientRect().width
-    }px`
+      }px`
   }
-  componentWillUnmount() {}
+  componentWillUnmount() { }
   filter(tags) {
     const posts = this.state.posts
     const index = posts.findIndex(
@@ -186,7 +186,7 @@ class BlogPostTemplate extends Component {
                     <ShareReddit
                       message={`${
                         post.frontmatter.description
-                      } from https://purpleandbold.com${post.fields.slug}`}
+                        } from https://purpleandbold.com${post.fields.slug}`}
                       title={`${post.frontmatter.title} by purple and bold`}
                       icon={redditIcon}
                     />
@@ -240,6 +240,7 @@ class BlogPostTemplate extends Component {
             </div>
             <div className="see__all__posts">
               <Button
+                noscroll={true}
                 section="blog"
                 text="View All Blog Posts"
                 loadButton={true}

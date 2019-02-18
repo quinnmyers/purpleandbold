@@ -98,7 +98,7 @@ class Navigation extends Component {
                   this.state.textLoaded ? 'loaded' : ''
                   }`}
               >
-                <A href={'#hero'} hasOnClick={false}>
+                <A href={'#hero'} hasOnClick={false} aria-label="link to top of site">
                   <img src={brand} alt="purple and bold logo" />
                 </A>
               </div>

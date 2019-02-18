@@ -20,7 +20,7 @@ class HeroNew extends Component {
   }
   render() {
     return (
-      <div className="hero">
+      <div className="hero" id="hero">
         {/* <Spacer /> */}
         <Content>
           <div className="hero__container">
@@ -42,7 +42,7 @@ class HeroNew extends Component {
                     section="#services"
                     text="See What We Can Do For You"
                     loadButton={this.state.firstLoad}
-                    // loadButton={this.state.loadMonitor}
+                  // loadButton={this.state.loadMonitor}
                   />
                 </div>
               </div>
