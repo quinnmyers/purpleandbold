@@ -27,8 +27,10 @@
         align-self: flex-start
         width: 25px
         margin-left: 0.4em
+        padding-right: 3.5em
         @include tablet-phone 
           flex-direction: row
+          padding-right: 0em
           width: 100%
           margin-bottom: 2em
           margin-left: 0em
@@ -88,8 +90,14 @@
     display: flex
     justify-content: space-between
     width: 100%
+    @include tablet-phone 
+      flex-direction: column
+      text-align: center
     &__item 
       width: 30%
+      @include tablet-phone 
+        width: 100%
+        margin-bottom: 2.5em
   .see__all__posts 
     margin-top: 1em
     margin-bottom: 5em

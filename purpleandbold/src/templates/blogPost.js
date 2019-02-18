@@ -240,7 +240,7 @@ class BlogPostTemplate extends Component {
             </div>
             <div className="see__all__posts">
               <Button
-                section="/blog"
+                section="blog"
                 text="View All Blog Posts"
                 loadButton={true}
               />
