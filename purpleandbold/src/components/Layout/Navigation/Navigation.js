@@ -42,7 +42,7 @@ class Navigation extends Component {
         },
         {
           name: 'Blog',
-          url: '/blog',
+          url: 'blog',
           alt: 'link to blog',
         },
         {
@@ -96,7 +96,7 @@ class Navigation extends Component {
               <div
                 className={`nav__container__brand ${
                   this.state.textLoaded ? 'loaded' : ''
-                }`}
+                  }`}
               >
                 <A href={'#hero'} hasOnClick={false}>
                   <img src={brand} alt="purple and bold logo" />
@@ -105,7 +105,7 @@ class Navigation extends Component {
               <div
                 className={`nav__container__navigation ${
                   this.state.textLoaded ? 'loaded' : ''
-                }`}
+                  }`}
               >
                 {this.state.navItems.map(n => (
                   <A
@@ -132,7 +132,7 @@ class Navigation extends Component {
                 <div
                   className={`nav__container__mobilenav__container ${
                     this.state.mobileNavExpanded ? 'expanded' : ''
-                  }`}
+                    }`}
                   ref={div => (this.mobilenav = div)}
                 >
                   {this.state.navItems.map(n => (
@@ -149,7 +149,7 @@ class Navigation extends Component {
                     <A
                       className={`nav__container__mobilenav__container__item ${
                         this.state.mobileNavExpanded ? 'expanded' : ''
-                      }`}
+                        }`}
                       hasOnClick={true}
                       onClickDo={this.handleMobileNavClick.bind(this)}
                       href={n.url}

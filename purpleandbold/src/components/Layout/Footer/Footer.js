@@ -55,7 +55,7 @@ class Footer extends Component {
         },
         {
           name: 'Blog',
-          url: '/blog',
+          url: 'blog',
           alt: 'link to blog',
         },
         {
@@ -123,8 +123,8 @@ class Footer extends Component {
                   <li key={index}>
                     <A
                       href={l.url}
-                      // onClick={this.testFunction.bind(this)}
-                      // hasOnClick={true}
+                    // onClick={this.testFunction.bind(this)}
+                    // hasOnClick={true}
                     >
                       {l.name}
                     </A>
