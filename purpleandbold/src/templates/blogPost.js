@@ -5,6 +5,7 @@ import SEO from '../components/seo'
 import Content from '../components/utility/Content/Content'
 import PostHero from '../components/Blog/PostHero'
 import PostPreview from '../components/Blog/PostPreview'
+import Spacer from '../components/utility/Spacer/Spacer'
 
 import './blogpost.sass'
 
@@ -19,6 +20,7 @@ import twitterIcon from '../images/icons/twitter-icon-blog.svg'
 import facebookIcon from '../images/icons/facebook-icon-blog.svg'
 import linkedinIcon from '../images/icons/linkedin-icon-blog.svg'
 import redditIcon from '../images/icons/reddit-icon-blog.svg'
+import AnalFeatured from '../images/blog/analytics/blog-analytics-noreflect.jpg'
 
 class BlogPostTemplate extends Component {
   constructor(props) {
@@ -143,72 +145,78 @@ class BlogPostTemplate extends Component {
     return (
       <Layout>
         <SEO />
+        {/* <Spacer /> */}
         <Content>
           <div className="blog">
             <PostHero
-              img={post.frontmatter.featuredImage.childImageSharp.fluid}
-              title={post.frontmatter.title}
-              desc={post.frontmatter.description}
-              author={post.frontmatter.author}
-              date={post.frontmatter.date}
+              img={AnalFeatured}
+              title="Analytics In Modern Websites"
+              desc={`Learn what analytics are, how to use analytics, and why analytics are important to your business' success`}
+              author={`Quinn Myers`}
+              date={`2/6/19`}
+              slug={`#`}
             />
 
             <div className="blog__body" ref={div => (this.contentBlock = div)}>
-              <div
-                className="blog__body__icons"
-                ref={div => (this.shareIcons = div)}
-              >
-                <div className="blog__body__icons__container">
-                  <ShareTwitter
-                    title={post.frontmatter.title}
-                    message={post.frontmatter.description}
-                    hastag={`#${post.frontmatter.tags.join(' #')}`}
-                    link={`https://purpleandbold.com${post.fields.slug}`}
-                    icon={twitterIcon}
-                  />
-                  <ShareFacebook
-                    message={`https://purpleandbold.com${post.fields.slug}`}
-                    icon={facebookIcon}
-                  />
-                  <ShareLinked
-                    message={`${post.frontmatter.description}`}
-                    title={post.frontmatter.title}
-                    website={'purple + bold'}
-                    link={`https://purpleandbold.com${post.fields.slug}`}
-                    icon={linkedinIcon}
-                  />
-                  <ShareReddit
-                    message={`${
-                      post.frontmatter.description
-                    } from https://purpleandbold.com${post.fields.slug}`}
-                    title={`${post.frontmatter.title} by purple and bold`}
-                    icon={redditIcon}
-                  />
+              <div className="blog__body__left">
+                <div
+                  className="blog__body__left__icons"
+                  ref={div => (this.shareIcons = div)}
+                >
+                  <div className="blog__body__left__icons__container">
+                    <ShareTwitter
+                      title={post.frontmatter.title}
+                      message={post.frontmatter.description}
+                      hastag={`#${post.frontmatter.tags.join(' #')}`}
+                      link={`https://purpleandbold.com${post.fields.slug}`}
+                      icon={twitterIcon}
+                    />
+                    <ShareFacebook
+                      message={`https://purpleandbold.com${post.fields.slug}`}
+                      icon={facebookIcon}
+                    />
+                    <ShareLinked
+                      message={`${post.frontmatter.description}`}
+                      title={post.frontmatter.title}
+                      website={'purple + bold'}
+                      link={`https://purpleandbold.com${post.fields.slug}`}
+                      icon={linkedinIcon}
+                    />
+                    <ShareReddit
+                      message={`${
+                        post.frontmatter.description
+                      } from https://purpleandbold.com${post.fields.slug}`}
+                      title={`${post.frontmatter.title} by purple and bold`}
+                      icon={redditIcon}
+                    />
+                  </div>
                 </div>
               </div>
-              <div className="blog__body__post">
-                <div
-                  className="blog__body__post__content"
-                  dangerouslySetInnerHTML={{ __html: post.html }}
-                />
-                <div className="blog__body__post__more">
-                  {this.state.showing.map(oPost => (
-                    <div key={oPost.node.id}>
-                      <PostPreview
-                        slug={oPost.node.fields.slug}
-                        img={
-                          oPost.node.frontmatter.featuredImage.childImageSharp
-                            .fluid
-                        }
-                        title={oPost.node.frontmatter.title}
-                        desc={oPost.node.frontmatter.description}
-                        author={oPost.node.frontmatter.author}
-                        date={oPost.node.frontmatter.date}
-                      />
-                    </div>
-                  ))}
+              <div className="blog__body__center">
+                {' '}
+                <div className="blog__body__center__post">
+                  <div
+                    className="blog__body__center__post__content"
+                    dangerouslySetInnerHTML={{ __html: post.html }}
+                  />
+                  {/* <div className="blog__body__center__post__more">
+                    {this.state.showing.map(oPost => (
+                      <div key={oPost.node.id}>
+                        <PostPreview
+                          slug={oPost.node.fields.slug}
+                          img={
+                            oPost.node.frontmatter.featuredImage.childImageSharp
+                              .fluid
+                          }
+                          title={oPost.node.frontmatter.title}
+                          desc={oPost.node.frontmatter.description}
+                          author={oPost.node.frontmatter.author}
+                          date={oPost.node.frontmatter.date}
+                        />
+                      </div>
+                    ))}
+                  </div> */}
                 </div>
-
                 <ul>
                   <li>
                     {previous && (
@@ -227,6 +235,7 @@ class BlogPostTemplate extends Component {
                 </ul>
                 <Link to={`/blog`}>See All Posts</Link>
               </div>
+              <div className="blog__body__right" />
             </div>
           </div>
         </Content>
