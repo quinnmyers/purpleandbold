@@ -48,6 +48,7 @@ class TestimonialsNew extends Component {
   render() {
     return (
       <div>
+        <Spacer />
         <div className="testimonialsnew">
           <Content>
             <div className="testimonialsnew__container">

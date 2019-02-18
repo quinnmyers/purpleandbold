@@ -39,10 +39,14 @@ section.about
       @include tablet-phone
         margin-left: 0em
       @include tablet-phone 
+        text-align: center
         transform: translateY(10vw)
       h2 
         align-self: flex-start
         padding-bottom: .75em
+        @include tablet-phone 
+          align-self: center
+          margin-top: 1em
       &.loaded 
         transform: translateX(0)
         opacity: 1

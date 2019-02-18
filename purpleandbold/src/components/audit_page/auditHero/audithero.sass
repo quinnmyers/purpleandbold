@@ -2,8 +2,19 @@
 
 .audit__hero
   display: flex
+  justify-content: center
   width: 100%
   background: $light-grey
+  // padding: 6.5em 0em
+  // @include edgesnap 
+  //   padding: 5em 0em
+  // @media(max-width: 860px)
+  //   max-width: 70%
+  // @include tablet-phone
+  //   padding: 3.5em 0em
+  //   max-width: 100%
+  // @include phone-large 
+  //   padding: 2em 0em
   &__content
     // background: orange
     display: flex
@@ -14,20 +25,16 @@
     &__left
       display: flex
       flex-direction: column
-      max-width: 60%
+      max-width: 55%
       align-self: center
       justify-content: center
       // background: yellow
-      padding: 6.5em 0em
-      @include edgesnap 
-        padding: 5em 0em
-      @media(max-width: 860px)
-        max-width: 70%
-      @include tablet-phone
-        padding: 3.5em 0em
+      // padding: 6.5em 0em
+      @include tablet-phone 
         max-width: 100%
-      @include phone-large 
-        padding: 2em 0em
+        margin-bottom: 2em
+        text-align: center
+     
       h2
           color: black
           margin-bottom: 0.8em
@@ -53,33 +60,37 @@
           @include tablet-phone 
             font-size: 1.2em
     &__right
-      height: 80%
-      max-width: 40%
+      // height: 80%
+      max-width: 45%
       margin-left: 2em
+      width: 100%
+      height: 100%
       display: flex
       align-self: center 
       transform: scale(0.75)
       opacity: 0
       transition: all 2s ease-in-out
+      // padding: 6.5em 0em
       // background: lightyellow
       &.loaded 
         transform: scale(1)
         opacity: 1
-      @media(max-width: 860px)
-        max-width: 30%
       @include tablet-phone
         justify-content: center
         max-width: 100%
-        width: 80%
         margin-left: 0em
         height: auto
-      img 
+      &__container
+        display: flex
+        justify-content: center
+        border-radius: 25px
+        height: 100%
         width: 100%
-        @include tablet-phone 
-          max-width: 100%
-          margin-bottom: 2.5em
-          margin-left: -30px
-        @include phone-large 
-          margin-bottom: 2em 
-          margin-left: -10px
-          width: 90%
+        // max-width: 100%
+        background: white
+        box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15)
+        img 
+          width: 85%
+          margin-top: 2em
+          @include tablet-phone 
+            max-width: 100%
