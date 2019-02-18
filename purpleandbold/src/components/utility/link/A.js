@@ -16,11 +16,13 @@ class A extends Component {
             this.setState({ isHome: true })
         }
         this.setState({ homePath: window.location.origin })
+        console.log("firstcar", this.props.href.charAt(0) === "#", "href", this.props.href);
+
 
     }
     render() {
         return (
-            this.state.isHome ?
+            this.state.isHome && this.props.href.charAt(0) === "#" ?
                 (<AnchorLink className={this.props.className} onClick={() => this.props.hasOnClick ? this.props.onClickDo() : ""} href={this.props.href} offset="70">{this.props.children}</AnchorLink>)
                 :
                 (<a onClick={() => this.props.hasOnClick ? this.props.onClickDo() : ""} href={`${this.state.homePath}/${this.props.href}`} className={this.props.className}>{this.props.children}</a>)
