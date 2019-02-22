@@ -4,6 +4,7 @@ import React from 'react'
 import Layout from '../components/layout'
 // import Image from '../components/image'
 import SEO from '../components/seo'
+import { graphql } from 'gatsby'
 
 //components
 // import Landing from '../components/Landing/Landing'
@@ -30,8 +31,14 @@ class IndexPage extends React.Component {
   didScroll() {
     this.setState({ didScroll: true })
   }
-
+  componentDidMount() {
+    this.testFunction()
+  }
+  testFunction() {
+    console.log(this.props)
+  }
   render() {
+    const data = this.props.data.allMarkdownRemark.edges[0].node
     return (
       <div>
         <SEO />
@@ -44,7 +51,14 @@ class IndexPage extends React.Component {
           <Spacer />
           <Services />
           <Spacer />
-          <BlogFeature />
+          <BlogFeature
+            title={data.frontmatter.title}
+            description={data.frontmatter.description}
+            author={data.frontmatter.author}
+            date={data.frontmatter.date}
+            img={data.frontmatter.featuredImage.childImageSharp.fluid}
+            slug={data.fields.slug}
+          />
           <Spacer />
           {/* <Hero /> */}
           {/* <AboutOne /> */}
@@ -60,5 +74,33 @@ class IndexPage extends React.Component {
     )
   }
 }
+
+export const query = graphql`
+  query {
+    allMarkdownRemark(filter: { frontmatter: { featured: { eq: true } } }) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          id
+          frontmatter {
+            description
+            date(formatString: "MMMM DD, YYYY")
+            author
+            title
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 500) {
+                  ...GatsbyImageSharpFluid_noBase64
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage

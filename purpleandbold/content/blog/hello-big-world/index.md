@@ -5,6 +5,7 @@ author: 'Cole Smith'
 tags: ['marketing']
 featuredImage: blog-analytics-noreflect.jpg
 description: 'I love eggs'
+featured: false
 ---
 
 ## What are analytics

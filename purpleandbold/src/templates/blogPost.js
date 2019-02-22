@@ -54,9 +54,9 @@ class BlogPostTemplate extends Component {
     console.log(this.contentBlock.getBoundingClientRect())
     this.contentBlock.style.marginLeft = `-${
       this.shareIcons.getBoundingClientRect().width
-      }px`
+    }px`
   }
-  componentWillUnmount() { }
+  componentWillUnmount() {}
   filter(tags) {
     const posts = this.state.posts
     const index = posts.findIndex(
@@ -149,14 +149,16 @@ class BlogPostTemplate extends Component {
         {/* <Spacer /> */}
         <Content>
           <div className="blog">
-            <PostHero
-              img={AnalFeatured}
-              title="Analytics In Modern Websites"
-              desc={`Learn what analytics are, how to use analytics, and why analytics are important to your business' success`}
-              author={`Quinn Myers`}
-              date={`2/6/19`}
-              slug={`#`}
-            />
+            <div className="post-hero">
+              <PostHero
+                img={post.frontmatter.featuredImage.childImageSharp.fluid}
+                title={post.frontmatter.title}
+                desc={post.frontmatter.description}
+                author={post.frontmatter.author}
+                date={post.frontmatter.date}
+                slug={`#`}
+              />
+            </div>
 
             <div className="blog__body" ref={div => (this.contentBlock = div)}>
               <div className="blog__body__left">
@@ -186,7 +188,7 @@ class BlogPostTemplate extends Component {
                     <ShareReddit
                       message={`${
                         post.frontmatter.description
-                        } from https://purpleandbold.com${post.fields.slug}`}
+                      } from https://purpleandbold.com${post.fields.slug}`}
                       title={`${post.frontmatter.title} by purple and bold`}
                       icon={redditIcon}
                     />

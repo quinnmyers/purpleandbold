@@ -5,6 +5,7 @@ author: 'Quinn Myers'
 tags: ['marketing']
 featuredImage: blog-analytics-noreflect.jpg
 description: 'I love eggs'
+featured: false
 ---
 
 This is my first post on my new fake blog! How exciting!

@@ -5,6 +5,7 @@ author: 'Quinn Myers'
 tags: ['marketing']
 featuredImage: blog-analytics-noreflect.jpg
 description: 'I love eggs'
+featured: false
 ---
 
 ## What are analytics

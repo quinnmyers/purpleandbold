@@ -4,7 +4,8 @@ date: '2018-02-02T22:12:03.284Z'
 author: 'Quinn Myers'
 tags: ['marketing']
 featuredImage: blog-analytics-noreflect.jpg
-description: 'I love eggs'
+description: "Learn what analytics are, how to use analytics, and why analytics are important to your business' success"
+featured: true
 ---
 
 ## What are analytics

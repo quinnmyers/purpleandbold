@@ -23,7 +23,9 @@ const PostHero = ({ slug, img, title, desc, author, date }) => (
         </div>
       </div>
       <div className="posthero__image">
-        <img src={img} alt="" />
+        <div className="posthero__image__container">
+          <Img fluid={img} />
+        </div>
       </div>
     </div>
   </Link>
@@ -32,10 +34,10 @@ const PostHero = ({ slug, img, title, desc, author, date }) => (
 export default PostHero
 
 //make these required when we really go
-PostHero.propTypes = {
-  img: PropTypes.object,
-  title: PropTypes.string,
-  desc: PropTypes.string,
-  author: PropTypes.string,
-  date: PropTypes.string,
-}
+// PostHero.propTypes = {
+//   img: PropTypes.object,
+//   title: PropTypes.string,
+//   desc: PropTypes.string,
+//   author: PropTypes.string,
+//   date: PropTypes.string,
+// }

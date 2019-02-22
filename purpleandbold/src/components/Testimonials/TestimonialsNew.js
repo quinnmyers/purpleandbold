@@ -23,10 +23,9 @@ class TestimonialsNew extends Component {
         },
         {
           id: 2,
-          name: 'Robert Riordan',
-          position: 'Actor, Singer',
-          testimonial:
-            'Purple and Bold takes the picture in your head and brings it to life. They know how to simplify tastefully and create solid options quickly. They are a real gem to work with too, and communicate very well.',
+          name: 'Patricia York',
+          position: 'Author',
+          testimonial: `Purple and Bold gave me exactly what I imagined. Cole patiently walked me through the ins and outs of "websitery," helping me to navigate a heretofore unknown territory. Arranging my plays, books, and music into a cohesive and visually compelling format was no small feat, yet, he did it. Instead of being intimidated by cyberspace, I'm infatuated and enthralled!.`,
         },
         {
           id: 3,
@@ -35,13 +34,13 @@ class TestimonialsNew extends Component {
           testimonial:
             'Purple and Bold has made me a website that really helps me get in front of buyers and sellers. I am confident when I send people a link to my website or hand them a business card, knowing that my website functions perfectly and looks stunning.',
         },
-        {
-          id: 4,
-          name: 'Jim Jackson',
-          position: 'CEO, Bluhare Studios',
-          testimonial:
-            'Purple and Bold did a great job on our company website. They were attentive to our needs and delivered the exact product we were looking for in a timely manner.',
-        },
+        // {
+        //   id: 4,
+        //   name: 'Jim Jackson',
+        //   position: 'CEO, Bluhare Studios',
+        //   testimonial:
+        //     'Purple and Bold did a great job on our company website. They were attentive to our needs and delivered the exact product we were looking for in a timely manner.',
+        // },
       ],
     }
   }
@@ -54,7 +53,7 @@ class TestimonialsNew extends Component {
             <div className="testimonialsnew__container">
               <TextBlock
                 header={`See What People Are Saying About Us`}
-                text={`Mollit nulla ut ex fugiat. Sint sit eu aliqua Lorem tempor ipsum elit adipisicing commodo ipsum. Ut fugiat aliqua consequat consectetur laboris adipisicing veniam tempor est cupidatat anim. Consequat sunt laboris Lorem duis adipisicing. Nulla quis tempor cupidatat culpa aliquip ut. Laborum exercitation culpa consectetur duis do anim. Lorem fugiat do non ea proident eu labore fugiat dolor dolor occaecat ullamco.`}
+                text={null}
               />
               <div className="testimonialsnew__container__grid">
                 {this.state.testimonials.map(item => (
