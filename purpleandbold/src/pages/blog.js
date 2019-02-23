@@ -28,18 +28,29 @@ class Blog extends Component {
     this.filter = this.filter.bind(this)
     this.buildFilterArray = this.buildFilterArray.bind(this)
   }
-  // static getDerivedStateFromProps(nextProps, prevState) {
-  //   return {
-  //     posts: nextProps.data.allMarkdownRemark.edges,
-  //     showing: nextProps.data.allMarkdownRemark.edges
-  //   }
-  // }
   componentDidMount() {
     this.setState({
-      showing: this.props.data.allMarkdownRemark.edges,
-      posts: this.props.data.allMarkdownRemark.edges,
+      showing: this.props.data.allPosts.edges,
+      posts: this.props.data.allPosts.edges,
     })
   }
+  // buildFeaturedPost() {
+  //   // this.props.data.allMarkdownRemark.forEach(p => {
+  //   //   if (p.edges.node.frontmatter === true) {
+  //   //     this.setState({ featuredPost: p })
+  //   //   }
+  //   // })
+  //   // console.log(this.state.featuredPost)
+  //   console.log(this.props.data)
+  //   this.props.data.allPosts.edges.forEach(p => {
+  //     if (p.node.frontmatter.featured) {
+  //       this.setState({ featuredPost: p })
+  //     }
+  //   })
+  //   setTimeout(() => {
+  //     console.log('from blog index:', this.state.featuredPost)
+  //   }, 100)
+  // }
   buildFilterArray(tag) {
     const otherpicked = [...this.state.pickedTags]
     const isIn = otherpicked.indexOf(tag) === -1
@@ -83,7 +94,8 @@ class Blog extends Component {
   }
 
   render() {
-    const data = this.props.data.allMarkdownRemark.edges
+    const data = this.props.data.allPosts.edges
+    const featured = this.props.data.featuredPost.edges[0].node
     return (
       <Layout>
         <Content>
@@ -104,12 +116,12 @@ class Blog extends Component {
             <div className="blogindex__featured">
               <h4>Featured Post</h4>
               <PostHero
-                img={AnalFeatured}
-                title="Analytics In Modern Websites"
-                desc={`Learn what analytics are, how to use analytics, and why analytics are important to your business' success`}
-                author={`Quinn Myers`}
-                date={`2/6/19`}
-                slug={`#`}
+                img={featured.frontmatter.featuredImage.childImageSharp.fluid}
+                title={featured.frontmatter.title}
+                desc={featured.frontmatter.description}
+                author={featured.frontmatter.author}
+                date={featured.frontmatter.date}
+                slug={featured.fields.slug}
               />
             </div>
             <div className="blogindex__posts">
@@ -174,7 +186,7 @@ class Blog extends Component {
 }
 export const query = graphql`
   query {
-    allMarkdownRemark {
+    allPosts: allMarkdownRemark {
       edges {
         node {
           fields {
@@ -186,10 +198,36 @@ export const query = graphql`
             description
             date(formatString: "MMMM DD, YYYY")
             author
+            featured
             title
             featuredImage {
               childImageSharp {
                 fluid(maxWidth: 200) {
+                  ...GatsbyImageSharpFluid_noBase64
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    featuredPost: allMarkdownRemark(
+      filter: { frontmatter: { featured: { eq: true } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          id
+          frontmatter {
+            description
+            date(formatString: "MMMM DD, YYYY")
+            author
+            title
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 500) {
                   ...GatsbyImageSharpFluid_noBase64
                 }
               }

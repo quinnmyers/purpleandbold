@@ -31,12 +31,7 @@ class IndexPage extends React.Component {
   didScroll() {
     this.setState({ didScroll: true })
   }
-  componentDidMount() {
-    this.testFunction()
-  }
-  testFunction() {
-    console.log(this.props)
-  }
+  componentDidMount() {}
   render() {
     const data = this.props.data.allMarkdownRemark.edges[0].node
     return (
