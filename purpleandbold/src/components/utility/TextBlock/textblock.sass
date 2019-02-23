@@ -6,6 +6,12 @@
   align-items: center
   margin-bottom: 2em
   text-align: center
+  transform: translateY(1em)
+  opacity: 0
+  transition: all .75s ease-in-out
+  &.loaded
+    opacity: 1
+    transform: translateY(0)
   h2
     padding-bottom: .3em
   p 

@@ -6,7 +6,7 @@ import { Link } from 'gatsby'
 //styles
 import './posthero.sass'
 
-const PostHero = ({ slug, img, title, desc, author, date }) => (
+const PostHero = ({ slug, img, title, desc, author, date, loaded }) => (
   <Link to={slug}>
     <div className="posthero">
       <div className="posthero__info">
@@ -23,7 +23,7 @@ const PostHero = ({ slug, img, title, desc, author, date }) => (
         </div>
       </div>
       <div className="posthero__image">
-        <div className="posthero__image__container">
+        <div className={`posthero__image__container ${loaded ? 'loaded' : ''}`}>
           <Img fluid={img} />
         </div>
       </div>
@@ -33,11 +33,11 @@ const PostHero = ({ slug, img, title, desc, author, date }) => (
 
 export default PostHero
 
-//make these required when we really go
-// PostHero.propTypes = {
-//   img: PropTypes.object,
-//   title: PropTypes.string,
-//   desc: PropTypes.string,
-//   author: PropTypes.string,
-//   date: PropTypes.string,
-// }
+PostHero.propTypes = {
+  img: PropTypes.object.isRequried,
+  title: PropTypes.string.isRequried,
+  desc: PropTypes.string.isRequried,
+  author: PropTypes.string.isRequried,
+  date: PropTypes.string.isRequried,
+  loaded: PropTypes.bool.isRequried,
+}

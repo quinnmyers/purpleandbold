@@ -24,6 +24,7 @@ class Blog extends Component {
       posts: [],
       showing: [],
       pickedTags: [],
+      firstLoad: false,
     }
     this.filter = this.filter.bind(this)
     this.buildFilterArray = this.buildFilterArray.bind(this)
@@ -33,24 +34,13 @@ class Blog extends Component {
       showing: this.props.data.allPosts.edges,
       posts: this.props.data.allPosts.edges,
     })
+    this.loadElements()
   }
-  // buildFeaturedPost() {
-  //   // this.props.data.allMarkdownRemark.forEach(p => {
-  //   //   if (p.edges.node.frontmatter === true) {
-  //   //     this.setState({ featuredPost: p })
-  //   //   }
-  //   // })
-  //   // console.log(this.state.featuredPost)
-  //   console.log(this.props.data)
-  //   this.props.data.allPosts.edges.forEach(p => {
-  //     if (p.node.frontmatter.featured) {
-  //       this.setState({ featuredPost: p })
-  //     }
-  //   })
-  //   setTimeout(() => {
-  //     console.log('from blog index:', this.state.featuredPost)
-  //   }, 100)
-  // }
+  loadElements() {
+    setTimeout(() => {
+      this.setState({ firstLoad: true })
+    }, 10)
+  }
   buildFilterArray(tag) {
     const otherpicked = [...this.state.pickedTags]
     const isIn = otherpicked.indexOf(tag) === -1
@@ -104,16 +94,14 @@ class Blog extends Component {
               <TextBlock
                 header={`Welcome to Our Blog`}
                 text={`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`}
+                loaded={this.state.firstLoad}
               />
-              {/* <h2>Welcome to Our Blog</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.{' '}
-              </p> */}
             </div>
-            <div className="blogindex__featured">
+            <div
+              className={`blogindex__featured ${
+                this.state.firstLoad ? 'loaded' : ''
+              }`}
+            >
               <h4>Featured Post</h4>
               <PostHero
                 img={featured.frontmatter.featuredImage.childImageSharp.fluid}
@@ -122,6 +110,7 @@ class Blog extends Component {
                 author={featured.frontmatter.author}
                 date={featured.frontmatter.date}
                 slug={featured.fields.slug}
+                loaded={this.state.firstLoad}
               />
             </div>
             <div className="blogindex__posts">
@@ -171,7 +160,7 @@ class Blog extends Component {
                     }
                     title={post.node.frontmatter.title}
                     desc={post.node.frontmatter.description}
-                    author={post.node.frontmatter.description}
+                    author={post.node.frontmatter.author}
                     date={post.node.frontmatter.date}
                     slug={post.node.fields.slug}
                   />
