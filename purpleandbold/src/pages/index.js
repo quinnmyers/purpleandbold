@@ -31,7 +31,19 @@ class IndexPage extends React.Component {
   didScroll() {
     this.setState({ didScroll: true })
   }
-  componentDidMount() {}
+  componentDidMount() {
+    if (this.props.location.state) {
+      if (this.props.location.state.hasOwnProperty('toID')) {
+        setTimeout(() => {
+          document
+            .getElementById(this.props.location.state.toID.substring(1))
+            .scrollIntoView({ block: 'end', behavior: 'smooth' })
+        }, 150)
+      } else {
+        return
+      }
+    }
+  }
   render() {
     const data = this.props.data.allMarkdownRemark.edges[0].node
     return (
