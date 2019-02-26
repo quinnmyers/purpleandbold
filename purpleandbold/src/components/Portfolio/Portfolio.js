@@ -157,13 +157,14 @@ class Portfolio extends Component {
     let temparray = []
     this.state.portfolioPieces.forEach(element => {
       tag.forEach(tagel => {
-        if (element.type === tagel) {
+        if (element.type.toLowerCase() === tagel.toLowerCase()) {
           temparray.push(element)
         } else {
           return
         }
       })
     })
+
     if (temparray.length === 0) {
       temparray = this.state.portfolioPieces
     }
