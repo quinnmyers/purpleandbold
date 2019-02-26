@@ -159,6 +159,7 @@ class Services extends Component {
             <TextBlock
               header={`Services`}
               text={`We offer every service necessary to get your busines to the next level, quickly. Or, if you’re thinking of starting a new business, we will help you get started the right way and get off the ground in no time. We love talking to people about their current business or future endeavors and explaining to them what we do and how we help, contact us today and let’s start the conversation.`}
+              loaded={true}
             />
             {this.state.services.map(s => (
               <ServiceBlock

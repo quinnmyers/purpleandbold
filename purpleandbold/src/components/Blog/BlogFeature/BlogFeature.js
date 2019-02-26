@@ -21,6 +21,7 @@ const BlogFeature = ({ title, description, author, date, img, slug }) => (
         <TextBlock
           header={`Check Out Our Blog`}
           text={`We love to write about what makes us happy — growing businesses. Our main goal is always to create concise, informative, and ultimately useful information to business owners and aspiring entrepreneurs. If you have a minute, check out some of the posts, you’ll probably find something helpful to you.`}
+          loaded={true}
         />
         {/* <PostHero
           img={AnalFeatured}

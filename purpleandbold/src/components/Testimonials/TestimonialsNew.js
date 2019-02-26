@@ -9,6 +9,11 @@ import Spacer from '../utility/Spacer/Spacer'
 //styles
 import './testimonialsnew.sass'
 
+//images
+import dimaTestimonial from '../../images/dima_testimonial.jpg'
+import patriciaTestimonial from '../../images/patricia_testimonial.jpg'
+import jaredTestimonial from '../../images/jared_testimonial.jpg'
+
 class TestimonialsNew extends Component {
   constructor(props) {
     super(props)
@@ -20,12 +25,14 @@ class TestimonialsNew extends Component {
           position: 'Artist, Art Lead',
           testimonial:
             'Purple and Bold worked on my personal art website, which means that I had to deliver many visual assets. Quinn was patient with me, and had good solutions to any questions I had. I am so excited to finally have a website of my own that is linked to all my other profiles and will serve as a good place to start my business.',
+          photo: dimaTestimonial,
         },
         {
           id: 2,
           name: 'Patricia York',
           position: 'Author',
           testimonial: `Purple and Bold gave me exactly what I imagined. Cole patiently walked me through the ins and outs of "websitery," helping me to navigate a heretofore unknown territory. Arranging my plays, books, and music into a cohesive and visually compelling format was no small feat, yet, he did it. Instead of being intimidated by cyberspace, I'm infatuated and enthralled!.`,
+          photo: patriciaTestimonial,
         },
         {
           id: 3,
@@ -33,6 +40,7 @@ class TestimonialsNew extends Component {
           position: 'Broker/Owner, One Commercial',
           testimonial:
             'Purple and Bold has made me a website that really helps me get in front of buyers and sellers. I am confident when I send people a link to my website or hand them a business card, knowing that my website functions perfectly and looks stunning.',
+          photo: jaredTestimonial,
         },
         // {
         //   id: 4,
@@ -54,6 +62,7 @@ class TestimonialsNew extends Component {
               <TextBlock
                 header={`See What People Are Saying About Us`}
                 text={null}
+                loaded={true}
               />
               <div className="testimonialsnew__container__grid">
                 {this.state.testimonials.map(item => (
@@ -63,6 +72,9 @@ class TestimonialsNew extends Component {
                   >
                     <p>{item.testimonial}</p>
                     <div className="testimonialsnew__container__grid__item__bottom">
+                      <div className="test__photo">
+                        <img src={item.photo} alt={`photo of ${item.name}`} />
+                      </div>
                       <h5>{item.name}</h5>
                       <span>
                         <p>{item.position}</p>

@@ -9,40 +9,70 @@
     width: 100%
     &__grid
       display: grid 
-      grid-gap: 20px
+      grid-gap: 30px
       // grid-template-columns: repeat(auto-fill, minmax(214px,1fr))
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
       @include edgesnap 
         width: 100% 
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+      @media(max-width: 800px)
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr))
+      @media(max-width: 750px)
+        grid-template-columns: auto
       &__item 
         display: flex
         flex-direction: column 
         align-items: center
         justify-content: space-between
-        padding: 1em 1em
+        padding: 1.5em 1.5em
         text-align: center
         // transition: all 1s
         // cursor: pointer
-        box-shadow: 0px 0px 10px 1px rgba(218,218,218,1);
-        border-radius: 15px
+        box-shadow: 0px 0px 10px 1px rgba(218,218,218,0.6);
+        border-radius: 32px
         width: 100%
+        min-height: 350px
         // height: 300px
         @include edgesnap
-          width: auto
+          width: 100%
+        @media(max-width: 750px) 
+          width: 100%
+          min-height: auto
         @include phone-large 
           margin-right: 0px
           width: 100%
         p 
           font-size: 0.85em
-          line-height: 1.2em
+          line-height: 1.22em
+          @media(max-width: 750px)
+            font-size: 1em 
+        &__bottom 
+          display: flex  
+          flex-direction: column 
+          align-items: center
+          // background: red 
+          margin-top: 1.25em
+          @media(max-width: 750px)
+            margin-top: 2.75em
+        .test__photo 
+          height: 75px
+          width: 75px
+          border-radius: 100px 
+          background: lightgrey
+          img 
+            width: 100%
         h5 
           font-size: 0.85em
-          margin-top: 2em
+          margin-top: .5em
+          @media(max-width: 750px) 
+            font-size: 1.3em
         span 
           p 
             margin-top: .2em
             font-size: .7em
             color: $darkgrey
+            @media(max-width: 750px)
+              font-size: 1em
 
 
 
