@@ -5,7 +5,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import Content from '../utility/Content/Content'
 import 'rc-slider/assets/index.css'
 import { Range } from 'rc-slider'
-import Spacer from '../utility/Spacer/Spacer'
+import Spacer from '../utility/Spacer/spacer'
 
 //images
 import x from '../../images/icons/x.svg'
@@ -72,7 +72,7 @@ class Contact extends Component {
   pushHidden() {
     this.hiddenRef.current.value = `${this.state.priceMin}- ${
       this.state.priceMax
-    } ${this.state.pickedTags}`
+      } ${this.state.pickedTags}`
   }
 
   onSliderChange(e) {
@@ -109,7 +109,7 @@ class Contact extends Component {
                   <div
                     className={`${style.flex__col} ${style.transback} ${
                       style.contact__body__left__name
-                    }`}
+                      }`}
                   >
                     <label htmlFor="name">
                       {' '}
@@ -127,7 +127,7 @@ class Contact extends Component {
                   <div
                     className={`${style.flex__col} ${style.transback} ${
                       style.contact__body__left__company
-                    }`}
+                      }`}
                   >
                     <label htmlFor="company">
                       {' '}
@@ -144,7 +144,7 @@ class Contact extends Component {
                   <div
                     className={`${style.flex__col} ${style.transback} ${
                       style.contact__body__left__telephone
-                    }`}
+                      }`}
                   >
                     <label htmlFor="Telephone">
                       {' '}
@@ -162,7 +162,7 @@ class Contact extends Component {
                   <div
                     className={`${style.flex__col} ${style.transback} ${
                       style.contact__body__left__email
-                    }`}
+                      }`}
                   >
                     <label htmlFor="email">
                       {' '}
@@ -180,7 +180,7 @@ class Contact extends Component {
                   <div
                     className={`${style.flex__col} ${style.transback} ${
                       style.contact__body__left__details
-                    }`}
+                      }`}
                   >
                     <label>Project Details</label>
                     <div className={style.tag}>
@@ -233,7 +233,7 @@ class Contact extends Component {
                   <div
                     className={`${style.flex__col} ${
                       style.contact__body__right__compose
-                    }`}
+                      }`}
                   >
                     <p>
                       Hello. My name is{' '}
@@ -304,7 +304,7 @@ class Contact extends Component {
                   <div
                     className={`${style.flex__col} ${style.transback} ${
                       style.contact__body__right__missed
-                    }`}
+                      }`}
                   >
                     <label htmlFor="missed">Did We Miss Anything?</label>
                     <textarea name="missed" id="missed" name="missed" />
