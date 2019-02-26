@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 //components
 import Content from '../utility/Content/Content'
-import Spacer from '../utility/Spacer/Spacer'
+import Spacer from '../utility/Spacer/spacer'
 import AboutAnimation from './AboutAnimation'
 
 //styles
@@ -34,7 +34,7 @@ class About extends Component {
             <div
               className={`about__container__content ${
                 this.state.loaded ? 'loaded' : ''
-              }`}
+                }`}
             >
               <h2 classname="section-header">Learn More About Us</h2>
               <p>

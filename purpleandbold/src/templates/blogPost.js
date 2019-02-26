@@ -5,7 +5,7 @@ import SEO from '../components/seo'
 import Content from '../components/utility/Content/Content'
 import PostHero from '../components/Blog/PostHero'
 import PostPreview from '../components/Blog/PostPreview'
-import Spacer from '../components/utility/Spacer/Spacer'
+import Spacer from '../components/utility/Spacer/spacer'
 import Button from '../components/utility/Button/Button'
 
 import './blogpost.sass'
@@ -54,9 +54,9 @@ class BlogPostTemplate extends Component {
     console.log(this.contentBlock.getBoundingClientRect())
     this.contentBlock.style.marginLeft = `-${
       this.shareIcons.getBoundingClientRect().width
-    }px`
+      }px`
   }
-  componentWillUnmount() {}
+  componentWillUnmount() { }
   filter(tags) {
     const posts = this.state.posts
     const index = posts.findIndex(
@@ -188,7 +188,7 @@ class BlogPostTemplate extends Component {
                     <ShareReddit
                       message={`${
                         post.frontmatter.description
-                      } from https://purpleandbold.com${post.fields.slug}`}
+                        } from https://purpleandbold.com${post.fields.slug}`}
                       title={`${post.frontmatter.title} by purple and bold`}
                       icon={redditIcon}
                     />

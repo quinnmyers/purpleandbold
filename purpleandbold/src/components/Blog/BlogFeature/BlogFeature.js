@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 //components
 import Content from '../../utility/Content/Content'
 import TextBlock from '../../utility/TextBlock/TextBlock'
-import Spacer from '../../utility/Spacer/Spacer'
+import Spacer from '../../utility/Spacer/spacer'
 import PostHero from '../PostHero.js'
 
 //styles

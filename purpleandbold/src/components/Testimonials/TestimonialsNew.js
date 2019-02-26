@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import Content from '../utility/Content/Content'
 import TextBlock from '../utility/TextBlock/TextBlock'
 // import Button from '../utility/Button/Button'
-import Spacer from '../utility/Spacer/Spacer'
+import Spacer from '../utility/Spacer/spacer'
 
 //styles
 import './testimonialsnew.sass'

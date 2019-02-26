@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 //components
 import Content from '../utility/Content/Content'
 import Button from '../utility/Button/Button'
-import Spacer from '../utility/Spacer/Spacer'
+import Spacer from '../utility/Spacer/spacer'
 
 //images
 import heroImg from '../../images/hero-img.svg'
@@ -36,7 +36,7 @@ class HeroNew extends Component {
               <div
                 className={`hero__container__content__text  ${
                   this.state.firstLoad ? 'loaded' : ''
-                }`}
+                  }`}
               >
                 <div className="hero__container__content__text__top">
                   <h2>
@@ -54,14 +54,14 @@ class HeroNew extends Component {
                     section="#services"
                     text="See What We Can Do For You"
                     loadButton={this.state.firstLoad}
-                    // loadButton={this.state.loadMonitor}
+                  // loadButton={this.state.loadMonitor}
                   />
                 </div>
               </div>
               <div
                 className={`hero__container__content__image ${
                   this.state.firstLoad ? 'loaded' : ''
-                }`}
+                  }`}
               >
                 <img
                   src={heroImg}

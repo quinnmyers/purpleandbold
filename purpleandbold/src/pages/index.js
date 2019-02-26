@@ -18,7 +18,7 @@ import About from '../components/About/About'
 import TestimonialsNew from '../components/Testimonials/TestimonialsNew'
 import Portfolio from '../components/Portfolio/Portfolio'
 import BlogFeature from '../components/Blog/BlogFeature/BlogFeature'
-import Spacer from '../components/utility/Spacer/Spacer'
+import Spacer from '../components/utility/Spacer/spacer'
 
 class IndexPage extends React.Component {
   constructor(props) {

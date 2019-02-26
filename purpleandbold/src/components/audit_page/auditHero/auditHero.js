@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 //components
 import Content from '../../utility/Content/Content'
-import Spacer from '../../utility/Spacer/Spacer'
+import Spacer from '../../utility/Spacer/spacer'
 
 //styles
 import './audithero.sass'
@@ -48,7 +48,7 @@ class AuditHero extends Component {
               <div
                 className={`audit__hero__content__right ${
                   this.state.loaded ? 'loaded' : ''
-                }`}
+                  }`}
               >
                 {/* <img
                 src={heroImg}
