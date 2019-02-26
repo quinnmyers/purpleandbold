@@ -78,9 +78,9 @@ class Footer extends Component {
           <div className="footer__container">
             <div className={`footer__container__left`}>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis.
+                You can find us on these social outlets. If that's not your
+                thing, contact us via email or phone. We look forward to hearing
+                from you.
               </p>
               <div className="footer__container__left__social">
                 <a href="//facebook.com" target="__blank">
@@ -123,8 +123,8 @@ class Footer extends Component {
                   <li key={index}>
                     <A
                       href={l.url}
-                    // onClick={this.testFunction.bind(this)}
-                    // hasOnClick={true}
+                      // onClick={this.testFunction.bind(this)}
+                      // hasOnClick={true}
                     >
                       {l.name}
                     </A>
