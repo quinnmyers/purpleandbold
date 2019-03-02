@@ -122,12 +122,14 @@ $disabled: #fc3a3a45
                         outline: none
                         box-shadow: 0px 0px 7px 1px rgba(250,177,245,1);//rgba(234,162,110,1);
                 .tag
-                    min-height: 62px
-                    flex-wrap: wrap
+                    // min-height: 62px
+                    margin-bottom: 2.5em
+                    flex-wrap: wrap 
                     span
                         height: 100%
                     &__bubbles
-                        height: 75%
+                        display: flex 
+                        // justify-content: space-between !important
                         cursor: pointer
 
                 .tags-enter-active
@@ -155,11 +157,11 @@ $disabled: #fc3a3a45
                         display: flex
                         border-radius: 100px
                         // padding: 1px 5px 
-                        padding: 2px 2px
+                        // padding: 2px 2px
                         justify-content: space-between
                         align-items: center
                         p
-                            padding: 2px 10px
+                            // padding: 2px 10px
                             font-size: 0.9rem 
                             margin: 0px 0px
                         img 
@@ -197,10 +199,9 @@ $disabled: #fc3a3a45
                 &::placeholder
                     color: $maintextcolor
             &__bubbles
-                cursor: bubbles
                 background: $cardback
                 border-radius: 15px
-                padding: 4px 15px
+                padding: 4px 6px
                 margin: 5px
                 font-size: 0.9em
                 .tag__bubbles__del
@@ -212,26 +213,28 @@ $disabled: #fc3a3a45
                     align-items: center
                     border: 1px solid white
                     border-radius: 100%
-                    margin-left: 4px
+                    margin-left: 10px
         
         .send
-            appearance: none
             display: flex
             justify-content: flex-end
             align-self: flex-end
             background: $cardback
             display: flex 
+            position: relative
             flex-direction: column 
             justify-content: center
             align-items: center
             color: $maintextcolor
             border: .08em solid $maintextcolor
             padding: 0.3em 1.25em
-            border-radius: 100px
+            border-radius: 100px 
+            height: 100% 
             font-size: 0.9em
             letter-spacing: .05em
             font-weight: $light
             transition: all 0.3s ease-in-out
+            z-index: 1
             @include tablet
                 font-size: .85em
                 height: 36px 
@@ -248,8 +251,12 @@ $disabled: #fc3a3a45
                 animation: disabled 3s infinite
                 &:hover 
                     transform: scale(1) translateY(0px)
+        .phone
+          position: relative
+          z-index: -1
         #contact__send__message
             visibility: hidden
+
         
 @keyframes tag-in 
     0%    
