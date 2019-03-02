@@ -100,7 +100,7 @@ class Contact extends Component {
             </div>
             <form
               method="POST"
-              action="https://formfor.site/send/f9sTRegHMvoV5rIl1riKHnpQl3yK23"
+              action="https://formfor.site/send/NHaVHQbTS1sWBB6v3Ekzg5kFe2RZmQ"
             >
               <div className={style.contact__body}>
                 <div
