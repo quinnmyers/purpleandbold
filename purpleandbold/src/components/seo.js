@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-function SEO({ description, lang, meta, keywords, title }) {
+import ogImage from 'ogImage.png'
+
+function SEO({ description, lang, meta, keywords, title, page }) {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -25,7 +27,7 @@ function SEO({ description, lang, meta, keywords, title }) {
                 },
                 {
                   property: `og:title`,
-                  content: data.site.siteMetadata.title,
+                  content: `{${data.site.siteMetadata.title} | ${page}}`,
                 },
                 {
                   property: `og:description`,
@@ -37,15 +39,15 @@ function SEO({ description, lang, meta, keywords, title }) {
                 },
                 {
                   property: `og:url`,
-                  content: `https://www.purpleandbold.com`,
+                  content: `http://lynsmithgregory.com/`,
                 },
                 {
                   property: `og:image`,
-                  content: `https://www.purpleandbold.com/purpleandbold_og.png`,
+                  content: ogImage,
                 },
                 {
                   name: `twitter:card`,
-                  content: `summary`,
+                  content: metaDescription,
                 },
                 {
                   name: `twitter:creator`,
@@ -63,9 +65,9 @@ function SEO({ description, lang, meta, keywords, title }) {
                 .concat(
                   keywords.length > 0
                     ? {
-                      name: `keywords`,
-                      content: keywords.join(`, `),
-                    }
+                        name: `keywords`,
+                        content: keywords.join(`, `),
+                      }
                     : []
                 )
                 .concat(meta)}
