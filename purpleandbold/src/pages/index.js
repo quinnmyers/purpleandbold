@@ -48,7 +48,7 @@ class IndexPage extends React.Component {
     const data = this.props.data.allMarkdownRemark.edges[0].node
     return (
       <div>
-        <SEO />
+        <SEO page="Home" />
         {/* <Landing didScroll={this.didScroll} /> */}
         <Layout didScroll={this.state.didScroll}>
           <Spacer />
