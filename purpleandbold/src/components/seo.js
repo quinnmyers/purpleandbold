@@ -27,7 +27,7 @@ function SEO({ description, lang, meta, keywords, title, page }) {
                 },
                 {
                   property: `og:title`,
-                  content: `{${data.site.siteMetadata.title} | ${page}}`,
+                  content: `${data.site.siteMetadata.title} | ${page}`,
                 },
                 {
                   property: `og:description`,
