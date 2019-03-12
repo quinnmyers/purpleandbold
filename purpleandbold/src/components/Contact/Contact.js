@@ -98,10 +98,13 @@ class Contact extends Component {
             <div className={style.Contact__title}>
               <h2 className={style.section__header}>Contact Us</h2>
             </div>
-            <form
+            {/* <form
               method="POST"
               action="https://formfor.site/send/NHaVHQbTS1sWBB6v3Ekzg5kFe2RZmQ"
-            >
+            > */}
+            <form action="https://getsimpleform.com/messages?form_api_token=278a4fc80eebbf34d2171cda4e11b8fa" method="post">
+              {/* <!-- the redirect_to is optional, the form will redirect to the referrer on submission --> */}
+              <input type='hidden' name='redirect_to' value='https://purpleandbold.com/#contact' />
               <div className={style.contact__body}>
                 <div
                   className={`${style.flex__col} ${style.contact__body__left}`}
