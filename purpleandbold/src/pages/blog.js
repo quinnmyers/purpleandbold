@@ -93,14 +93,14 @@ class Blog extends Component {
             <div className="blogindex__header">
               <TextBlock
                 header={`Welcome to Our Blog`}
-                text={`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`}
+                text={`At purple and bold we are experts on the nuts and bolts of how the internet works not just what it does. Here we would like to share some of our expertise with you. Check back often to learn new things about this digital world we all live in.`}
                 loaded={this.state.firstLoad}
               />
             </div>
             <div
               className={`blogindex__featured ${
                 this.state.firstLoad ? 'loaded' : ''
-              }`}
+                }`}
             >
               <h4>Featured Post</h4>
               <PostHero
